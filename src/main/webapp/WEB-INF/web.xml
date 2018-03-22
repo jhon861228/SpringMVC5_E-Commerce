@@ -6,19 +6,15 @@
 
 
     <listener>
-        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
     </listener>
-  
-    /<context-param>
-    <param-name>contextConfigLocation</param-name>
-    <param-value>/WEB-INF/dispatcher-servlet.xml,
-        /WEB-INF/applicationContext.xml
-    </param-value>
-</context-param>
 
-
-    
-
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>/WEB-INF/dispatcher-servlet.xml,
+            /WEB-INF/applicationContext.xml
+        </param-value>
+    </context-param>
 
 
     <servlet>
