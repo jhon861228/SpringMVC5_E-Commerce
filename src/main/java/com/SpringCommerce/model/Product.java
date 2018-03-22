@@ -1,5 +1,9 @@
 package com.SpringCommerce.model;
 
+
+import javax.persistence.Entity;
+
+@Entity
 public class Product {
 
     private String productName;
