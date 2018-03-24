@@ -1,4 +1,5 @@
 <%@taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@include file="/WEB-INF/views/template/header.jsp"%>
 
 
@@ -13,14 +14,14 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-5">
-                    <img src="#" alt="image" style="width:100%; height: 300px" />
+                    <td><img style="width:120px; height: auto; " src="http://localhost:8080/eMusicStore/getUserImage/<c:out value="${product.productId}"  />.do"</td>
                 </div>
 
                 <div class="col-md-5">
                     <h3>${product.productName}</h3>
                     <p>${product.productDescription}</p>
                     <p>
-                       <strong>Manufacturer</strong> : ${product.productManufacturer}
+                       <strong>Manufacturer</strong> : ${product.productId}
                     </p>
                     <p>
                         <strong>Category</strong> : ${product.productCategory}
@@ -32,6 +33,8 @@
                 </div>
             </div>
         </div>
+
+        <h3><a href="<spring:url value="deleteProduct/${product.productId}" />"</h3>
 
 
 

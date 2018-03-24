@@ -24,7 +24,7 @@
             </thead>
             <c:forEach items="${products}" var="product">
                 <tr>
-                    <td><img src="#" alt="image"/></td>
+                    <td><img style="width:120px; height: auto; " src="getUserImage/<c:out value="${product.productId}"  />.do"</td>
                     <td>${product.productName}</td>
                     <td>${product.productCategory}</td>
                     <td>${product.productCondition}</td>
@@ -34,5 +34,8 @@
                 </tr>
             </c:forEach>
         </table>
+        <a href="<spring:url value="/addProduct" />" class="btn btn-primary">Add Product</a>
 
-<%@include file="/WEB-INF/views/template/footer.jsp" %>
+
+
+    <%@include file="/WEB-INF/views/template/footer.jsp" %>

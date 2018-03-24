@@ -1,5 +1,5 @@
 <component name="ArtifactManager">
-  <artifact type="exploded-war" name="eMusicStore:war exploded">
+  <artifact type="exploded-war" build-on-make="true" name="eMusicStore:war exploded">
     <output-path>$PROJECT_DIR$/out/artifacts/eMusicStore_war_exploded</output-path>
     <root id="root">
       <element id="javaee-facet-resources" facet="WebShopApp/web/Web" />
@@ -44,8 +44,12 @@
           <element id="library" level="project" name="Maven: org.jboss.logging:jboss-logging:3.3.1.Final" />
           <element id="library" level="project" name="Maven: org.jboss.spec.javax.transaction:jboss-transaction-api_1.2_spec:1.0.1.Final" />
           <element id="library" level="project" name="Maven: org.jboss:jandex:2.0.3.Final" />
+          <element id="library" level="project" name="Maven: commons-fileupload:commons-fileupload:1.2.2" />
+          <element id="library" level="project" name="Maven: commons-io:commons-io:2.4" />
+          <element id="library" level="project" name="Maven: commons-codec:commons-codec:1.11" />
         </element>
       </element>
+      <element id="javaee-facet-resources" facet="WebShopApp/web/Web2" />
     </root>
   </artifact>
 </component>
