@@ -63,10 +63,11 @@
             <form:input path="productManufacturer" id="manufacturer" class="form-Control"/>
         </div>
 
-        <div class="form-group">
-            <label class="control-label" for="pic">Upload Picture</label>
-            <form:input id="pic" path="pic" type="file" class="form:input-large" />
-        </div>
+        File2 to upload: <input type="file" name="file">
+        <%--<div class="form-group">--%>
+            <%--<label class="control-label" for="pic">Upload Picture</label>--%>
+            <%--<form:input id="pic" path="pic" type="multipart/form-data" class="form:input-large" />--%>
+        <%--</div>--%>
 
         <br><br>
         <input type="submit" value="submit" class="btn btn-default">

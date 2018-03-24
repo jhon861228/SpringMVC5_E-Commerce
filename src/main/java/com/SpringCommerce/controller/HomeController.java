@@ -8,19 +8,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
-
-import javax.imageio.ImageIO;
-import javax.servlet.ServletException;
-import javax.servlet.ServletOutputStream;
-import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.awt.image.BufferedImage;
 import java.io.*;
-import java.nio.file.*;
-import java.nio.file.Path;
-
-import java.sql.Blob;
-import java.util.Base64;
 import java.util.List;
 
 
@@ -58,9 +47,16 @@ public class HomeController {
         return "/addProduct";
     }
 
-    @RequestMapping(value = "/addProduct", method = RequestMethod.POST)
-    public String addProductPost(@ModelAttribute("product") Product product) {
+    @RequestMapping(value = "/addProduct", method = RequestMethod.POST )
+    public String addProductPost(@ModelAttribute("product") Product product, @RequestParam("file") MultipartFile file) throws IOException {
+        byte[] bytes = null;
+        try {
+           bytes = file.getBytes();
+        } catch (IOException e) {
 
+            e.printStackTrace();
+        }
+        product.setPic(bytes);
         productDao.addProduct(product);
         return "redirect:/productList";
     }
