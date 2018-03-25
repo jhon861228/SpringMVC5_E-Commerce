@@ -14,7 +14,9 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-5">
-                    <td><img style="width:120px; height: auto; " src="http://localhost:8080/eMusicStore/getUserImage/<c:out value="${product.productId}"  />.do"</td>
+                    <%--<td><img  src="http://localhost:8080/eMusicStore/getUserImage/<c:out value="${product.productId}"  />.do"</td>--%>
+                   <td><img style="width:120px; height: auto; " src="<spring:url value="/getUserImage/${product.productId}" />.do"/></td>
+
                 </div>
 
                 <div class="col-md-5">
@@ -31,13 +33,15 @@
                     </p>
                     <h4>${product.productPrice} USD</h4>
 
-                <h2> <a href="http://localhost:8080/eMusicStore/deleteProduct/<c:out value="${product.productId}" />"> DELETE PRODUCTt</a></h2>
+
+                    <h2><a href="<spring:url value="/deleteProduct/${product.productId}" />"
+                    >DELETE PRODUCT</a></h2>
+
                 </div>
             </div>
         </div>
 
 
-                        <a href="<spring:url value="/addProduct" />" class="btn btn-primary">Add Product</a>
 
 
         <%@include file="/WEB-INF/views/template/footer.jsp" %>

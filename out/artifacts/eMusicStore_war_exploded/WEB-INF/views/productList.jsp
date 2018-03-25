@@ -24,7 +24,7 @@
             </thead>
             <c:forEach items="${products}" var="product">
                 <tr>
-                    <td><img style="width:120px; height: auto; " src="getUserImage/<c:out value="${product.productId}"  />.do"</td>
+                    <td><img style="width:120px; height: auto; " src="<spring:url value="/getUserImage/${product.productId}" />.do"/></td>
                     <td>${product.productName}</td>
                     <td>${product.productCategory}</td>
                     <td>${product.productCondition}</td>
