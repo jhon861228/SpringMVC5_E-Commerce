@@ -1,6 +1,6 @@
-<%@taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
-<%@include file="/WEB-INF/views/template/header.jsp"%>
+<%@include file="/WEB-INF/views/template/header.jsp" %>
 
 
 <div class="container-wrapper">
@@ -13,7 +13,7 @@
 
         <form:form action="${pageContext.request.contextPath}/editProduct" method="post"
                    commandName="product" enctype="multipart/form-data">
-            <form:hidden path="productId" value="${product.productId}" />
+            <form:hidden path="productId" value="${product.productId}"/>
 
         <div class="form-group">
             <label for="name">Name</label>
@@ -23,16 +23,17 @@
         <div class="form-group">
             <label for="category">Category</label>
             <label class="checkbox-inline"><form:radiobutton path="productCategory" id="category"
-                                                             value="instrument" />Instrument</label>
+                                                             value="instrument"/>Instrument</label>
             <label class="checkbox-inline"><form:radiobutton path="productCategory" id="category"
-                                                             value="record" />Record</label>
+                                                             value="record"/>Record</label>
             <label class="checkbox-inline"><form:radiobutton path="productCategory" id="category"
-                                                             value="accessory" />Accessory</label>
+                                                             value="accessory"/>Accessory</label>
         </div>
 
         <div class="form-group">
             <label for="description">Description</label>
-            <form:textarea path="productDescription" id="description" class="form-Control" value="${product.productDescription}"/>
+            <form:textarea path="productDescription" id="description" class="form-Control"
+                           value="${product.productDescription}"/>
         </div>
 
         <div class="form-group">
@@ -43,17 +44,17 @@
         <div class="form-group">
             <label for="condition">Condition</label>
             <label class="checkbox-inline"><form:radiobutton path="productCondition" id="condition"
-                                                             value="new" />New</label>
+                                                             value="new"/>New</label>
             <label class="checkbox-inline"><form:radiobutton path="productCondition" id="condition"
-                                                             value="used" />Used</label>
+                                                             value="used"/>Used</label>
         </div>
 
         <div class="form-group">
             <label for="status">Status</label>
             <label class="checkbox-inline"><form:radiobutton path="productStatus" id="status"
-                                                             value="active" />Active</label>
+                                                             value="active"/>Active</label>
             <label class="checkbox-inline"><form:radiobutton path="productStatus" id="status"
-                                                             value="inactive" />Inactive</label>
+                                                             value="inactive"/>Inactive</label>
         </div>
 
         <div class="form-group">
@@ -63,7 +64,8 @@
 
         <div class="form-group">
             <label for="manufacturer">Manufacturer</label>
-            <form:input path="productManufacturer" id="manufacturer" class="form-Control" value="${product.productManufacturer}"/>
+            <form:input path="productManufacturer" id="manufacturer" class="form-Control"
+                        value="${product.productManufacturer}"/>
         </div>
 
         File2 to upload: <input type="file" name="file">

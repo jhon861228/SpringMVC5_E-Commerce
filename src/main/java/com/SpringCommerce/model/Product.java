@@ -1,9 +1,9 @@
 package com.SpringCommerce.model;
 
 
-import org.springframework.web.multipart.MultipartFile;
-
 import javax.persistence.*;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotEmpty;
 
 @Entity
 public class Product {
@@ -11,23 +11,26 @@ public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int productId;
+    @NotEmpty(message = "CANNOT BE EMPTY")
     private String productName;
     private String productCategory;
     private String productDescription;
+    @Min(value = 0, message = "The Product must have a Valid Price")
     private double productPrice;
     private String productCondition;
     private String productStatus;
+    @Min(value = 0 , message = "The Product Units Must Be More than 0")
     private int unitInStock;
     private String productManufacturer;
     @Lob
     private byte[] pic;
 
 
-    public byte[] getPic(){
+    public byte[] getPic() {
         return this.pic;
     }
 
-    public void setPic(byte[] pic){
+    public void setPic(byte[] pic) {
         this.pic = pic;
     }
 
@@ -38,7 +41,6 @@ public class Product {
     public void setProductId(int productId) {
         this.productId = productId;
     }
-
 
 
     public String getProductName() {

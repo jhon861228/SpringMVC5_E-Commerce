@@ -6,17 +6,15 @@ import org.apache.commons.io.IOUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
-
-import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.*;
-import java.nio.file.Files;
-import java.nio.file.LinkOption;
-import java.nio.file.Paths;
+import javax.validation.Valid;
+import java.io.ByteArrayInputStream;
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.List;
-
 
 
 @Controller
@@ -53,7 +51,13 @@ public class HomeController {
     }
 
     @RequestMapping(value = "/addProduct", method = RequestMethod.POST)
-    public String addProductPost(@ModelAttribute("product") Product product, @RequestParam("file") MultipartFile file) throws IOException {
+    public String addProductPost(@Valid @ModelAttribute("product") Product product, BindingResult result, @RequestParam("file") MultipartFile file) throws IOException {
+       if (result.hasErrors()){
+
+           return "addProduct";
+       }
+
+
         byte[] bytes = null;
         try {
             bytes = file.getBytes();
@@ -110,7 +114,7 @@ public class HomeController {
             e.printStackTrace();
         }
         product.setPic(bytes);
-    productDao.editProduct(product);
-    return "redirect:/productList";
+        productDao.editProduct(product);
+        return "redirect:/productList";
     }
 }
