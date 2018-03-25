@@ -8,8 +8,13 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
+
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.LinkOption;
+import java.nio.file.Paths;
 import java.util.List;
 
 
@@ -81,6 +86,12 @@ public class HomeController {
         byte[] buffer = productDao.getProductById(productId).getPic();
         InputStream in1 = new ByteArrayInputStream(buffer);
         IOUtils.copy(in1, response.getOutputStream());
+    }
+
+    @RequestMapping({"/deleteProduct/{id}"})
+    public String deleteProduct(@PathVariable int id) {
+        this.productDao.deleteProduct(id);
+        return "redirect:/productList";
     }
 
 }
