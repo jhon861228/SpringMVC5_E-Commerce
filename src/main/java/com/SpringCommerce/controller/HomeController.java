@@ -52,11 +52,11 @@ public class HomeController {
         return "/addProduct";
     }
 
-    @RequestMapping(value = "/addProduct", method = RequestMethod.POST )
+    @RequestMapping(value = "/addProduct", method = RequestMethod.POST)
     public String addProductPost(@ModelAttribute("product") Product product, @RequestParam("file") MultipartFile file) throws IOException {
         byte[] bytes = null;
         try {
-           bytes = file.getBytes();
+            bytes = file.getBytes();
         } catch (IOException e) {
 
             e.printStackTrace();
@@ -65,8 +65,6 @@ public class HomeController {
         productDao.addProduct(product);
         return "redirect:/productList";
     }
-
-
 
 
     @RequestMapping("/productList/viewProduct/{productId}")
@@ -79,8 +77,8 @@ public class HomeController {
     }
 
 
-    @RequestMapping(method=RequestMethod.GET, value="/getUserImage/{id}")
-    public void getUserImage(HttpServletResponse response , @PathVariable("id") int productId) throws IOException{
+    @RequestMapping(method = RequestMethod.GET, value = "/getUserImage/{id}")
+    public void getUserImage(HttpServletResponse response, @PathVariable("id") int productId) throws IOException {
 
         response.setContentType("image/jpeg");
         byte[] buffer = productDao.getProductById(productId).getPic();
@@ -94,4 +92,25 @@ public class HomeController {
         return "redirect:/productList";
     }
 
+    @RequestMapping("/editProduct/{id}")
+    public String editProduct(@PathVariable int id, Model model) {
+        Product product = productDao.getProductById(id);
+        model.addAttribute(product);
+
+        return "editProduct";
+    }
+
+    @RequestMapping(value = "/editProduct", method = RequestMethod.POST)
+    public String editProduct(@ModelAttribute("product") Product product, @RequestParam("file") MultipartFile file, Model model) {
+        byte[] bytes = null;
+        try {
+            bytes = file.getBytes();
+        } catch (IOException e) {
+
+            e.printStackTrace();
+        }
+        product.setPic(bytes);
+    productDao.editProduct(product);
+    return "redirect:/productList";
+    }
 }
