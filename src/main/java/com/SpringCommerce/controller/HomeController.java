@@ -37,6 +37,12 @@ public class HomeController {
         return "productList";
     }
 
+    @RequestMapping("/admin")
+    public String adminPanel() {
+        return "admin";
+    }
+
+
 
     @RequestMapping("/addProduct")
     public String addProduct(Model model) {
@@ -52,10 +58,10 @@ public class HomeController {
 
     @RequestMapping(value = "/addProduct", method = RequestMethod.POST)
     public String addProductPost(@Valid @ModelAttribute("product") Product product, BindingResult result, @RequestParam("file") MultipartFile file) throws IOException {
-       if (result.hasErrors()){
+        if (result.hasErrors()) {
 
-           return "addProduct";
-       }
+            return "addProduct";
+        }
 
 
         byte[] bytes = null;
@@ -71,7 +77,15 @@ public class HomeController {
     }
 
 
-    @RequestMapping("/productList/viewProduct/{productId}")
+    @RequestMapping("admin/productInventory")
+    public String productInventory(Model model) {
+        List<Product> products = productDao.getAllProducts();
+        model.addAttribute("products", products);
+
+        return "productInventory";
+    }
+
+    @RequestMapping("/viewProduct/{productId}")
     public String viewProduct(@PathVariable int productId, Model model) throws IOException {
         Product product = productDao.getProductById(productId);
         model.addAttribute(product);
@@ -90,13 +104,13 @@ public class HomeController {
         IOUtils.copy(in1, response.getOutputStream());
     }
 
-    @RequestMapping({"/deleteProduct/{id}"})
+    @RequestMapping({"admin/deleteProduct/{id}"})
     public String deleteProduct(@PathVariable int id) {
         this.productDao.deleteProduct(id);
         return "redirect:/productList";
     }
 
-    @RequestMapping("/editProduct/{id}")
+    @RequestMapping("admin/editProduct/{id}")
     public String editProduct(@PathVariable int id, Model model) {
         Product product = productDao.getProductById(id);
         model.addAttribute(product);

@@ -35,10 +35,7 @@
                     <h4>${product.productPrice} USD</h4>
 
 
-                    <h2><a href="<spring:url value="/deleteProduct/${product.productId}" />"
-                    >DELETE PRODUCT</a></h2>
-                    <h2><a href="<spring:url value="/editProduct/${product.productId}" />"
-                    >EDIT PRODUCT</a></h2>
+
                 </div>
             </div>
         </div>
