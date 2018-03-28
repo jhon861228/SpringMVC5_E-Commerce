@@ -1,6 +1,8 @@
 package com.SpringCommerce.model;
 
 
+import org.hibernate.annotations.GenericGenerator;
+
 import javax.persistence.*;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotEmpty;
@@ -9,8 +11,9 @@ import javax.validation.constraints.NotEmpty;
 public class Product {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private int productId;
+    @GeneratedValue(generator = "uuid")
+    @GenericGenerator(name = "uuid", strategy = "uuid2")
+    private String productId;
     @NotEmpty(message = "CANNOT BE EMPTY")
     private String productName;
     private String productCategory;
@@ -34,11 +37,11 @@ public class Product {
         this.pic = pic;
     }
 
-    public int getProductId() {
+    public String getProductId() {
         return productId;
     }
 
-    public void setProductId(int productId) {
+    public void setProductId(String productId) {
         this.productId = productId;
     }
 

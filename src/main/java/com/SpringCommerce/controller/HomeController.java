@@ -15,6 +15,7 @@ import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.List;
+import java.util.UUID;
 
 
 @Controller
@@ -47,6 +48,8 @@ public class HomeController {
     @RequestMapping("/addProduct")
     public String addProduct(Model model) {
         Product product = new Product();
+//        String productGenerator = UUID.randomUUID().toString().substring(0,6);
+
         product.setProductCategory("instrument");
         product.setProductCondition("new");
         product.setProductStatus("active");
@@ -72,6 +75,7 @@ public class HomeController {
             e.printStackTrace();
         }
         product.setPic(bytes);
+//        product.setProductId(UUID.randomUUID().toString().substring(0, 6));
         productDao.addProduct(product);
         return "redirect:/productList";
     }
@@ -86,7 +90,7 @@ public class HomeController {
     }
 
     @RequestMapping("/viewProduct/{productId}")
-    public String viewProduct(@PathVariable int productId, Model model) throws IOException {
+    public String viewProduct(@PathVariable String productId, Model model) throws IOException {
         Product product = productDao.getProductById(productId);
         model.addAttribute(product);
 
@@ -96,7 +100,7 @@ public class HomeController {
 
 
     @RequestMapping(method = RequestMethod.GET, value = "/getUserImage/{id}")
-    public void getUserImage(HttpServletResponse response, @PathVariable("id") int productId) throws IOException {
+    public void getUserImage(HttpServletResponse response, @PathVariable("id") String productId) throws IOException {
 
         response.setContentType("image/jpeg");
         byte[] buffer = productDao.getProductById(productId).getPic();
@@ -105,13 +109,13 @@ public class HomeController {
     }
 
     @RequestMapping({"admin/deleteProduct/{id}"})
-    public String deleteProduct(@PathVariable int id) {
+    public String deleteProduct(@PathVariable String id) {
         this.productDao.deleteProduct(id);
         return "redirect:/productList";
     }
 
     @RequestMapping("admin/editProduct/{id}")
-    public String editProduct(@PathVariable int id, Model model) {
+    public String editProduct(@PathVariable String id, Model model) {
         Product product = productDao.getProductById(id);
         model.addAttribute(product);
 

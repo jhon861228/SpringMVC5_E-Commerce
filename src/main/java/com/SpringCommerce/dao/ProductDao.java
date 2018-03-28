@@ -6,13 +6,13 @@ import java.util.List;
 
 public interface ProductDao {
 
-    Product getProductById(int id);
+    Product getProductById(String id);
 
     List<Product> getAllProducts();
 
     void addProduct(Product product);
 
-    void deleteProduct(int id);
+    void deleteProduct(String id);
 
     void editProduct(Product product);
 }
