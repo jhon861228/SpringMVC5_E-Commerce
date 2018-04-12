@@ -1,4 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
@@ -64,7 +65,7 @@
                     <ul class="list-inline">
                         <li class="list-inline-item"><a href="#" class="search-btn"><i class="icon-search"></i></a></li>
                         <li class="list-inline-item"><a href="#"><i class="fa fa-heart-o"></i>Wishlist</a></li>
-                        <li class="list-inline-item"><a href="customer-login.html" class="pr-0 border-right-0"><i
+                        <li class="list-inline-item"><a href="<spring:url value="/admin/login" />" class="pr-0 border-right-0"><i
                                 class="icon-user-1"></i>Account</a></li>
 
                     </ul>
@@ -92,7 +93,7 @@
                     class="navbar-toggler navbar-toggler-right"><span></span><span></span><span></span></button>
             <div id="navbarSupportedContent" class="collapse navbar-collapse">
                 <ul class="navbar-nav mx-auto">
-                    <li class="nav-item active"><a href="index.html" class="nav-link">Home <span class="sr-only">(current)</span></a>
+                    <li class="nav-item active"><a href="/" class="nav-link">Home <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
                     <li class="nav-item"><a href="property.html" class="nav-link">Property</a></li>
