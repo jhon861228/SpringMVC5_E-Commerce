@@ -52,6 +52,15 @@ public class UserController {
 
         return "loginPage";
     }
+
+    @RequestMapping("/productlist")
+    public String productInventory(Model model) {
+        List<Product> products = productDao.getAllProducts();
+        model.addAttribute("products", products);
+
+        return "productList";
+    }
+
     @RequestMapping(value = "/registration", method = RequestMethod.POST)
     public String registration(@ModelAttribute("userForm") User userForm, BindingResult bindingResult, Model model) {
         userValidator.validate(userForm, bindingResult);

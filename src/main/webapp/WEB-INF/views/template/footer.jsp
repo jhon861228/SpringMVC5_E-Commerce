@@ -48,7 +48,7 @@
     </div>
     <div class="copyrights bg-black-6">
         <div class="container text-center">
-            <p>&copy; Copyrights 2017. Template by <a href="https://bootstrapious.com">Bootstrapious</a></p>
+            <p>&copy; Copyrights 2018 Dimou John</a></p>
         </div>
     </div>
 </footer>

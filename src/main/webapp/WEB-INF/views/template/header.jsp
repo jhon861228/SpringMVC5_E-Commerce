@@ -65,7 +65,7 @@
                     <ul class="list-inline">
                         <li class="list-inline-item"><a href="#" class="search-btn"><i class="icon-search"></i></a></li>
                         <li class="list-inline-item"><a href="#"><i class="fa fa-heart-o"></i>Wishlist</a></li>
-                        <li class="list-inline-item"><a href="<spring:url value="/admin/login" />" class="pr-0 border-right-0"><i
+                        <li class="list-inline-item"><a href="<spring:url value="/loginpage" />" class="pr-0 border-right-0"><i
                                 class="icon-user-1"></i>Account</a></li>
 
                     </ul>
@@ -96,7 +96,7 @@
                     <li class="nav-item active"><a href="/" class="nav-link">Home <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
-                    <li class="nav-item"><a href="property.html" class="nav-link">Property</a></li>
+                    <li class="nav-item"><a href="<spring:url value="/productlist" />" class="nav-link">PRODUCTS</a></li>
                     <li class="nav-item dropdown"><a id="navbarDropdownMenuLink" href="http://example.com"
                                                      data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
                                                      class="nav-link">Dropdown <i class="fa fa-angle-down"></i></a>
