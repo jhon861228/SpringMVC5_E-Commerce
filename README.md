@@ -4,11 +4,6 @@
 </p>
 
 
-
-# 
-
-![alt text](https://imgur.com/cysl8XX.png)
-
 - Spring MVC
 - Spring Security
 - Spring Data JPA
