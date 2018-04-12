@@ -1,15 +1,16 @@
-# E-ShopWebApp with Spring MVC 5, Spring Security , Spring Data JPA, XML Configuration, Maven, JSP, and MySQL (IN PROGRESS).
+# E-ShopWebApp with Spring MVC 5, Spring Security , Spring Data JPA, Hibernate, XML Configuration, Maven, JSP, and MySQL (IN PROGRESS).
 
-![alt text](http://4.bp.blogspot.com/-_FcPlpLJlJc/VfiAWDETfHI/AAAAAAAACGE/IWnS0V_sTh0/s1600/spring-mvc-io.png)
+![alt text](https://imgur.com/cysl8XX.png)
+
 - Spring MVC
 - Spring Security
 - Spring Data JPA
 - Maven
+- Hibernate
 - JSP
 - MySQL <BR><BR>
+  
 DEPLOYING AND BUILDING ON Apache Tomcat/9.0.6
+IDE USED  : IntelliJ IDEA Ultimate
 
-TO-DO LIST
-- ADD BOOTSTRAP THEMING AND GENERAL FRONT END CONFIGURATION
-- ADD LOGIN- REGISTER 
-- ADD CART SERVICE 
+IN PROGRESS
