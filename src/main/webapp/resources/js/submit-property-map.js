@@ -291,7 +291,7 @@ function init() {
                     ]
                 }
             ]
-            },
+        },
         b = document.getElementById("submit-property-map"),
         c = new google.maps.Map(b, a);
     marker = new google.maps.Marker({
@@ -300,4 +300,5 @@ function init() {
         icon: "img/map-marker-default.png"
     })
 }
+
 google.maps.event.addDomListener(window, "load", init);

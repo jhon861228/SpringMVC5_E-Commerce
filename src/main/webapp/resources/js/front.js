@@ -5,7 +5,7 @@ $(function () {
     // ------------------------------------------------------ //
 
     var stylesheet = $('link#theme-stylesheet');
-    $( "<link id='new-stylesheet' rel='stylesheet'>" ).insertAfter(stylesheet);
+    $("<link id='new-stylesheet' rel='stylesheet'>").insertAfter(stylesheet);
     var alternateColour = $('link#new-stylesheet');
 
     if ($.cookie("theme_csspath")) {
@@ -20,7 +20,10 @@ $(function () {
 
             alternateColour.attr("href", theme_csspath);
 
-            $.cookie("theme_csspath", theme_csspath, { expires: 365, path: document.URL.substr(0, document.URL.lastIndexOf('/')) });
+            $.cookie("theme_csspath", theme_csspath, {
+                expires: 365,
+                path: document.URL.substr(0, document.URL.lastIndexOf('/'))
+            });
 
         }
 
@@ -132,73 +135,73 @@ $(function () {
     // Apartments Slider
     // ------------------------------------------------------ //
     var swiper = new Swiper('.apartments-slider', {
-            slidesPerView: 3,
-            spaceBetween: 20,
-            breakpoints: {
-               991: {
-                   slidesPerView: 1
-               }
-           },
-            pagination: {
-                el: '.swiper-pagination',
-                clickable: true,
-                dynamicBullets: true
+        slidesPerView: 3,
+        spaceBetween: 20,
+        breakpoints: {
+            991: {
+                slidesPerView: 1
             }
-        });
+        },
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+            dynamicBullets: true
+        }
+    });
 
     // ------------------------------------------------------- //
     // Agents Slider
     // ------------------------------------------------------ //
     var swiper = new Swiper('.agents-slider', {
-            slidesPerView: 3,
-            spaceBetween: 20,
-            breakpoints: {
-               991: {
-                   slidesPerView: 1
-               }
-           },
-            pagination: {
-                el: '.swiper-pagination',
-                clickable: true,
-                dynamicBullets: true
+        slidesPerView: 3,
+        spaceBetween: 20,
+        breakpoints: {
+            991: {
+                slidesPerView: 1
             }
-        });
+        },
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+            dynamicBullets: true
+        }
+    });
 
 
     // ------------------------------------------------------- //
     // Testimonials Slider
     // ------------------------------------------------------ //
     var swiper = new Swiper('.testimonials-slider', {
-            slidesPerView: 1,
-            spaceBetween: 30,
-            breakpoints: {
-               991: {
-                   slidesPerView: 1
-               }
-           },
-            pagination: {
-                el: '.swiper-pagination',
-                clickable: true,
-                dynamicBullets: true
+        slidesPerView: 1,
+        spaceBetween: 30,
+        breakpoints: {
+            991: {
+                slidesPerView: 1
             }
-        });
+        },
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+            dynamicBullets: true
+        }
+    });
 
 
     // ------------------------------------------------------- //
     // Clients Slider
     // ------------------------------------------------------ //
     var swiper = new Swiper('.clients-slider', {
-            slidesPerView: 6,
-            spaceBetween: 30,
-            breakpoints: {
-               991: {
-                   slidesPerView: 3
-               },
-               480: {
-                   slidesPerView: 2
-               }
-           }
-        });
+        slidesPerView: 6,
+        spaceBetween: 30,
+        breakpoints: {
+            991: {
+                slidesPerView: 3
+            },
+            480: {
+                slidesPerView: 2
+            }
+        }
+    });
 
 
     // ------------------------------------------------------- //

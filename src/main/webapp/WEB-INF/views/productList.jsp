@@ -21,8 +21,10 @@
                     <c:forEach items="${products}" var="product">
                         <div class="col-lg-4">
                             <div class="property-listing-item">
-                                <div class="image"><img src="<spring:url value="/getUserImage/${product.productId}" />.do" alt=" The Chalet Estate"
-                                                        class="img-fluid">
+                                <div class="image"><img
+                                        src="<spring:url value="/getUserImage/${product.productId}" />.do"
+                                        alt=" The Chalet Estate"
+                                        class="img-fluid">
                                     <div class="price">${product.productPrice} $</div>
                                 </div>
                                 <div class="info">
@@ -32,10 +34,11 @@
                                     <p class="address">${product.productDescription}</p>
                                 </div>
                                 <div class="footer d-flex align-items-center justify-content-between">
-                                    <div class="left">UNITS IN STOCK  : <span class="area"></span> <b>${product.unitInStock}</b></div>
+                                    <div class="left">UNITS IN STOCK : <span class="area"></span>
+                                        <b>${product.unitInStock}</b></div>
                                     <div class="right">
                                         <div class="form-group">
-                                            <button   class="btn btn-gradient col-md-12">Add To Cart</button>
+                                            <button class="btn btn-gradient col-md-12">Add To Cart</button>
                                         </div>
                                     </div>
                                 </div>
@@ -44,7 +47,6 @@
 
 
                     </c:forEach>
-
 
 
                 </div>

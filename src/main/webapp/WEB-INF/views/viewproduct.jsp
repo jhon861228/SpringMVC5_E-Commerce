@@ -3,7 +3,6 @@
 <%@include file="/WEB-INF/views/template/header.jsp" %>
 
 
-
 <!-- Property Single Section-->
 <section class="property-single bg-black-2 col-md-12">
     <div class="container col-md-12">
@@ -25,18 +24,20 @@
                 <!-- Image Slider -->
                 <div class="swiper-container gallery-top">
                     <div class="swiper-wrapper">
-                        <div style="background: url(<spring:url value="/getUserImage/${product.productId}" />.do); background-size: cover;" class="swiper-slide"></div>
+                        <div style="background: url(<spring:url
+                                value="/getUserImage/${product.productId}"/>.do); background-size: cover;"
+                             class="swiper-slide"></div>
 
                     </div>
                 </div>
                 <div class="property-single-description bg-black-3 mt-5 block">
-                    <h3 class="h4 has-line">Product Description  </h3>
+                    <h3 class="h4 has-line">Product Description </h3>
                     <p>${product.productDescription}</p>
 
                     <div class="property-single-details bg-black-3 mt-5 block">
                         <h3 class="h4 has-line col-md-12">Product Details</h3>
                         <div class="row col-md-12">
-                            <div class="col-lg-3"><strong>       ${product.productId}</strong><span>20142354</span></div>
+                            <div class="col-lg-3"><strong> ${product.productId}</strong><span>20142354</span></div>
                             <div class="col-lg-3"><strong>Type of location</strong><span>Apartment</span></div>
                             <div class="col-lg-3"><strong>Property status</strong><span>For sale</span></div>
                             <div class="col-lg-3"><strong>${product.productPrice}</strong><span>$560,000</span></div>
@@ -48,7 +49,8 @@
                                     <form action="#" class="agent-contact-form">
 
                                         <div class="form-group">
-                                            <button type="submit" class="btn btn-gradient full-width">ADD TO CART</button>
+                                            <button type="submit" class="btn btn-gradient full-width">ADD TO CART
+                                            </button>
                                         </div>
                                     </form>
                                 </div>
@@ -62,7 +64,6 @@
         </div>
     </div>
     <!-- Property Details-->
-
 
 
 </section>
@@ -79,7 +80,9 @@
                 <div class="col-lg-4">
                     <div class="property mb-5 mb-lg-0">
                         <div class="image"><img src="img/property-3.jpeg" alt="Condo with pool view" class="img-fluid">
-                            <div class="overlay d-flex align-items-center justify-content-center"><a href="#" class="btn btn-gradient btn-sm">View Details</a></div>
+                            <div class="overlay d-flex align-items-center justify-content-center"><a href="#"
+                                                                                                     class="btn btn-gradient btn-sm">View
+                                Details</a></div>
                         </div>
                         <div class="info"><a href="property-single.html" class="no-anchor-style">
                             <h3 class="h4 text-thin text-uppercase mb-1">Condo with pool view</h3></a>
@@ -87,7 +90,9 @@
                                 <li class="list-inline-item"><a href="#">Embarcadero,</a></li>
                                 <li class="list-inline-item"><a href="#">San Francisco</a></li>
                             </ul>
-                            <div class="price text-primary"><strong class="mr-1">$800</strong><small>/ Month</small></div>
+                            <div class="price text-primary"><strong class="mr-1">$800</strong>
+                                <small>/ Month</small>
+                            </div>
                         </div>
                         <div class="statistics d-flex justify-content-between text-center">
                             <div class="item"><strong class="d-block">4</strong><span>Bedrooms</span></div>
@@ -102,17 +107,10 @@
 </section>
 
 
+<p></p>
 
 
+USD</h4>
 
 
-
-
-                    <p></p>
-
-
-
-              USD</h4>
-
-
-        <%@include file="/WEB-INF/views/template/footer.jsp" %>
+<%@include file="/WEB-INF/views/template/footer.jsp" %>

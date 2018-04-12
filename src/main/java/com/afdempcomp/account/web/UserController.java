@@ -1,22 +1,23 @@
 package com.afdempcomp.account.web;
 
 
-
 import com.afdempcomp.account.dao.ProductDao;
 import com.afdempcomp.account.model.Product;
 import com.afdempcomp.account.model.User;
 import com.afdempcomp.account.service.SecurityService;
 import com.afdempcomp.account.service.UserService;
 import com.afdempcomp.account.validator.UserValidator;
-
 import org.apache.commons.io.IOUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.*;
-import javax.servlet.http.HttpServletResponse;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
+import javax.servlet.http.HttpServletResponse;
 import javax.transaction.Transactional;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
@@ -45,25 +46,14 @@ public class UserController {
 
         return "registration";
     }
-    @RequestMapping(value = "/loginpage")
-    public String loginpage(Model model){
 
+    @RequestMapping(value = "/loginpage")
+    public String loginpage(Model model) {
 
 
         return "loginPage";
     }
 
-    @Controller
-    public class HTTPErrorHandler{
-
-        String path = "/error";
-
-        @RequestMapping(value="/404")
-        public String error404(){
-
-            return "404";
-        }
-    }
     @RequestMapping("/productlist")
     public String productInventory(Model model) {
         List<Product> products = productDao.getAllProducts();
@@ -98,23 +88,20 @@ public class UserController {
         return "login";
     }
 
-//
+    //
 //    @RequestMapping(value = {"/", "/welcome"}, method = RequestMethod.GET)
 //    public String welcome(Model model) {
 //
 //        return "home";
 //    }
     @Transactional
-    @RequestMapping(value="/")
-     public String home(Model model) {
+    @RequestMapping(value = "/")
+    public String home(Model model) {
 
         List<Product> products = productDao.getAllProducts();
         model.addAttribute("products", products);
         return "home";
     }
-
-
-
 
     @RequestMapping(method = RequestMethod.GET, value = "/getUserImage/{id}")
     public void getUserImage(HttpServletResponse response, @PathVariable("id") String productId) throws IOException {
@@ -131,8 +118,17 @@ public class UserController {
         return "redirect:/productList";
     }
 
+    @Controller
+    public class HTTPErrorHandler {
 
+        String path = "/error";
 
+        @RequestMapping(value = "/404")
+        public String error404() {
+
+            return "404";
+        }
+    }
 
 
 }

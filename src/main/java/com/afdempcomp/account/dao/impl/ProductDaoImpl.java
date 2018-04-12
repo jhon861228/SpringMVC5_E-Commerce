@@ -17,7 +17,7 @@ import java.util.List;
 public class ProductDaoImpl implements ProductDao {
 
     @Autowired
-    private SessionFactory  sessionFactory;
+    private SessionFactory sessionFactory;
 
     public void addProduct(Product product) {
 

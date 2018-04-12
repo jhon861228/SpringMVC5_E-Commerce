@@ -1,21 +1,20 @@
 .grid-gallery {
-    figcaption {
-        background: lighten($bg-black-1, 4%);
-    }
+  figcaption {
+    background: lighten($bg-black-1, 4%);
+  }
 }
 
-
 .slideshow-open {
-    figure {
-        background: $bg-black-1;
-        border-color: $bg-black-1;
-    }
+  figure {
+    background: $bg-black-1;
+    border-color: $bg-black-1;
+  }
 
-    figcaption {
-        background: none !important;
-    }
+  figcaption {
+    background: none !important;
+  }
 
-    li::after {
-        background: rgba($bg-black-1, 0.8);
-    }
+  li::after {
+    background: rgba($bg-black-1, 0.8);
+  }
 }

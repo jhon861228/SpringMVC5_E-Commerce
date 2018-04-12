@@ -1,11 +1,11 @@
-
 <div id="scrollTopButton"><i class="fa fa-long-arrow-up"></i></div>
 <footer class="footer bg-black-5">
     <div class="container">
         <div class="row">
             <div class="col-lg-4 brief">
                 <div class="logo"><img src="<c:url value="/resources/img/logo.png" />" alt="..." width="170"></div>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna </p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                    et dolore magna </p>
                 <ul class="social list-inline">
                     <li class="list-inline-item"><a href="#"><i class="fa fa-twitter"></i></a></li>
                     <li class="list-inline-item"><a href="#"><i class="fa fa-facebook"></i></a></li>
@@ -36,7 +36,8 @@
             </div>
             <div class="col-lg-4 newsletter">
                 <h3 class="h4 text-thin text-uppercase">Newsletter</h3>
-                <p>p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna</p>
+                <p>p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                    et dolore magna</p>
                 <form class="newsletter-form">
                     <div class="form-group">
                         <input type="email" name="email" placeholder="Enter your email address" class="form-control">

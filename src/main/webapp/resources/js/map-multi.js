@@ -1,18 +1,18 @@
 function init() {
 
     var locations = [
-      ['Blue Hill', 40.73723, -73.99967, 4],
-      ['Gramercy Tavern', 40.7384555,-73.9906951, 5],
-      ['Babbo Ristorante Enoteca', 40.732346,-74.0014247, 3],
-      ['Estela', 40.7246413,-73.9969277, 2],
-      ['Eleven Madison Park', 40.741726,-73.9893617, 1]
+        ['Blue Hill', 40.73723, -73.99967, 4],
+        ['Gramercy Tavern', 40.7384555, -73.9906951, 5],
+        ['Babbo Ristorante Enoteca', 40.732346, -74.0014247, 3],
+        ['Estela', 40.7246413, -73.9969277, 2],
+        ['Eleven Madison Park', 40.741726, -73.9893617, 1]
     ];
 
     var a = {
             zoom: 14,
             disableDefaultUI: true,
             scrollwheel: false,
-            center: new google.maps.LatLng(40.732346,-74.0014247),
+            center: new google.maps.LatLng(40.732346, -74.0014247),
             styles: [
                 {
                     "featureType": "all",
@@ -314,4 +314,5 @@ function init() {
         })
     }
 }
+
 google.maps.event.addDomListener(window, "load", init);

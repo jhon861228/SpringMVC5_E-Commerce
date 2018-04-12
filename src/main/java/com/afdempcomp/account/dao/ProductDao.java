@@ -2,7 +2,6 @@ package com.afdempcomp.account.dao;
 
 
 import com.afdempcomp.account.model.Product;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 

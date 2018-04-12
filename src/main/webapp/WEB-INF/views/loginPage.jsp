@@ -21,19 +21,26 @@
             <div class="col-md-12">
                 <h2 class="has-line">Select Your Account Type</h2>
                 <h4 class="text-thin">Not Registered? <a href=""><B>JOIN NOW</B></a></h4>
-                <p style="text-align: center;">Welcome to the LOGIN PORTAL <BR>Select Your Account Type To Procceed Or Select "JOIN" If you Are Not Registered Yet</p>
+                <p style="text-align: center;">Welcome to the LOGIN PORTAL <BR>Select Your Account Type To Procceed Or
+                    Select "JOIN" If you Are Not Registered Yet</p>
                 <hr>
 
                 <div class="form-group">
-                    <button onclick="location.href = 'http://google.gr';"  class="btn btn-gradient col-md-12">USER / CLIENT</button>
+                    <button onclick="location.href = 'http://google.gr';" class="btn btn-gradient col-md-12">USER /
+                        CLIENT
+                    </button>
                 </div>
 
                 <div class="form-group">
-                    <button onclick="location.href = 'http://google.gr';"  class="btn btn-gradient col-md-12">MEMBER OF AFDEMP COOPERATION</button>
+                    <button onclick="location.href = 'http://google.gr';" class="btn btn-gradient col-md-12">MEMBER OF
+                        AFDEMP COOPERATION
+                    </button>
                 </div>
 
                 <div class="form-group">
-                    <button onclick="location.href = 'http://google.gr';"  class="btn btn-gradient col-md-12">ADMINISTRATOR</button>
+                    <button onclick="location.href = 'http://google.gr';" class="btn btn-gradient col-md-12">
+                        ADMINISTRATOR
+                    </button>
                 </div>
 
             </div>

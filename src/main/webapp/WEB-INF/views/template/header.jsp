@@ -8,7 +8,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Townville - Real Estate template</title>
+    <title>AfDemp Cooperation - DimouJohn</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="all,follow">
@@ -102,7 +102,8 @@
                     </li>
 
                     <li class="nav-item"><a href="agents.html" class="nav-link">Contact</a></li>
-                    <li class="nav-item"><a href="agents.html" class="nav-link">Join Today And Win 40% Discount!</a></li>
+                    <li class="nav-item"><a href="agents.html" class="nav-link">Join Today And Win 40% Discount!</a>
+                    </li>
                 </ul>
                 <ul class="secondary-nav-menu list-inline ml-auto mb-0">
                     <li class="list-inline-item"><a href="submit-property.html" class="btn btn-primary btn-gradient">Submit

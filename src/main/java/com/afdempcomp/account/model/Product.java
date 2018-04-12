@@ -4,7 +4,10 @@ package com.afdempcomp.account.model;
 import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.validator.constraints.NotEmpty;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Lob;
 import javax.validation.constraints.Min;
 
 
@@ -23,7 +26,7 @@ public class Product {
     private double productPrice;
     private String productCondition;
     private String productStatus;
-    @Min(value = 0 , message = "The Product Units Must Be More than 0")
+    @Min(value = 0, message = "The Product Units Must Be More than 0")
     private int unitInStock;
     private String productManufacturer;
     @Lob
