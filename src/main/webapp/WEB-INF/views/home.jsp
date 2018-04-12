@@ -29,7 +29,7 @@
         <section class="new-properties bg-black-3">
             <div class="container">
                 <header class="text-center">
-                    <h2>Products <span class="text-primary">for sale</span></h2>
+                    <h2><span class="text-primary">FEATURED</span>Products <span class="text-primary">for sale</span></h2>
                     <div class="row">
                         <p class="template-text col-lg-8 mx-auto">Take A Look at Our Stunning Products and Buy Yours Today or Save it in your Wishlist.</p>
                     </div>

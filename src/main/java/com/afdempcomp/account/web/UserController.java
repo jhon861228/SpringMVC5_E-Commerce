@@ -53,6 +53,17 @@ public class UserController {
         return "loginPage";
     }
 
+    @Controller
+    public class HTTPErrorHandler{
+
+        String path = "/error";
+
+        @RequestMapping(value="/404")
+        public String error404(){
+
+            return "404";
+        }
+    }
     @RequestMapping("/productlist")
     public String productInventory(Model model) {
         List<Product> products = productDao.getAllProducts();
