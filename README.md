@@ -1,4 +1,5 @@
-##  E-Commerce Web Application With Jav Spring Framework MVC 5. (IN PROGRESS).
+##  E-Commerce Web Application Using Java Spring Framework MVC 5. 
+### (IN PROGRESS).
 <p align="center">
   <img src="https://imgur.com/cysl8XX.png?raw=true" alt="Dimou-john"/>
 </p>
