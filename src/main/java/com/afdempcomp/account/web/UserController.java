@@ -45,7 +45,13 @@ public class UserController {
 
         return "registration";
     }
+    @RequestMapping(value = "/loginpage")
+    public String loginpage(Model model){
 
+
+
+        return "loginPage";
+    }
     @RequestMapping(value = "/registration", method = RequestMethod.POST)
     public String registration(@ModelAttribute("userForm") User userForm, BindingResult bindingResult, Model model) {
         userValidator.validate(userForm, bindingResult);
@@ -72,14 +78,14 @@ public class UserController {
         return "login";
     }
 
-
-    @RequestMapping(value = {"/", "/welcome"}, method = RequestMethod.GET)
-    public String welcome(Model model) {
-
-        return "home";
-    }
+//
+//    @RequestMapping(value = {"/", "/welcome"}, method = RequestMethod.GET)
+//    public String welcome(Model model) {
+//
+//        return "home";
+//    }
     @Transactional
-    @RequestMapping(value="/store")
+    @RequestMapping(value="/")
      public String home(Model model) {
 
         List<Product> products = productDao.getAllProducts();
