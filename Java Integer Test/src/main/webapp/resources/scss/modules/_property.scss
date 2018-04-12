@@ -1,0 +1,443 @@
+/*
+* ===============================================================
+*     FILTER BAR
+* ===============================================================
+*/
+.filter {
+    padding: 10px 30px;
+    margin-top: 50px;
+    background: $bg-black-2;
+
+    strong {
+        min-width: 50px;
+        color: #999;
+    }
+
+    .sort {
+        padding: 10px 0;
+    }
+
+    .view {
+        padding: 10px 0;
+        li {
+            margin: 0;
+        }
+        a {
+            width: 35px;
+            height: 35px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+
+            &:hover {
+                background: $bg-black-1;
+                color: $brand-primary;
+            }
+        }
+        a.active {
+            background: $bg-black-3;
+        }
+    }
+
+    .bootstrap-select .dropdown-toggle {
+        background: $bg-black-3;
+        padding: 10px 20px;
+        padding-right: 40px;
+
+        span {
+            font-size: 0.85rem;
+            line-height: 1.5rem;
+        }
+
+        span.bs-caret {
+            margin-right: 10px;
+        }
+    }
+}
+
+
+
+/*
+* ===============================================================
+*     PROPERTY LISTINGS
+* ===============================================================
+*/
+.property-listing-item {
+    margin-top: 40px;
+    .image {
+        height: 220px;
+        overflow: hidden;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        img {
+            width: 100%;
+        }
+
+        .price {
+            @include position(absolute, $right: 0, $bottom: 0);
+            background: $brand-primary;
+            padding: 5px 20px;
+            color: #fff;
+        }
+    }
+
+    &.list-full-width {
+        .image {
+            height: 320px;
+
+            img {
+                width: 100%;
+            }
+        }
+    }
+
+    .info {
+        padding: 20px;
+        padding-bottom: 0;
+        background: $bg-black-1;
+
+        &::after {
+            content: '';
+            background: #555;
+            width: 100%;
+            height: 1px;
+            display: block;
+            margin-top: 20px;
+        }
+
+        a {
+            display: block;
+        }
+
+        .badge {
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 0.95rem;
+            color: #eee;
+        }
+
+        .address {
+            font-size: 0.85rem;
+            font-weight: 300;
+            color: #999;
+        }
+    }
+
+    .footer {
+        padding: 20px;
+        background: $bg-black-1;
+        color: #999;
+        font-size: 0.85rem;
+    }
+
+    ul {
+        i {
+            color: #fff;
+            margin-right: 5px;
+        }
+    }
+    .inner {
+        height: 100%;
+        padding: 10px;
+    }
+}
+
+.property-listing-footer {
+    font-size: 0.9rem;
+}
+
+
+
+/*
+* ===============================================================
+*     PROPERTY SIDEBAR
+* ===============================================================
+*/
+.widget {
+    background: $bg-black-2;
+    margin-top: 40px;
+    padding: 20px;
+
+    .widget-header {
+        color: #fff;
+        margin-bottom: 40px;
+    }
+}
+
+
+.sidebar-search {
+    .form-control {
+        background: $bg-black-3;
+    }
+    .bootstrap-select {
+        .dropdown-toggle {
+            background: $bg-black-3;
+        }
+    }
+}
+
+.property-thumb {
+    margin-bottom: 20px;
+    .image {
+        width: 85px;
+        height: 85px;
+        margin-right: 15px;
+    }
+    a {
+        color: #fff !important;
+        font-weight: 500;
+        font-size: 0.95rem;
+    }
+    p {
+        font-size: 0.8rem;
+        margin-bottom: 0;
+    }
+    .price {
+        color: $brand-primary;
+        font-weight: 600;
+        font-size: 0.9rem;
+    }
+}
+
+
+.location-widget {
+    ul {
+        margin-right: 40px;
+        a {
+            color: #999;
+            font-size: 0.9rem;
+            margin-bottom: 5px;
+            text-decoration: none;
+
+            &:hover {
+                color: $brand-primary;
+            }
+        }
+    }
+}
+
+.map {
+    position: relative;
+}
+
+.map-holder {
+    height: 500px;
+    overflow: hidden;
+    &::after {
+        content: '';
+        width: 100%;
+        height: 30px;
+        @include position(absolute, $top: 0, $left: 0);
+        box-shadow: inset 0 10px 30px rgba(0, 0, 0, 0.2)
+    }
+}
+
+.collapse-map {
+    padding: 10px 30px;
+    background: $bg-black-1;
+    text-decoration: none !important;
+    color: #eee !important;
+    border-radius: 30px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    @include position(absolute, $top: 0, $left: 50%);
+    transform: translate(-50%, -50%);
+    z-index: 999;
+    font-size: 0.8rem;
+}
+
+.toggle-features {
+    margin-bottom: 15px;
+    user-select: none;
+    margin-left: 15px;
+    &:hover, &:focus {
+        color: $brand-primary;
+        text-decoration: none;
+    }
+}
+
+.features {
+    margin-left: 15px;
+}
+
+
+
+/*
+* ===============================================================
+*     PROPERTY SINGLE PAGE
+* ===============================================================
+*/
+.property-single {
+    .swiper-container {
+      width: 100%;
+      height: 545px !important;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .swiper-slide {
+      background-size: cover;
+      background-position: center;
+    }
+    .gallery-top {
+      height: 80%;
+      width: 100%;
+    }
+    .gallery-thumbs {
+      height: 150px !important;
+      box-sizing: border-box;
+      padding: 10px 0;
+
+      .swiper-wrapper {
+          margin-left: -33.333%;
+      }
+    }
+    .gallery-thumbs .swiper-slide {
+      width: 33.33% !important;
+      height: 100%;
+      opacity: 0.4;
+    }
+    .gallery-thumbs .swiper-slide-active {
+      opacity: 1;
+    }
+}
+
+
+.property-single-author {
+    padding: 50px 30px;
+
+    .avatar {
+        min-width: 80px;
+        min-height: 80px;
+        max-width: 80px;
+        max-height: 80px;
+        border-radius: 50%;
+        overflow: hidden;
+        margin-right: 20px;
+    }
+
+    .text {
+        color: #fff;
+
+        strong {
+            font-size: 1.2rem;
+            display: block;
+            line-height: 1;
+        }
+        span {
+            color: #999;
+            font-size: 0.85rem;
+        }
+    }
+
+    .agent-social {
+        margin-bottom: 0;
+        margin-top: 10px;
+        font-size: 0.8rem;
+        a {
+            color: #fff;
+
+            &:hover {
+                color: $brand-primary;
+            }
+        }
+    }
+
+    .contact-info {
+        font-size: 0.85rem;
+        padding: 20px 0;
+
+        a {
+            text-decoration: none;
+            font-weight: 300;
+            color: #999;
+            margin-right: 5px;
+        }
+        i {
+            margin-right: 10px;
+        }
+    }
+}
+
+.block {
+    padding: 30px;
+    h3 {
+        margin-top: 15px;
+        margin-bottom: 30px;
+    }
+    p {
+        font-size: 0.9rem;
+        font-weight: 300;
+        line-height: 1.7rem;
+    }
+}
+
+
+.property-single-details {
+
+    strong {
+        color: #fff;
+        font-size: 0.9rem;
+        display: block;
+        line-height: 1;
+        font-weight: 500;
+    }
+    span {
+        color: #999;
+        font-size: 0.85rem;
+        margin-bottom: 15px;
+    }
+}
+
+
+.property-single-features {
+    .label-template-checkbox {
+        font-size: 0.9rem;
+        margin-bottom: 15px;
+        cursor: default;
+    }
+}
+
+
+.floor-plan {
+
+    .image {
+        padding: 30px;
+        margin-top: 40px;
+        img {
+            max-width: 600px;
+            width: 100%;
+        }
+    }
+}
+
+
+.floor-plan {
+    .nav-tabs {
+        border-bottom: none;
+    }
+    a.nav-link {
+        border: none;
+        border-radius: 50px;
+        font-size: 0.85rem;
+        padding: 5px 20px;
+        background: $bg-black-1;
+        margin: 5px;
+        color: #999;
+
+        &.active {
+            background: $brand-primary;
+            color: #fff;
+        }
+    }
+}
+
+
+#property-single-map {
+    width: 100%;
+    height: 400px;
+}

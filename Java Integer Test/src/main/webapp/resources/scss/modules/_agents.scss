@@ -1,0 +1,77 @@
+.agent-full {
+    .image {
+        max-height: 500px;
+        overflow: hidden;
+    }
+    .text {
+        height: 100%;
+    }
+    .header {
+        padding: 30px;
+        background: $brand-primary;
+        color: #fff;
+
+        h2 {
+            margin-bottom: 0;
+        }
+        p {
+            color: #fff;
+            font-weight: 300;
+            font-size: 0.9rem;
+        }
+        a {
+            color: #fff;
+            font-size: 0.85rem;
+            text-decoration: none;
+            font-weight: 300;
+
+            &:hover {
+                color: #fff;
+                text-decoration: none;
+                font-weight: 300;
+            }
+        }
+        i {
+            margin-right: 5px;
+        }
+    }
+
+    .body {
+        padding: 30px;
+        font-size: 0.9rem;
+    }
+
+    .footer {
+        color: #999;
+        padding: 30px;
+        padding-top: 0;
+
+        .icon {
+            font-size: 2.1rem;
+            margin-right: 20px;
+            color: #fff;
+        }
+        i[class*='icon-'] {
+            transform: translateY(2px);
+            display: flex;
+        }
+
+        strong {
+            display: block;
+            line-height: 1;
+            font-size: 1.8rem;
+            color: $brand-primary;
+        }
+
+        span {
+            font-size: 0.9rem;
+            font-weight: 300;
+        }
+    }
+}
+
+.agent-contact-form {
+    textarea {
+        min-height: 200px;
+    }
+}

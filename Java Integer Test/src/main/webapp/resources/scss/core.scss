@@ -1,0 +1,38 @@
+
+/*
+=========================================
+=========================================
+
+Townville - Real Estate template
+
+=========================================
+========================================= */
+
+
+// functions.scss - Bootstrap functions
+@import "modules/functions";
+// variables-custom.scss - to change colour variant, rounded corners, etc.
+@import "modules/variables-custom";
+// bootstrap mixins
+@import "modules/mixins";
+// custom mixins
+@import "modules/mixins-custom";
+// general styling
+@import "modules/general";
+// property styling
+@import "modules/property";
+// agents styling
+@import "modules/agents";
+// gallery styling
+@import "modules/gallery";
+// login styling
+@import "modules/login";
+// about styling
+@import "modules/about";
+// 404 styling
+@import "modules/404";
+// demo styling
+@import "modules/demo";
+
+// bootstrap base stylesheet overrides
+@import "theme";
