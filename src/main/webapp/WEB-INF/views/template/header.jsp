@@ -65,7 +65,8 @@
                     <ul class="list-inline">
                         <li class="list-inline-item"><a href="#" class="search-btn"><i class="icon-search"></i></a></li>
                         <li class="list-inline-item"><a href="#"><i class="fa fa-heart-o"></i>Wishlist</a></li>
-                        <li class="list-inline-item"><a href="<spring:url value="/loginpage" />" class="pr-0 border-right-0"><i
+                        <li class="list-inline-item"><a href="<spring:url value="/loginpage" />"
+                                                        class="pr-0 border-right-0"><i
                                 class="icon-user-1"></i>Account</a></li>
 
                     </ul>
@@ -86,8 +87,9 @@
     </div>
     <!-- Navbar-->
     <nav class="navbar navbar-expand-lg">
-        <div class="container"><a href="<spring:url value="/" /> class="navbar-brand"><img src="<c:url value="/resources/img/logo.png" />" alt="..." width="180"
-                                                                              class="img-fluid"></a>
+        <div class="container"><a href="<spring:url value="/" /> class=" navbar-brand"><img
+                src="<c:url value="/resources/img/logo.png" />" alt="..." width="180"
+                class="img-fluid"></a>
             <button type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                     aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
                     class="navbar-toggler navbar-toggler-right"><span></span><span></span><span></span></button>
@@ -96,83 +98,11 @@
                     <li class="nav-item active"><a href="/" class="nav-link">Home <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
-                    <li class="nav-item"><a href="<spring:url value="/productlist" />" class="nav-link">PRODUCTS</a></li>
-                    <li class="nav-item dropdown"><a id="navbarDropdownMenuLink" href="http://example.com"
-                                                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
-                                                     class="nav-link">Dropdown <i class="fa fa-angle-down"></i></a>
-                        <ul aria-labelledby="navbarDropdownMenuLink" class="dropdown-menu">
-                            <li><a href="#" class="dropdown-item nav-link">Action</a></li>
-                            <li><a href="#" class="dropdown-item nav-link">Another action</a></li>
-                            <li class="dropdown-submenu"><a id="navbarDropdownMenuLink2" href="http://example.com"
-                                                            data-toggle="dropdown" aria-haspopup="true"
-                                                            aria-expanded="false" class="nav-link">Dropdown link <i
-                                    class="fa fa-angle-down"></i></a>
-                                <ul aria-labelledby="navbarDropdownMenuLink2" class="dropdown-menu">
-                                    <li><a href="#" class="dropdown-item nav-link">Action</a></li>
-                                    <li class="dropdown-submenu"><a id="navbarDropdownMenuLink3"
-                                                                    href="http://example.com" data-toggle="dropdown"
-                                                                    aria-haspopup="true" aria-expanded="false"
-                                                                    class="nav-link">
-
-                                        Another action <i class="fa fa-angle-down"></i></a>
-                                        <ul aria-labelledby="navbarDropdownMenuLink3" class="dropdown-menu">
-                                            <li><a href="#" class="dropdown-item nav-link">Action</a></li>
-                                            <li><a href="#" class="dropdown-item nav-link">Action</a></li>
-                                            <li><a href="#" class="dropdown-item nav-link">Action</a></li>
-                                            <li><a href="#" class="dropdown-item nav-link">Action</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="#" class="dropdown-item nav-link">Something else here </a></li>
-                                </ul>
-                            </li>
-                        </ul>
+                    <li class="nav-item"><a href="<spring:url value="/productlist" />" class="nav-link">PRODUCTS</a>
                     </li>
-                    <li class="nav-item"><a href="agents.html" class="nav-link">Agents</a></li>
-                    <li class="nav-item"><a href="gallery.html" class="nav-link">
 
-                        Gallery </a></li>
-                    <li class="list-inline-item dropdown menu-large"><a id="megamenu" href="#" data-toggle="dropdown"
-                                                                        class="nav-link">Template <i
-                            class="fa fa-angle-down"></i></a>
-                        <div aria-labelledby="megamenu" class="dropdown-menu megamenu">
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col-lg-3"><strong class="text-uppercase">Template Pages 1</strong>
-                                        <ul class="list-unstyled">
-                                            <li><a href="index.html">Home</a></li>
-                                            <li><a href="about.html">About</a></li>
-                                            <li><a href="agents.html">Agents</a></li>
-                                            <li><a href="agent-single.html">Agent Single</a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="col-lg-3"><strong class="text-uppercase">Template Pages 2</strong>
-                                        <ul class="list-unstyled">
-                                            <li><a href="property.html">Property </a></li>
-                                            <li><a href="property=single.html">Property Single</a></li>
-                                            <li><a href="property-grid-full.html">Property Grid Full</a></li>
-                                            <li><a href="property-list-full.html">Property List Full</a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="col-lg-3"><strong class="text-uppercase">Template Pages 3</strong>
-                                        <ul class="list-unstyled">
-                                            <li><a href="submit-property.html">Submit Property</a></li>
-                                            <li><a href="error-404.html">Error 404</a></li>
-                                            <li><a href="gallery.html">Gallery</a></li>
-                                            <li><a href="customer-login.html">Login</a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="col-lg-3"><strong class="text-uppercase">Demo Pages</strong>
-                                        <ul class="list-unstyled">
-                                            <li><a href="#">Demo Link</a></li>
-                                            <li><a href="#">Demo Link</a></li>
-                                            <li><a href="#">Demo Link</a></li>
-                                            <li><a href="#">Demo Link</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
+                    <li class="nav-item"><a href="agents.html" class="nav-link">Contact</a></li>
+                    <li class="nav-item"><a href="agents.html" class="nav-link">Join Today And Win 40% Discount!</a></li>
                 </ul>
                 <ul class="secondary-nav-menu list-inline ml-auto mb-0">
                     <li class="list-inline-item"><a href="submit-property.html" class="btn btn-primary btn-gradient">Submit

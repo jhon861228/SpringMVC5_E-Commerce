@@ -5,12 +5,12 @@
 
 <section class="property-grid-sidebar bg-black-3">
     <div class="container">
-        <h1 class="h2">Property Grid Sidebar</h1>
+        <h1 class="h2">Products </h1>
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                <li class="breadcrumb-item"><a href="property.html">Property</a></li>
-                <li aria-current="page" class="breadcrumb-item active">Property Grid Sidebar</li>
+                <li class="breadcrumb-item"><a href="property.html">Products</a></li>
+                <li aria-current="page" class="breadcrumb-item active">Products List</li>
             </ol>
         </nav>
 
