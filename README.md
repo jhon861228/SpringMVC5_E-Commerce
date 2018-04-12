@@ -1,4 +1,11 @@
-# E-ShopWebApp with Spring MVC 5, Spring Security , Spring Data JPA, Hibernate, XML Configuration, Maven, JSP, and MySQL (IN PROGRESS).
+##  E-Commerce Web Application With Jav Spring Framework MVC 5. (IN PROGRESS).
+<p align="center">
+  <img src="https://imgur.com/cysl8XX.png?raw=true" alt="Dimou-john"/>
+</p>
+
+
+
+# 
 
 ![alt text](https://imgur.com/cysl8XX.png)
 
