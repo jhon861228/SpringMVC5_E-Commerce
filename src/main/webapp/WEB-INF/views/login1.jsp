@@ -25,11 +25,13 @@
                 <h4 class="text-thin">Already our user?</h4>
                 <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
                 <hr>
-                <form action="#" class="login-form">
+                <form method="POST" action="${contextPath}/login" class="form-signin">
                     <div class="form-group">
+                        <span>${message}</span>
                         <input type="email" name="email" placeholder="Type your email address" class="form-control">
                     </div>
                     <div class="form-group">
+
                         <input type="password" name="paddword" placeholder="Password" class="form-control">
                     </div>
                     <div class="form-group">
