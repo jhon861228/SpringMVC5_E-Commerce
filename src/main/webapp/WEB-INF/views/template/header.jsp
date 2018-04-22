@@ -13,6 +13,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="all,follow">
     <!-- Bootstrap CSS-->
+
     <link href="<c:url value="/resources/vendor/bootstrap/css/bootstrap.min.css" />" rel="stylesheet">
     <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
     <!-- Font Awesome CSS-->
@@ -27,7 +28,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,700">
     <!-- swiper carousel-->
     <link href="<c:url value="/resources/vendor/swiper/css/swiper.css" />" rel="stylesheet">
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <!-- Gallery-->
 
     <link href="<c:url value="/resources/css/gallery.css" />" rel="stylesheet">
@@ -67,7 +68,12 @@
                         <li class="list-inline-item"><a href="#"><i class="fa fa-heart-o"></i>Wishlist</a></li>
                         <li class="list-inline-item"><a href="<spring:url value="/loginpage" />"
                                                         class="pr-0 border-right-0"><i
-                                class="icon-user-1"></i>Account</a></li>
+                                class="icon-user-1"></i>Sumbit Product</a>
+
+
+
+
+                        </li>
 
                     </ul>
                 </div>
@@ -102,12 +108,32 @@
                     </li>
 
                     <li class="nav-item"><a href="agents.html" class="nav-link">Contact</a></li>
-                    <li class="nav-item"><a href="agents.html" class="nav-link">Join Today And Win 40% Discount!</a>
-                    </li>
+                    <%--<li class="nav-item"><a href="agents.html" class="nav-link">40% Discount!</a>--%>
+                    <%--</li>--%>
                 </ul>
+
+
                 <ul class="secondary-nav-menu list-inline ml-auto mb-0">
-                    <li class="list-inline-item"><a href="submit-property.html" class="btn btn-primary btn-gradient">Submit
-                        Product</a></li>
+
+                    <c:if test="${pageContext.request.userPrincipal.name == null}">
+                        
+                        <li class="list-inline-item"><a href="<spring:url value="/loginpage" />" class="btn btn-primary btn-gradient">LOGIN</a></li>
+                    </c:if>
+                    <c:if test="${pageContext.request.userPrincipal.name != null}">
+
+                        <li class="list-inline-item"><a href="<spring:url value="/loginpage" />" class="btn btn-primary btn-gradient">${pageContext.request.userPrincipal.name} ACCOUNT </a>
+                            <a href="<spring:url value="/loginpage" />" class="btn btn-primary btn-gradient">Cart <i class="fa fa-cart-arrow-down"></i></a>
+                            <a class="btn btn-primary btn-gradient" onclick="document.forms['logoutForm'].submit()">Logout<i class="fa fa-window-close"></i></a>
+
+                        <form id="logoutForm" method="POST" action="${contextPath}/logout">
+                        <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+                        </form>
+
+
+</li>
+
+                            </c:if>
+
                 </ul>
             </div>
         </div>
