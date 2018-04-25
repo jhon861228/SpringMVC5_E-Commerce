@@ -26,7 +26,7 @@
                 <hr>
 
                 <div class="form-group">
-                    <button onclick="location.href = 'http://google.gr';" class="btn btn-gradient col-md-12">USER /
+                    <button onclick="location.href = '<spring:url value="/login"/>';" class="btn btn-gradient col-md-12">USER /
                         CLIENT
                     </button>
                 </div>
