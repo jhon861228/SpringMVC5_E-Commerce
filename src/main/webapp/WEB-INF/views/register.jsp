@@ -1,11 +1,12 @@
 <%@taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<%@ taglib prefix="th" uri="http://www.springframework.org/tags/form" %>
 <%@include file="/WEB-INF/views/template/header.jsp" %>
 <h1 th:text="#{label.form.title}">form</h1>
 <form action="/" th:object="${user}" method="POST" enctype="utf8">
     <div>
         <label th:text="#{label.user.firstName}">first</label>
-        <input th:field="*{firstName}"/>
+        <input th:th:field="*{firstName}"/>
         <p th:each="error: ${#fields.errors('firstName')}"
            th:text="${error}">Validation error</p>
     </div>

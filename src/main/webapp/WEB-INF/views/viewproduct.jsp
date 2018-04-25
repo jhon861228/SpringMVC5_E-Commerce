@@ -5,61 +5,60 @@
 
 <!-- Property Single Section-->
 <section class="property-single bg-black-2 col-md-12">
-    <div class="container col-md-12">
+    <div class="container">
         <nav aria-label="breadcrumb" class="col-md-12">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="index.html">Home</a></li>
                 <li class="breadcrumb-item"><a href="property.html">Products</a></li>
-                <li aria-current="page" class="breadcrumb-item active">ΟΝΟΜΑ ΠΡΟΙΟΝΤΟΣ</li>
+                <li aria-current="page" class="breadcrumb-item active">${product.productId}</li>
             </ol>
         </nav>
         <header>
-            <h1 class="h2 d-flex align-items-center"><span>${product.productName}</span>
+            <h1 class="h2 d-flex align-items-center"><span>Wallpaper22</span>
                 <div class="badge badge-primary">LIVE</div>
             </h1>
-            <p class="template-text">${product.productCategory}</p>
+            <p class="template-text">AnewCategory</p>
         </header>
         <div class="row">
-            <div class="col-md-12">
-                <!-- Image Slider -->
-                <div class="swiper-container gallery-top">
-                    <div class="swiper-wrapper">
-                        <div style="background: url(<spring:url
-                                value="/getUserImage/${product.productId}"/>.do); background-size: cover;"
-                             class="swiper-slide"></div>
 
-                    </div>
+            <!-- Image Slider -->
+            <div class="col-md-6 col-sm-6 swiper-container gallery-top">
+                <div class="swiper-wrapper col-md-12 col-sm-12">
+                    <div style="background: url(<spring:url
+                            value="/getUserImage/${product.productId}"/>.do); background-size: cover;"
+                         class="swiper-slide"></div>
+
                 </div>
-                <div class="property-single-description bg-black-3 mt-5 block">
-                    <h3 class="h4 has-line">Product Description </h3>
-                    <p>${product.productDescription}</p>
+            </div>
+            <div class="property-single-description bg-black-3 col-md-6 col-sm-6 block">
+                <h3 class="h4 has-line">Product Description </h3>
+                <p>${product.productDescription}</p>
 
-                    <div class="property-single-details bg-black-3 mt-5 block">
-                        <h3 class="h4 has-line col-md-12">Product Details</h3>
-                        <div class="row col-md-12">
-                            <div class="col-lg-3"><strong> ${product.productId}</strong><span>20142354</span></div>
-                            <div class="col-lg-3"><strong>Type of location</strong><span>Apartment</span></div>
-                            <div class="col-lg-3"><strong>Property status</strong><span>For sale</span></div>
-                            <div class="col-lg-3"><strong>${product.productPrice}</strong><span>$560,000</span></div>
+                <div class="property-single-details bg-black-3 mt-5 block">
+                    <h3 class="h4 has-line col-md-12">Product Details</h3>
+                    <div class="row col-md-12">
+                        <div class="col-lg-3"><strong> 6723</strong><span>${product.unitInStock}</span></div>
+                        <div class="col-lg-3"><strong>Type of location</strong><span>Apartment</span></div>
+                        <div class="col-lg-3"><strong>Property status</strong><span>${product.productStatus}</span></div>
+                        <div class="col-lg-3"><strong>821.0</strong><span>$${product.productPrice}</span></div>
 
-                            <div class="col-md-12">
-                                <br>
+                        <div class="col-md-6">
+                            <br>
 
-                                <div class="agent-contact">
-                                    <form action="#" class="agent-contact-form">
+                            <div class="agent-contact col-md-12">
+                                <form action="#" class="agent-contact-form">
 
-                                        <div class="form-group">
-                                            <button type="submit" class="btn btn-gradient full-width">ADD TO CART
-                                            </button>
-                                        </div>
-                                    </form>
-                                </div>
+                                    <div class="form-group">
+                                        <button type="submit" class="btn btn-gradient">ADD TO CART
+                                        </button>
+                                    </div>
+                                </form>
                             </div>
                         </div>
                     </div>
                 </div>
-
             </div>
+
 
         </div>
     </div>

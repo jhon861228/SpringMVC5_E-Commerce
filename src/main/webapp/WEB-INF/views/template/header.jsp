@@ -71,8 +71,6 @@
                                 class="icon-user-1"></i>Sumbit Product</a>
 
 
-
-
                         </li>
 
                     </ul>
@@ -108,31 +106,35 @@
                     </li>
 
                     <li class="nav-item"><a href="agents.html" class="nav-link">Contact</a></li>
-                    <%--<li class="nav-item"><a href="agents.html" class="nav-link">40% Discount!</a>--%>
-                    <%--</li>--%>
+
                 </ul>
 
 
                 <ul class="secondary-nav-menu list-inline ml-auto mb-0">
 
                     <c:if test="${pageContext.request.userPrincipal.name == null}">
-                        
-                        <li class="list-inline-item"><a href="<spring:url value="/loginpage" />" class="btn btn-primary btn-gradient">LOGIN</a></li>
+
+                        <li class="list-inline-item"><a href="<spring:url value="/loginpage" />"
+                                                        class="btn btn-primary btn-gradient">LOGIN</a></li>
                     </c:if>
                     <c:if test="${pageContext.request.userPrincipal.name != null}">
 
-                        <li class="list-inline-item"><a href="<spring:url value="/loginpage" />" class="btn btn-primary btn-gradient">${pageContext.request.userPrincipal.name} ACCOUNT </a>
-                            <a href="<spring:url value="/loginpage" />" class="btn btn-primary btn-gradient">Cart <i class="fa fa-cart-arrow-down"></i></a>
-                            <a class="btn btn-primary btn-gradient" onclick="document.forms['logoutForm'].submit()">Logout<i class="fa fa-window-close"></i></a>
+                        <li class="list-inline-item"><a href="<spring:url value="/loginpage" />"
+                                                        class="btn btn-primary btn-gradient">${pageContext.request.userPrincipal.name}
+                            ACCOUNT </a>
+                            <a href="<spring:url value="/loginpage" />" class="btn btn-primary btn-gradient">Cart <i
+                                    class="fa fa-cart-arrow-down"></i></a>
+                            <a class="btn btn-primary btn-gradient" onclick="document.forms['logoutForm'].submit()">Logout<i
+                                    class="fa fa-window-close"></i></a>
 
-                        <form id="logoutForm" method="POST" action="${contextPath}/logout">
-                        <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
-                        </form>
+                            <form id="logoutForm" method="POST" action="${contextPath}/logout">
+                                <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+                            </form>
 
 
-</li>
+                        </li>
 
-                            </c:if>
+                    </c:if>
 
                 </ul>
             </div>
