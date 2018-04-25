@@ -15,7 +15,7 @@
         </nav>
     </div>
 </section>
-<section class="customer-login bg-black-2 col-md-12">
+<section style="padding:4.5rem 0;" class=" customer-login bg-black-2 col-md-12">
     <div class="container">
         <div class="col-md-12">
             <div class="col-md-12">
