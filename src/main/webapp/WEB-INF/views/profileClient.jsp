@@ -2,6 +2,9 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@include file="/WEB-INF/views/template/header.jsp" %>
 
+
+
+
 <section class="hero-page bg-black-3">
     <div class="container">
         <h1 class="h2">${pageContext.request.userPrincipal.name}'s Profile</h1>
@@ -27,12 +30,28 @@
 
                         <div class="d-flex justify-content-between col-xs-8">
                             <div class="name">
-                                <h2 class="h3">${pageContext.request.userPrincipal.name}</h2>
-                                <p>Standard User</p>
+                                <h2 class="h3">User Dashboard</h2>
+                                <p>
+
+
+                                <li class="list-inline-item">
+                                <a class="btn btn-primary btn-gradient" onclick="document.forms['logoutForm'].submit()" style="background-image:linear-gradient(to right, #5989e5, #000000);">.MY ORDERS <i class="fa fa-window-close"></i></a>
+                                <a class="btn btn-primary btn-gradient" onclick="document.forms['logoutForm'].submit()" style="background-image:linear-gradient(to right, #5989e5, #000000);">.WISHLIST  <i class="fa fa-window-close"></i></a>
+                                <a class="btn btn-primary btn-gradient" onclick="document.forms['logoutForm'].submit()" style="background-image:linear-gradient(to right, #5989e5, #000000);">LOGOUT  <i class="fa fa-window-close"></i></a>
+
+                                    <form id="logoutForm" method="POST" action="/logout">
+                                        <input type="hidden" name="_csrf" value="652d0282-b122-448b-8233-ec5f01fd8794">
+                                    </form>
+
+
+                                </li></p>
                             </div>
                             <ul class="social list-inline mb-0">
                                 <div class="image col-xs-3"><img src="http://www.stickpng.com/assets/images/585e4beacb11b227491c3399.png" alt="..." class="img-fluid" style="border-radius:40px; max-height:170px;"></div>
-
+                                <div class="name">
+                                    <h2 class="h3">${pageContext.request.userPrincipal.name}</h2>
+                                    <p>AfDemp Member</p>
+                                </div>
                                 <li class="list-inline-item"></li>
 
                             </ul>

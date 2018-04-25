@@ -99,7 +99,7 @@ public class UserController {
     @RequestMapping(value = "/users/profile")
     public String profiler(Model model) {
 
-        return "profile";
+        return "profileClient";
     }
 
 
