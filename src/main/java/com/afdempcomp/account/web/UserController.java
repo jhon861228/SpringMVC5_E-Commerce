@@ -11,13 +11,16 @@ import org.apache.commons.io.IOUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import javax.transaction.Transactional;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
@@ -95,12 +98,29 @@ public class UserController {
         model.addAttribute("products", products);
         return "home";
     }
+//
+//    @RequestMapping(value = "/users/profile")
+//    public String profiler(Model model) {
+//
+//
+//        return "profileClient";
+//    }
+    @RequestMapping(value = "profile")
+    public String profiler(HttpSession session, HttpServletRequest request, Model model) {
 
-    @RequestMapping(value = "/users/profile")
-    public String profiler(Model model) {
 
-        return "profileClient";
+        if (request.isUserInRole("ROLE_ADMIN")) {
+            return "home";
+        }
+        if (request.isUserInRole("ROLE_USER")) {
+            return "profileClient";
+        }
+        if (request.isUserInRole("ROLE_MEMBER")) {
+            return "profileMember";
+        }
+            else return "404";
     }
+
 
 
     @RequestMapping(method = RequestMethod.GET, value = "/getUserImage/{id}")

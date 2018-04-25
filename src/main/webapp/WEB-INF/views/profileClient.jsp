@@ -1,8 +1,215 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@include file="/WEB-INF/views/template/header.jsp" %>
+<style>
 
+    body {
+        font-size: 12px;
+        font-family: 'Roboto', sans-serif;
+    }
+    .container-skills {
+        margin: 20px auto 0 auto;
+        max-width: 400px;
+    }
 
+    .bar {
+        position: relative;
+        background-color: #d8d8d8;
+        height: 10px;
+        margin: 0 0 20px 0;
+    }
+    .bar-fill {
+        position: absolute;
+        height: 10px;
+    }
+    .bar-title {
+        position: relative;
+        font-size: 1em;
+        text-align: left;
+        margin: 0 0 5px 0;
+    }
+    .percent {
+        position: absolute;
+        right: 0;
+    }
+
+    /* Animations Below - Replace ease-out with infinite for infinite loop*/
+    /*Edit here for html*/
+    .bar-fill-html {
+        width: 90%;
+        background-color: #e44d26;
+        animation: bar-fill-html 2s ease-out;
+        -moz-animation: bar-fill-html 2s ease-out;
+        -webkit-animation: bar-fill-html 2s ease-out;
+    }
+    @keyframes bar-fill-html {
+        0% {
+            width: 0px;
+        }
+
+        100% {
+            width: 90%;
+        }
+    }
+    @-moz-keyframes bar-fill-html {
+        0% {
+            width: 0px;
+        }
+
+        100% {
+            width: 90%;
+        }
+    }
+    @-webkit-keyframes bar-fill-html {
+        0% {
+            width: 0px;
+        }
+
+        100% {
+            width: 90%;
+        }
+    }
+    /*Edit here for Javascript*/
+    .bar-fill-javascript {
+        width: 60%;
+        background-color: #f8dc3d;
+        animation: bar-fill-javascript 2s ease-out;
+        -moz-animation: bar-fill-javascript 2s ease-out;
+        -webkit-animation: bar-fill-javascript 2s ease-out;
+    }
+    @keyframes bar-fill-javascript {
+        0% {
+            width: 0px;
+        }
+
+        100% {
+            width: 60%;
+        }
+    }
+    @-moz-keyframes bar-fill-javascript {
+        0% {
+            width: 0px;
+        }
+
+        100% {
+            width: 60%;
+        }
+    }
+    @-webkit-keyframes bar-fill-javascript {
+        0% {
+            width: 0px;
+        }
+
+        100% {
+            width: 60%;
+        }
+    }
+    /*Edit here for Jquery*/
+    .bar-fill-jquery{
+        width: 70%;
+        background-color: #131b28;
+        animation: bar-fill-jquery 2s ease-out;
+        -moz-animation: bar-fill-jquery 2s ease-out;
+        -webkit-animation: bar-fill-jquery 2s ease-out;
+    }
+    @keyframes bar-fill-jquery {
+        0% {
+            width: 0px;
+        }
+
+        100% {
+            width: 70%;
+        }
+    }
+    @-moz-keyframes bar-fill-jquery {
+        0% {
+            width: 0px;
+        }
+
+        100% {
+            width: 70%;
+        }
+    }
+    @-webkit-keyframes bar-fill-jquery {
+        0% {
+            width: 0px;
+        }
+
+        100% {
+            width: 70%;
+        }
+    }
+    /*Edit here for Responsive*/
+    .bar-fill-responsive{
+        width: 90%;
+        background-color: #429f46;
+        animation: bar-fill-responsive 2s ease-out;
+        -moz-animation: bar-fill-responsive 2s ease-out;
+        -webkit-animation: bar-fill-responsive 2s ease-out;
+    }
+    @keyframes bar-fill-responsive {
+        0% {
+            width: 0px;
+        }
+
+        100% {
+            width: 90%;
+        }
+    }
+    @-moz-keyframes bar-fill-responsive {
+        0% {
+            width: 0px;
+        }
+
+        100% {
+            width: 90%;
+        }
+    }
+    @-webkit-keyframes bar-fill-responsive {
+        0% {
+            width: 0px;
+        }
+
+        100% {
+            width: 90%;
+        }
+    }
+    /*Edit here for Photoshop*/
+    .bar-fill-photoshop{
+        width: 20%;
+        background-color: #0a73dc;
+        animation: bar-fill-photoshop 2s ease-out;
+        -moz-animation: bar-fill-photoshop 2s ease-out;
+        -webkit-animation: bar-fill-photoshop 2s ease-out;
+    }
+    @keyframes bar-fill-photoshop {
+        0% {
+            width: 0px;
+        }
+
+        100% {
+            width: 20%;
+        }
+    }
+    @-moz-keyframes bar-fill-photoshop {
+        0% {
+            width: 0px;
+        }
+
+        100% {
+            width: 20%;
+        }
+    }
+    @-webkit-keyframes bar-fill-photoshop {
+        0% {
+            width: 0px;
+        }
+
+        100% {
+            width: 20%;
+        }
+    }
+</style>
 
 
 <section class="hero-page bg-black-3">
@@ -38,6 +245,27 @@
                                 <a class="btn btn-primary btn-gradient" onclick="document.forms['logoutForm'].submit()" style="background-image:linear-gradient(to right, #5989e5, #000000);">.MY ORDERS <i class="fa fa-window-close"></i></a>
                                 <a class="btn btn-primary btn-gradient" onclick="document.forms['logoutForm'].submit()" style="background-image:linear-gradient(to right, #5989e5, #000000);">.WISHLIST  <i class="fa fa-window-close"></i></a>
                                 <a class="btn btn-primary btn-gradient" onclick="document.forms['logoutForm'].submit()" style="background-image:linear-gradient(to right, #5989e5, #000000);">LOGOUT  <i class="fa fa-window-close"></i></a>
+                                    <div class="container-skills">
+                                        <div class="html">
+                                <p class="bar-title">
+                                    WishList Full
+                                    <span class="percent align-right">90%</span>
+                                </p>
+                                <div class="bar">
+                                    <div class="bar-fill bar-fill-html start"></div>
+                                </div>
+                            </div>
+                            <div class="javascript">
+                                <p class="bar-title">
+                                    Logins This Month (30Days Period)
+                                    <span class="percent align-right">60%</span>
+                                </p>
+                                <div class="bar">
+                                    <div class="bar-fill bar-fill-javascript start"></div>
+                                </div>
+                            </div>
+
+
 
                                     <form id="logoutForm" method="POST" action="/logout">
                                         <input type="hidden" name="_csrf" value="652d0282-b122-448b-8233-ec5f01fd8794">
@@ -50,7 +278,7 @@
                                 <div class="image col-xs-3"><img src="http://www.stickpng.com/assets/images/585e4beacb11b227491c3399.png" alt="..." class="img-fluid" style="border-radius:40px; max-height:170px;"></div>
                                 <div class="name">
                                     <h2 class="h3">${pageContext.request.userPrincipal.name}</h2>
-                                    <p>AfDemp Member</p>
+                                    <p><B>USER / CLIENT MEMBER</B></p>
                                 </div>
                                 <li class="list-inline-item"></li>
 
@@ -67,16 +295,8 @@
                     <div class="footer d-flex justify-content-between text-md-center flex-column flex-md-row">
                         <div class="item d-flex align-items-center mb-2 mb-lg-0">
                             <div class="icon"><i class="icon-appartments-1"></i></div>
-                            <div class="number"><strong>23</strong><span>Property Sold</span></div>
-                        </div>
-                        <div class="item d-flex align-items-center mb-2 mb-lg-0">
-                            <div class="icon"><i class="icon-users"></i></div>
-                            <div class="number"><strong>21</strong><span>Happy Clients</span></div>
-                        </div>
-                        <div class="item d-flex align-items-center mb-2 mb-lg-0">
-                            <div class="icon"><i class="icon-briefcase"></i></div>
-                            <div class="number"><strong>12</strong><span>Year of Experience</span></div>
-                        </div>
+                            <div class="number"><span><h3>STANDARD USER LICENSE (USER/CLIENT)</h3></span></div>
+
                     </div>
                 </div>
             </div>

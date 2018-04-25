@@ -119,7 +119,7 @@
                     </c:if>
                     <c:if test="${pageContext.request.userPrincipal.name != null}">
 
-                        <li class="list-inline-item"><a href="<spring:url value="/users/profile" />"
+                        <li class="list-inline-item"><a href="<spring:url value="/profile" />"
                                                         class="btn btn-primary btn-gradient">${pageContext.request.userPrincipal.name}
                             PROFILE </a>
                             <a href="<spring:url value="/loginpage" />" class="btn btn-primary btn-gradient">Cart <i
