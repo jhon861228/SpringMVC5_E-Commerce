@@ -38,7 +38,8 @@
                 </div>
 
                 <div class="form-group">
-                    <button onclick="location.href = '<spring:url value="/login" />';" class="btn btn-gradient col-md-12">
+                    <button onclick="location.href = '<spring:url value="/login"/>';"
+                            class="btn btn-gradient col-md-12">
                         ADMINISTRATOR
                     </button>
                 </div>

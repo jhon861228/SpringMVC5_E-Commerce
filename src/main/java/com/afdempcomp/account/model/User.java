@@ -11,10 +11,10 @@ public class User {
     private String username;
     private String password;
     private String passwordConfirm;
-    private String role;
+    private Set<Role> roles;
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     public Long getId() {
         return id;
     }
@@ -48,12 +48,13 @@ public class User {
         this.passwordConfirm = passwordConfirm;
     }
 
-
-    public String getRoles() {
-        return role;
+    @ManyToMany
+    @JoinTable(name = "user_role", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "role_id"))
+    public Set<Role> getRoles() {
+        return roles;
     }
 
-    public void setRoles(String role) {
-        this.role = role;
+    public void setRoles(Set<Role> roles) {
+        this.roles = roles;
     }
 }

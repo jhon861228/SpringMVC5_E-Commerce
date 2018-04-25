@@ -29,7 +29,6 @@
         <hr>
 
 
-
         <section class="new-properties bg-black-3">
             <div class="container">
                 <header class="text-center">

@@ -39,7 +39,8 @@
                     <div class="row col-md-12">
                         <div class="col-lg-3"><strong> 6723</strong><span>${product.unitInStock}</span></div>
                         <div class="col-lg-3"><strong>Type of location</strong><span>Apartment</span></div>
-                        <div class="col-lg-3"><strong>Property status</strong><span>${product.productStatus}</span></div>
+                        <div class="col-lg-3"><strong>Property status</strong><span>${product.productStatus}</span>
+                        </div>
                         <div class="col-lg-3"><strong>821.0</strong><span>$${product.productPrice}</span></div>
 
                         <div class="col-md-6">

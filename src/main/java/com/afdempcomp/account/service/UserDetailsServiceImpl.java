@@ -1,5 +1,7 @@
 package com.afdempcomp.account.service;
 
+
+import com.afdempcomp.account.model.Role;
 import com.afdempcomp.account.model.User;
 import com.afdempcomp.account.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,14 +20,13 @@ public class UserDetailsServiceImpl implements UserDetailsService {
     private UserRepository userRepository;
 
     @Override
-    @Transactional
+    @Transactional(readOnly = true)
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         User user = userRepository.findByUsername(username);
 
         Set<GrantedAuthority> grantedAuthorities = new HashSet<>();
         for (Role role : user.getRoles()) {
             grantedAuthorities.add(new SimpleGrantedAuthority(role.getName()));
-
         }
 
         return new org.springframework.security.core.userdetails.User(user.getUsername(), user.getPassword(), grantedAuthorities);

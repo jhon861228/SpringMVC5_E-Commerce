@@ -23,7 +23,9 @@
             <div class="col-md-12">
                 <h2 class="has-line">Login</h2>
                 <h4 class="text-thin">Already our user?</h4>
-                <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+                <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+                    Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit
+                    amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
                 <hr>
                 <form method="POST" action="${contextPath}/login" class="form-signin">
                     <div class="form-group">
@@ -39,11 +41,11 @@
                     </div>
                 </form>
             </div>
-<%--//--%>
+            <%--//--%>
         </div>
     </div>
 </section>
-<!-- Clients Section            -->
+<!-- Clients Section -->
 <!-- Clients Section -->
 <section class="clients bg-black-4">
     <div class="container">

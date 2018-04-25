@@ -1,7 +1,11 @@
 package com.afdempcomp.account.service;
 
+
 import com.afdempcomp.account.model.User;
+import com.afdempcomp.account.repository.RoleRepository;
 import com.afdempcomp.account.repository.UserRepository;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -18,13 +22,20 @@ public class UserServiceImpl implements UserService {
     @Autowired
     private BCryptPasswordEncoder bCryptPasswordEncoder;
 
+    @Autowired
+    private SessionFactory sessionFactory;
+
+
     @Override
-    @Transactional
+    @Transactional//
     public void save(User user) {
         user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
         user.setRoles(new HashSet<>(roleRepository.findAll()));
-        userRepository.save(user);
+//        userRepository.save(user);
 
+        Session session = sessionFactory.getCurrentSession();
+        session.saveOrUpdate(user);
+        session.flush();
     }
 
     @Override

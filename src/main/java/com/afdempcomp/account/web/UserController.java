@@ -8,8 +8,6 @@ import com.afdempcomp.account.service.SecurityService;
 import com.afdempcomp.account.service.UserService;
 import com.afdempcomp.account.validator.UserValidator;
 import org.apache.commons.io.IOUtils;
-import org.hibernate.Session;
-import org.hibernate.validator.internal.engine.messageinterpolation.parser.MessageDescriptorFormatException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -42,21 +40,18 @@ public class UserController {
     private ProductDao productDao;
 
 
+    @RequestMapping(value = "/registration", method = RequestMethod.GET)
+    public String registration(Model model) {
+        model.addAttribute("userForm", new User());
+
+        return "registration";
+    }
 
     @RequestMapping(value = "/loginpage")
     public String loginpage(Model model) {
 
 
         return "loginPage";
-    }
-
-    @RequestMapping("/viewProduct/{productId}")
-    public String viewProduct(@PathVariable String productId, Model model) throws IOException {
-        Product product = productDao.getProductById(productId);
-        model.addAttribute(product);
-
-
-        return "viewproduct";
     }
 
     @RequestMapping("/productlist")
@@ -67,15 +62,6 @@ public class UserController {
         return "productList";
     }
 
-
-    @RequestMapping(value = "/registration", method = RequestMethod.GET)
-    public String registration(Model model) {
-        model.addAttribute("userForm", new User());
-
-        return "registration";
-    }
-
-
     @RequestMapping(value = "/registration", method = RequestMethod.POST)
     public String registration(@ModelAttribute("userForm") User userForm, BindingResult bindingResult, Model model) {
         userValidator.validate(userForm, bindingResult);
@@ -83,13 +69,10 @@ public class UserController {
         if (bindingResult.hasErrors()) {
             return "registration";
         }
-
         userService.save(userForm);
-
-        //todo
         securityService.autologin(userForm.getUsername(), userForm.getPasswordConfirm());
 
-        return "redirect:/";
+        return "redirect:/welcome";
     }
 
     @RequestMapping(value = "/login", method = RequestMethod.GET)
@@ -103,12 +86,7 @@ public class UserController {
         return "login";
     }
 
-//
-//    @RequestMapping(value = {"/", "/welcome"}, method = RequestMethod.GET)
-//    public String welcome(Model model) {
-//
-//        return "welcome";
-//    }
+
     @Transactional
     @RequestMapping(value = "/")
     public String home(Model model) {

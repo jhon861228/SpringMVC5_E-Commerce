@@ -1,5 +1,6 @@
 package com.afdempcomp.account.validator;
 
+
 import com.afdempcomp.account.model.User;
 import com.afdempcomp.account.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;

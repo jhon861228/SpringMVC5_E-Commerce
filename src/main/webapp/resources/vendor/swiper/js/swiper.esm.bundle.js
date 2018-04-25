@@ -362,6 +362,9 @@ class SwiperClass {
     events = args[0];
     data$$1 = args.slice(1, args.length);
     context = self;
+    args
+
+===
 
     constructor(params = {}) {
         const self = this;
@@ -377,7 +380,8 @@ class SwiperClass {
             ;
         }
     }
-===
+
+||
 
     on(events, handler) {
         const self = this;
@@ -392,7 +396,8 @@ class SwiperClass {
         ;
         return self;
     }
-||
+
+.
 
     once(events, handler) {
         const self = this;
@@ -409,7 +414,6 @@ class SwiperClass {
         }
         return self.on(events, onceHandler);
     }
-.
 
     off(events, handler) {
         const self = this;
@@ -435,14 +439,15 @@ class SwiperClass {
         return self;
     }
 
-    emit(
-)) {
+) {
+
+    emit()
 
     if(
 
-    if(
+(
 
-    isArray(args
+    if(isArray
 }
 
 else
@@ -2702,17 +2707,19 @@ class Swiper$1 extends SwiperClass {
 .
     params = args[0];
 ===
-
-    constructor(
-) {
-
-    if(args
-}
-
 else
-{
-    [el, params] = args;
+    [el {
+    params
+,
+    args;
+] =
+
+    constructor() {
+
+        if (args
+            }
 }
+
 if (!params) params = {};
 
 params = Utils.extend({}, params);
