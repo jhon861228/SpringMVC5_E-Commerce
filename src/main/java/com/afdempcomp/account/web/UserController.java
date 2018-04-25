@@ -96,6 +96,13 @@ public class UserController {
         return "home";
     }
 
+    @RequestMapping(value = "/users/profile")
+    public String profiler(Model model) {
+
+        return "profile";
+    }
+
+
     @RequestMapping(method = RequestMethod.GET, value = "/getUserImage/{id}")
     public void getUserImage(HttpServletResponse response, @PathVariable("id") String productId) throws IOException {
 

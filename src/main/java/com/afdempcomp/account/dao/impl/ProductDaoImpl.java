@@ -27,11 +27,12 @@ public class ProductDaoImpl implements ProductDao {
     }
 
 
+
+
     public Product getProductById(String id) {
         Session session = sessionFactory.getCurrentSession();
         Product product = (Product) session.get(Product.class, id);
         session.flush();
-
         return product;
     }
 
@@ -40,7 +41,6 @@ public class ProductDaoImpl implements ProductDao {
         Query query = session.createQuery("from Product");
         List<Product> products = query.list();
         session.flush();
-
         return products;
     }
 
