@@ -13,15 +13,14 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import javax.transaction.Transactional;
+import javax.validation.Valid;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -50,6 +49,14 @@ public class UserController {
         return "registration";
     }
 
+
+
+    @RequestMapping(value = "/addProduct", method = RequestMethod.GET)
+    public String addProduct(Model model) {
+        model.addAttribute("product", new Product());
+
+        return "addProduct";
+    }
     @RequestMapping(value = "/loginpage")
     public String loginpage(Model model) {
 
@@ -76,6 +83,21 @@ public class UserController {
         securityService.autologin(userForm.getUsername(), userForm.getPasswordConfirm());
 
         return "redirect:/welcome";
+    }
+
+    @RequestMapping(value = "/addProduct", method = RequestMethod.POST)
+    public String registration(@ModelAttribute("product") Product product, BindingResult bindingResult, Model model) {
+
+
+        if (bindingResult.hasErrors()) {
+            return "/addProduct";
+        }
+
+
+        productDao.addProduct(product);
+
+
+        return "redirect:/";
     }
 
     @RequestMapping(value = "/login", method = RequestMethod.GET)
@@ -149,6 +171,39 @@ public class UserController {
             return "404";
         }
     }
+//    @RequestMapping("/addProduct")
+//    public String addProduct(Model model) {
+//        Product product = new Product();
+//        product.setProductCategory("instrument");
+//        product.setProductCondition("new");
+//        product.setProductStatus("active");
+//
+//        model.addAttribute("product", product);
+//
+//        return "/addProduct";
+//    }
+//
+//    @RequestMapping(value = "/addProduct", method = RequestMethod.POST)
+//    public String addProductPost(@Valid @ModelAttribute("product") Product product, BindingResult result, @RequestParam("file") MultipartFile file) throws IOException {
+//        if (result.hasErrors()) {
+//
+//            return "addProduct";
+//        }
+//
+//
+//        byte[] bytes = null;
+//        try {
+//            bytes = file.getBytes();
+//        } catch (IOException e) {
+//
+//            e.printStackTrace();
+//        }
+//        product.setPic(bytes);
+//        productDao.addProduct(product);
+//        return "redirect:/productList";
+//    }
+
+
 
 
 }
