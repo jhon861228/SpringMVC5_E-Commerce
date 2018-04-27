@@ -16,7 +16,7 @@
 
                 <p></p>
                 <hr>
-                <form:form method="POST" modelAttribute="product" class="form-signin">
+                <form:form method="POST" modelAttribute="product" class="form-signin" >
 
                     <spring:bind path="productName">
                         <div style="color: whitesmoke;" class="form-group ${status.error ? 'has-error' : ''}">
@@ -25,6 +25,21 @@
                             <form:errors path="productName"></form:errors>
                         </div>
                     </spring:bind>
+                    <spring:bind path="productCategory">
+                        <div style="color: whitesmoke;" class="form-group ${status.error ? 'has-error' : ''}">
+                            <form:input type="text" path="productName" class="form-control" placeholder="Category"
+                                        autofocus="true"></form:input>
+                            <form:errors path="productCategory"></form:errors>
+                        </div>
+                    </spring:bind>
+                    <spring:bind path="">
+                    <div style="color: whitesmoke;" class="form-group ${status.error ? 'has-error' : ''}">
+                        <form:input type="" path="pic" class="form-control" placeholder="pic"
+                                    autofocus="true"></form:input>
+                        <form:errors path="productCategory"></form:errors>
+                    </div>
+                </spring:bind>
+
 
 
 

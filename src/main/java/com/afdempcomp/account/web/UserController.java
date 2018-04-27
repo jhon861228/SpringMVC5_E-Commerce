@@ -86,8 +86,7 @@ public class UserController {
     }
 
     @RequestMapping(value = "/addProduct", method = RequestMethod.POST)
-    public String registration(@ModelAttribute("product") Product product, BindingResult bindingResult, Model model) {
-
+    public String registration(@ModelAttribute("product") Product product, BindingResult bindingResult) {
 
         if (bindingResult.hasErrors()) {
             return "/addProduct";
