@@ -11,8 +11,8 @@
     <div class="container" style="padding:3rem ,0;">
         <div class="row">
             <div class="col-md-12">
-                <h2 class="has-line">Create your Account</h2>
-                <h4 class="text-thin">Join The AfDemp Cooperation Today!</h4>
+                <h2 class="has-line">Submit a Product For Sale.</h2>
+                <h4 class="text-thin">Submit your by filling the form below.</h4>
 
                 <p></p>
                 <hr>
@@ -20,7 +20,7 @@
                 <%--<form:form action="/addProduct${_csrf.parameterName}=${_csrf.token}" method="POST " modelAttribute="product" class="form-signin" enctype="multipart/form-data"><form:form action="/addProduct${_csrf.parameterName}=${_csrf.token}" method="POST " modelAttribute="product" class="form-signin" enctype="multipart/form-data">--%>
                     <spring:bind path="productName">
                         <div style="color: whitesmoke;" class="form-group ${status.error ? 'has-error' : ''}">
-                            <form:input type="text" path="productName" class="form-control" placeholder="Username"
+                            <form:input type="text" path="productName" class="form-control" placeholder="Product Name"
                                         autofocus="true"></form:input>
                             <form:errors path="productName"></form:errors>
                         </div>
@@ -32,15 +32,47 @@
                             <form:errors path="productCategory"></form:errors>
                         </div>
                     </spring:bind>
-                    <%--<spring:bind path="pic">--%>
-                    <%--<div style="color: whitesmoke;" class="form-group ${status.error ? 'has-error' : ''}">--%>
-                        <%--<form:input type="file" path="pic" class="form-control" placeholder="pic"--%>
-                                    <%--autofocus="true"></form:input>--%>
-                        <%--<form:errors path="productCategory"></form:errors>--%>
-                    <%--</div>--%>
-                <%--</spring:bind>--%>
-                    <td>Pick file #2:</td>
-                    <td><input type="file" name="fileUpload" size="50" /></td>
+                    <spring:bind path="productDescription">
+                        <div style="color: whitesmoke;" class="form-group ${status.error ? 'has-error' : ''}">
+                            <form:input type="text" path="productDescription" class="form-control" placeholder="Description"
+                                        autofocus="true"></form:input>
+                            <form:errors path="productDescription"></form:errors>
+                        </div>
+                    </spring:bind>
+                    <spring:bind path="productPrice">
+                        <div style="color: whitesmoke;" class="form-group ${status.error ? 'has-error' : ''}">
+                            <form:input type="number" path="productPrice" class="form-control" placeholder="Price"
+                                        autofocus="true"></form:input>
+                            <form:errors path="productPrice"></form:errors>
+                        </div>
+                    </spring:bind>
+
+                    <spring:bind path="productManufacturer">
+                        <div style="color: whitesmoke;" class="form-group ${status.error ? 'has-error' : ''}">
+                            <form:input type="text" path="productManufacturer" class="form-control" placeholder="Manufacturer"
+                                        autofocus="true"></form:input>
+                            <form:errors path="productManufacturer"></form:errors>
+                        </div>
+                    </spring:bind>
+                    <spring:bind path="productStatus">
+                        <div style="color: whitesmoke;" class="form-group ${status.error ? 'has-error' : ''}">
+                            <form:input type="text" path="productStatus" class="form-control" placeholder="Status"
+                                        autofocus="true"></form:input>
+                            <form:errors path="productStatus"></form:errors>
+                        </div>
+                    </spring:bind>
+                    <spring:bind path="unitInStock">
+                        <div style="color: whitesmoke;" class="form-group ${status.error ? 'has-error' : ''}">
+                            <form:input type="number" path="unitInStock" class="form-control" placeholder="Units In Stock"
+                                        autofocus="true"></form:input>
+                            <form:errors path="unitInStock"></form:errors>
+                        </div>
+                    </spring:bind>
+
+
+
+                    <td><p>Product Image:</p></td>
+                    <td><input type="file" name="fileUpload" size="90" /></td>
 
 
 
