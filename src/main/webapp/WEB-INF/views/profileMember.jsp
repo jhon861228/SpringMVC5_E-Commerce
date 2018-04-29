@@ -7,6 +7,7 @@
         font-size: 12px;
         font-family: 'Roboto', sans-serif;
     }
+
     .container-skills {
         margin: 20px auto 0 auto;
         max-width: 400px;
@@ -18,16 +19,19 @@
         height: 10px;
         margin: 0 0 20px 0;
     }
+
     .bar-fill {
         position: absolute;
         height: 10px;
     }
+
     .bar-title {
         position: relative;
         font-size: 1em;
         text-align: left;
         margin: 0 0 5px 0;
     }
+
     .percent {
         position: absolute;
         right: 0;
@@ -42,6 +46,7 @@
         -moz-animation: bar-fill-html 2s ease-out;
         -webkit-animation: bar-fill-html 2s ease-out;
     }
+
     @keyframes bar-fill-html {
         0% {
             width: 0px;
@@ -51,6 +56,7 @@
             width: 90%;
         }
     }
+
     @-moz-keyframes bar-fill-html {
         0% {
             width: 0px;
@@ -60,6 +66,7 @@
             width: 90%;
         }
     }
+
     @-webkit-keyframes bar-fill-html {
         0% {
             width: 0px;
@@ -69,6 +76,7 @@
             width: 90%;
         }
     }
+
     /*Edit here for Javascript*/
     .bar-fill-javascript {
         width: 60%;
@@ -77,6 +85,7 @@
         -moz-animation: bar-fill-javascript 2s ease-out;
         -webkit-animation: bar-fill-javascript 2s ease-out;
     }
+
     @keyframes bar-fill-javascript {
         0% {
             width: 0px;
@@ -86,6 +95,7 @@
             width: 60%;
         }
     }
+
     @-moz-keyframes bar-fill-javascript {
         0% {
             width: 0px;
@@ -95,6 +105,7 @@
             width: 60%;
         }
     }
+
     @-webkit-keyframes bar-fill-javascript {
         0% {
             width: 0px;
@@ -104,14 +115,16 @@
             width: 60%;
         }
     }
+
     /*Edit here for Jquery*/
-    .bar-fill-jquery{
+    .bar-fill-jquery {
         width: 70%;
         background-color: #131b28;
         animation: bar-fill-jquery 2s ease-out;
         -moz-animation: bar-fill-jquery 2s ease-out;
         -webkit-animation: bar-fill-jquery 2s ease-out;
     }
+
     @keyframes bar-fill-jquery {
         0% {
             width: 0px;
@@ -121,6 +134,7 @@
             width: 70%;
         }
     }
+
     @-moz-keyframes bar-fill-jquery {
         0% {
             width: 0px;
@@ -130,6 +144,7 @@
             width: 70%;
         }
     }
+
     @-webkit-keyframes bar-fill-jquery {
         0% {
             width: 0px;
@@ -139,14 +154,16 @@
             width: 70%;
         }
     }
+
     /*Edit here for Responsive*/
-    .bar-fill-responsive{
+    .bar-fill-responsive {
         width: 90%;
         background-color: #429f46;
         animation: bar-fill-responsive 2s ease-out;
         -moz-animation: bar-fill-responsive 2s ease-out;
         -webkit-animation: bar-fill-responsive 2s ease-out;
     }
+
     @keyframes bar-fill-responsive {
         0% {
             width: 0px;
@@ -156,6 +173,7 @@
             width: 90%;
         }
     }
+
     @-moz-keyframes bar-fill-responsive {
         0% {
             width: 0px;
@@ -165,6 +183,7 @@
             width: 90%;
         }
     }
+
     @-webkit-keyframes bar-fill-responsive {
         0% {
             width: 0px;
@@ -174,14 +193,16 @@
             width: 90%;
         }
     }
+
     /*Edit here for Photoshop*/
-    .bar-fill-photoshop{
+    .bar-fill-photoshop {
         width: 20%;
         background-color: #0a73dc;
         animation: bar-fill-photoshop 2s ease-out;
         -moz-animation: bar-fill-photoshop 2s ease-out;
         -webkit-animation: bar-fill-photoshop 2s ease-out;
     }
+
     @keyframes bar-fill-photoshop {
         0% {
             width: 0px;
@@ -191,6 +212,7 @@
             width: 20%;
         }
     }
+
     @-moz-keyframes bar-fill-photoshop {
         0% {
             width: 0px;
@@ -200,6 +222,7 @@
             width: 20%;
         }
     }
+
     @-webkit-keyframes bar-fill-photoshop {
         0% {
             width: 0px;
@@ -242,9 +265,18 @@
 
 
                                     <li class="list-inline-item">
-                                        <a class="btn btn-primary btn-gradient" onclick="document.forms['logoutForm'].submit()" style="background-image:linear-gradient(to right, #5989e5, #000000);">.MY ORDERS <i class="fa fa-window-close"></i></a>
-                                        <a class="btn btn-primary btn-gradient" onclick="document.forms['logoutForm'].submit()" style="background-image:linear-gradient(to right, #5989e5, #000000);">.WISHLIST  <i class="fa fa-window-close"></i></a>
-                                        <a class="btn btn-primary btn-gradient" onclick="document.forms['logoutForm'].submit()" style="background-image:linear-gradient(to right, #5989e5, #000000);">LOGOUT  <i class="fa fa-window-close"></i></a>
+                                        <a class="btn btn-primary btn-gradient"
+                                           onclick="document.forms['logoutForm'].submit()"
+                                           style="background-image:linear-gradient(to right, #5989e5, #000000);">.MY
+                                            ORDERS <i class="fa fa-window-close"></i></a>
+                                        <a class="btn btn-primary btn-gradient"
+                                           onclick="document.forms['logoutForm'].submit()"
+                                           style="background-image:linear-gradient(to right, #5989e5, #000000);">.WISHLIST
+                                            <i class="fa fa-window-close"></i></a>
+                                        <a class="btn btn-primary btn-gradient"
+                                           onclick="document.forms['logoutForm'].submit()"
+                                           style="background-image:linear-gradient(to right, #5989e5, #000000);">LOGOUT
+                                            <i class="fa fa-window-close"></i></a>
                                         <div class="container-skills">
                                             <div class="html">
                                 <p class="bar-title">
@@ -266,7 +298,6 @@
                             </div>
 
 
-
                             <form id="logoutForm" method="POST" action="/logout">
                                 <input type="hidden" name="_csrf" value="652d0282-b122-448b-8233-ec5f01fd8794">
                             </form>
@@ -275,7 +306,9 @@
                             </li></p>
                         </div>
                         <ul class="social list-inline mb-0">
-                            <div class="image col-xs-3"><img src="http://www.stickpng.com/assets/images/585e4beacb11b227491c3399.png" alt="..." class="img-fluid" style="border-radius:40px; max-height:170px;"></div>
+                            <div class="image col-xs-3"><img
+                                    src="http://www.stickpng.com/assets/images/585e4beacb11b227491c3399.png" alt="..."
+                                    class="img-fluid" style="border-radius:40px; max-height:170px;"></div>
                             <div class="name">
                                 <h2 class="h3">${pageContext.request.userPrincipal.name}</h2>
                                 <p><B>PREMIUM AFDEMP MEMBER </B></p>
@@ -283,26 +316,31 @@
                             <li class="list-inline-item"></li>
 
                         </ul>
-                    </div><ul class="contact-info list-inline mb-0">
-                    <li class="list-inline-item"><a href="mailto:Richard@Example.com"><i class="icon-envelope-1"></i>Richard@Example.com</a></li>
-                    <li class="list-inline-item"><a href="#"><i class="icon-smart-phone-2"></i>(305) 555-4555</a></li>
-                    <li class="list-inline-item"><a href="#"><i class="fa fa-skype"></i>Richard.Wood</a></li>
-                </ul>
+                    </div>
+                    <ul class="contact-info list-inline mb-0">
+                        <li class="list-inline-item"><a href="mailto:Richard@Example.com"><i
+                                class="icon-envelope-1"></i>Richard@Example.com</a></li>
+                        <li class="list-inline-item"><a href="#"><i class="icon-smart-phone-2"></i>(305) 555-4555</a>
+                        </li>
+                        <li class="list-inline-item"><a href="#"><i class="fa fa-skype"></i>Richard.Wood</a></li>
+                    </ul>
                 </div>
                 <div class="body">
-                    <p class="template-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. LOLUt enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. LOLDuis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                    <p class="template-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua. LOLUt enim ad minim veniam, quis nostrud
+                        exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. LOLDuis aute irure dolor
+                        in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
                     <ul class="secondary-nav-menu list-inline ml-auto mb-0">
 
 
-
-
-                        <li class="list-inline-item col-md-12"><a href="/profile" class="col-md-12 btn btn-primary btn-gradient">ADD PRODUCT FOR SALE
-                            <i class="fa fa-product-hunt "></i>  </a>
+                        <li class="list-inline-item col-md-12"><a href="/profile"
+                                                                  class="col-md-12 btn btn-primary btn-gradient">ADD
+                            PRODUCT FOR SALE
+                            <i class="fa fa-product-hunt "></i> </a>
                             <br><br>
-                            <a href="/loginpage" class="col-md-12 btn btn-primary btn-gradient">EDIT PRODUCT<i class="fa fa-pencil-square-o "></i></a>
+                            <a href="/loginpage" class="col-md-12 btn btn-primary btn-gradient">EDIT PRODUCT<i
+                                    class="fa fa-pencil-square-o "></i></a>
                             <%--<a class="btn btn-primary btn-gradient" onclick="document.forms['logoutForm'].submit()">EDIT PRODUCT<i class="fa fa-window-close"></i></a>--%>
-
-
 
 
                         </li>
@@ -333,14 +371,18 @@
                                                         href="<spring:url value="/viewProduct/${product.productId}" />"
                                                         class="btn btn-gradient btn-sm">View Details</a></div>
                                             </div>
-                                            <div class="info"><a href="<spring:url value="/viewProduct/${product.productId}" />"
-                                                                 class="no-anchor-style">
-                                                <h3 class="h4 text-thin text-uppercase mb-1">${product.productName}</h3></a>
+                                            <div class="info"><a
+                                                    href="<spring:url value="/viewProduct/${product.productId}" />"
+                                                    class="no-anchor-style">
+                                                <h3 class="h4 text-thin text-uppercase mb-1">${product.productName}</h3>
+                                            </a>
                                                 <ul class="tags list-inline">
-                                                    <li class="list-inline-item"><a href="#">${product.productCategory}</a></li>
+                                                    <li class="list-inline-item"><a
+                                                            href="#">${product.productCategory}</a></li>
 
                                                 </ul>
-                                                <div class="price text-primary"><strong class="mr-1">${product.productPrice}
+                                                <div class="price text-primary"><strong
+                                                        class="mr-1">${product.productPrice}
                                                     $</strong></div>
                                             </div>
 

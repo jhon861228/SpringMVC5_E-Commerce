@@ -7,16 +7,13 @@ import com.afdempcomp.account.model.User;
 import com.afdempcomp.account.service.SecurityService;
 import com.afdempcomp.account.service.UserService;
 import com.afdempcomp.account.validator.UserValidator;
-import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.io.IOUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
-import org.springframework.web.multipart.commons.CommonsMultipartFile;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -52,13 +49,13 @@ public class UserController {
     }
 
 
-
     @RequestMapping(value = "/addProduct")
     public String addProduct(Model model) {
         model.addAttribute("product", new Product());
 
         return "addProduct";
     }
+
     @RequestMapping(value = "/loginpage")
     public String loginpage(Model model) {
 
@@ -92,8 +89,6 @@ public class UserController {
 //    public class FileUploadController {
 
 
-
-
     @RequestMapping(value = "/login", method = RequestMethod.GET)
     public String login(Model model, String error, String logout) {
         if (error != null)
@@ -114,7 +109,8 @@ public class UserController {
         model.addAttribute("products", products);
         return "home";
     }
-//
+
+    //
 //    @RequestMapping(value = "/users/profile")
 //    public String profiler(Model model) {
 //
@@ -133,10 +129,8 @@ public class UserController {
         }
         if (request.isUserInRole("ROLE_MEMBER")) {
             return "profileMember";
-        }
-            else return "404";
+        } else return "404";
     }
-
 
 
     @RequestMapping(method = RequestMethod.GET, value = "/getUserImage/{id}")
@@ -154,18 +148,7 @@ public class UserController {
         return "redirect:/productList";
     }
 
-    @Controller
-    public class HTTPErrorHandler {
-
-        String path = "/error";
-
-        @RequestMapping(value = "/404")
-        public String error404() {
-
-            return "404";
-        }
-    }
-//    @RequestMapping("/addProduct")
+    //    @RequestMapping("/addProduct")
 //    public String addProduct(Model model) {
 //        Product product = new Product();
 //        product.setProductCategory("instrument");
@@ -179,7 +162,7 @@ public class UserController {
 //
     @RequestMapping(value = "/addProduct", method = RequestMethod.POST)
     // @RequestParam("file") MultipartFile file
-    public String addProduct(@Valid @ModelAttribute("product") Product product, BindingResult result,@RequestParam("fileUpload") MultipartFile file) throws IOException {
+    public String addProduct(@Valid @ModelAttribute("product") Product product, BindingResult result, @RequestParam("fileUpload") MultipartFile file) throws IOException {
         if (result.hasErrors()) {
 
             return "addProduct";
@@ -198,7 +181,17 @@ public class UserController {
         return "redirect:/productList";
     }
 
+    @Controller
+    public class HTTPErrorHandler {
 
+        String path = "/error";
+
+        @RequestMapping(value = "/404")
+        public String error404() {
+
+            return "404";
+        }
+    }
 
 
 }

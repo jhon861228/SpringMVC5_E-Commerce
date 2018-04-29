@@ -27,8 +27,6 @@ public class ProductDaoImpl implements ProductDao {
     }
 
 
-
-
     public Product getProductById(String id) {
         Session session = sessionFactory.getCurrentSession();
         Product product = (Product) session.get(Product.class, id);

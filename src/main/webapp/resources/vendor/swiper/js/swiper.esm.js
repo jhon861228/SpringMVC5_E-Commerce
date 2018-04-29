@@ -2707,7 +2707,7 @@ class Swiper extends SwiperClass {
 .
     params = args[0];
 ===
-else
+    else
     [el {
     params
 ,
