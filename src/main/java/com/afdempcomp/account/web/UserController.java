@@ -7,6 +7,7 @@ import com.afdempcomp.account.model.User;
 import com.afdempcomp.account.service.SecurityService;
 import com.afdempcomp.account.service.UserService;
 import com.afdempcomp.account.validator.UserValidator;
+import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.io.IOUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -15,6 +16,7 @@ import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.multipart.commons.CommonsMultipartFile;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -51,7 +53,7 @@ public class UserController {
 
 
 
-    @RequestMapping(value = "/addProduct", method = RequestMethod.GET)
+    @RequestMapping(value = "/addProduct")
     public String addProduct(Model model) {
         model.addAttribute("product", new Product());
 
@@ -84,20 +86,13 @@ public class UserController {
 
         return "redirect:/welcome";
     }
-
-    @RequestMapping(value = "/addProduct", method = RequestMethod.POST)
-    public String registration(@ModelAttribute("product") Product product, BindingResult bindingResult) {
-
-        if (bindingResult.hasErrors()) {
-            return "/addProduct";
-        }
+//
+//    @Controller
+//    @RequestMapping("/uploadFile.do")
+//    public class FileUploadController {
 
 
-        productDao.addProduct(product);
 
-
-        return "redirect:/";
-    }
 
     @RequestMapping(value = "/login", method = RequestMethod.GET)
     public String login(Model model, String error, String logout) {
@@ -182,25 +177,26 @@ public class UserController {
 //        return "/addProduct";
 //    }
 //
-//    @RequestMapping(value = "/addProduct", method = RequestMethod.POST)
-//    public String addProductPost(@Valid @ModelAttribute("product") Product product, BindingResult result, @RequestParam("file") MultipartFile file) throws IOException {
-//        if (result.hasErrors()) {
-//
-//            return "addProduct";
-//        }
-//
-//
-//        byte[] bytes = null;
-//        try {
-//            bytes = file.getBytes();
-//        } catch (IOException e) {
-//
-//            e.printStackTrace();
-//        }
-//        product.setPic(bytes);
-//        productDao.addProduct(product);
-//        return "redirect:/productList";
-//    }
+    @RequestMapping(value = "/addProduct", method = RequestMethod.POST)
+    // @RequestParam("file") MultipartFile file
+    public String addProduct(@Valid @ModelAttribute("product") Product product, BindingResult result,@RequestParam("fileUpload") MultipartFile file) throws IOException {
+        if (result.hasErrors()) {
+
+            return "addProduct";
+        }
+
+
+        byte[] bytes = null;
+        try {
+            bytes = file.getBytes();
+        } catch (IOException e) {
+
+            e.printStackTrace();
+        }
+        product.setPic(bytes);
+        productDao.addProduct(product);
+        return "redirect:/productList";
+    }
 
 
 

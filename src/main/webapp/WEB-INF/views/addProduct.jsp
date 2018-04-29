@@ -16,8 +16,8 @@
 
                 <p></p>
                 <hr>
-                <form:form method="POST" modelAttribute="product" class="form-signin" >
-
+                <form:form method="POST" modelAttribute="product" class="form-signin" enctype="multipart/form-data" >
+                <%--<form:form action="/addProduct${_csrf.parameterName}=${_csrf.token}" method="POST " modelAttribute="product" class="form-signin" enctype="multipart/form-data"><form:form action="/addProduct${_csrf.parameterName}=${_csrf.token}" method="POST " modelAttribute="product" class="form-signin" enctype="multipart/form-data">--%>
                     <spring:bind path="productName">
                         <div style="color: whitesmoke;" class="form-group ${status.error ? 'has-error' : ''}">
                             <form:input type="text" path="productName" class="form-control" placeholder="Username"
@@ -32,14 +32,15 @@
                             <form:errors path="productCategory"></form:errors>
                         </div>
                     </spring:bind>
-                    <spring:bind path="">
-                    <div style="color: whitesmoke;" class="form-group ${status.error ? 'has-error' : ''}">
-                        <form:input type="" path="pic" class="form-control" placeholder="pic"
-                                    autofocus="true"></form:input>
-                        <form:errors path="productCategory"></form:errors>
-                    </div>
-                </spring:bind>
-
+                    <%--<spring:bind path="pic">--%>
+                    <%--<div style="color: whitesmoke;" class="form-group ${status.error ? 'has-error' : ''}">--%>
+                        <%--<form:input type="file" path="pic" class="form-control" placeholder="pic"--%>
+                                    <%--autofocus="true"></form:input>--%>
+                        <%--<form:errors path="productCategory"></form:errors>--%>
+                    <%--</div>--%>
+                <%--</spring:bind>--%>
+                    <td>Pick file #2:</td>
+                    <td><input type="file" name="fileUpload" size="50" /></td>
 
 
 
