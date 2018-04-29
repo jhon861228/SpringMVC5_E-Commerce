@@ -72,7 +72,7 @@
 
 
                     <td><p>Product Image:</p></td>
-                    <td><input type="file" name="fileUpload" size="90" /></td>
+                    <td><input class="col-md-12 btn btn-primary btn-gradient" type="file" name="fileUpload" size="90" /></td><br><br><br>
 
 
 
