@@ -29,7 +29,8 @@
                                 </div>
                                 <div class="info">
                                     <div class="badge badge-primary">${product.productStatus}</div>
-                                    <a href="property-single.html" class="no-anchor-style">
+                                    <a href="<spring:url value="/viewProduct/${product.productId}" />"
+                                       class="no-anchor-style">
                                         <h2 class="h3 text-thin">${product.productName}</h2></a>
                                     <p class="address">${product.productDescription}</p>
                                 </div>

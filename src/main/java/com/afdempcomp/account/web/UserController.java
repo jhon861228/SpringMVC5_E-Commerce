@@ -110,19 +110,22 @@ public class UserController {
         return "home";
     }
 
-    //
-//    @RequestMapping(value = "/users/profile")
-//    public String profiler(Model model) {
-//
-//
-//        return "profileClient";
-//    }
+
+    @RequestMapping("/viewProduct/{productId}")
+    public String viewProduct(@PathVariable String productId, Model model) throws IOException {
+        Product product = productDao.getProductById(productId);
+        model.addAttribute(product);
+
+
+        return "/viewproduct";
+    }
+
     @RequestMapping(value = "profile")
     public String profiler(HttpSession session, HttpServletRequest request, Model model) {
 
 
         if (request.isUserInRole("ROLE_ADMIN")) {
-            return "home";
+            return "adminpanel";
         }
         if (request.isUserInRole("ROLE_USER")) {
             return "profileClient";

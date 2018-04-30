@@ -49,7 +49,7 @@
     </div>
     <div class="copyrights bg-black-6">
         <div class="container text-center">
-            <p>&copy; Copyrights 2018 Dimou John</a></p>
+            <p>&copy; Copyrights 2018 Dimou John</p>
         </div>
     </div>
 </footer>
@@ -62,5 +62,7 @@
 <script src="<c:url value="/resources/vendor/jquery.cookie/jquery.cookie.js" />"></script>
 <script src="<c:url value="/resources/vendor/swiper/js/swiper.js" />"></script>
 <script src="<c:url value="/resources/js/front.js" />"></script>
+<script src="<c:url value="/resources/js/charts-custom.js" />"></script>
+<script src="http://www.chartjs.org/dist/2.7.2/Chart.bundle.js"></script>
 
 </body><html>

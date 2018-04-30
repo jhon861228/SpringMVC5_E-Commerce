@@ -4,7 +4,7 @@
 
 
 <!-- Property Single Section-->
-<section class="property-single bg-black-2 col-md-12">
+<section style="padding:2.5rem 0;" class="property-single bg-black-2 col-md-12">
     <div class="container">
         <nav aria-label="breadcrumb" class="col-md-12">
             <ol class="breadcrumb">
@@ -108,9 +108,6 @@
 
 
 <p></p>
-
-
-USD</h4>
 
 
 <%@include file="/WEB-INF/views/template/footer.jsp" %>
