@@ -130,7 +130,7 @@ public class UserController {
         if (request.isUserInRole("ROLE_USER")) {
             return "profileClient";
         }
-        if (request.isUserInRole("ROLE_MEMBER")) {
+        if (request.isUserInRole("ROLE_ME-MBER")) {
             return "profileMember";
         } else return "404";
     }
