@@ -27,35 +27,35 @@ a {
 }
 
 .dashtext-1 {
-    color: #864DD9 !important;
+    color: #1694d9 !important;
 }
 
 .dashtext-2 {
-    color: #CF53F9 !important;
+    color: #579df9 !important;
 }
 
 .dashtext-3 {
-    color: #e95f71 !important;
+    color: #23c6e9 !important;
 }
 
 .dashtext-4 {
-    color: #7127AC !important;
+    color: #2688ac !important;
 }
 
 .dashbg-1 {
-    background: #864DD9;
+    background: #518fd9;
 }
 
 .dashbg-2 {
-    background: #CF53F9;
+    background: #55c2f9;
 }
 
 .dashbg-3 {
-    background: #e95f71;
+    background: #65cee9;
 }
 
 .dashbg-4 {
-    background: #7127AC;
+    background: #4079ac;
 }
 
 .text-bold {
@@ -140,7 +140,7 @@ pre {
 }
 
 .breadcrumb a {
-    color: #DB6574;
+    color: #6fdbd7;
     text-decoration: none !important;
 }
 
@@ -311,19 +311,19 @@ i[class*='icon-'] {
 }
 
 .megamenu .megamenu-buttons .megamenu-button-link.dashbg-1:hover {
-    background: #7838d5 !important;
+    background: #33b4d5 !important;
 }
 
 .megamenu .megamenu-buttons .megamenu-button-link.dashbg-2:hover {
-    background: #c83af8 !important;
+    background: #4695f8 !important;
 }
 
 .megamenu .megamenu-buttons .megamenu-button-link.dashbg-3:hover {
-    background: #e6495d !important;
+    background: #6eb1e6 !important;
 }
 
 .megamenu .megamenu-buttons .megamenu-button-link.dashbg-4:hover {
-    background: #632297 !important;
+    background: #138797 !important;
 }
 
 .block .title {
@@ -773,11 +773,11 @@ nav#sidebar li a {
 }
 
 nav#sidebar li a:hover {
-    background: #34373d;
+    background: #659ddb;
 }
 
 nav#sidebar li a:hover i {
-    color: #DB6574;
+    color: #659ddb;
 }
 
 nav#sidebar li a i {
@@ -815,7 +815,7 @@ nav#sidebar li::before {
 }
 
 nav#sidebar li.active::before {
-    background: #DB6574;
+    background: #3071db;
 }
 
 nav#sidebar li.active > a {
@@ -824,7 +824,7 @@ nav#sidebar li.active > a {
 }
 
 nav#sidebar li.active i {
-    color: #DB6574;
+    color: #27bddb;
 }
 
 nav#sidebar li li.active > a {

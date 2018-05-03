@@ -118,32 +118,34 @@ $(document).ready(function () {
                 {
                     label: "Data Set 1",
                     backgroundColor: [
-                        '#EF8C99',
-                        '#EF8C99',
-                        '#EF8C99',
-                        '#EF8C99',
-                        '#EF8C99',
-                        '#EF8C99',
-                        '#EF8C99',
-                        '#EF8C99',
-                        '#EF8C99',
-                        '#EF8C99',
-                        '#EF8C99',
-                        '#EF8C99'
+                        '#2b99ef',
+                        '#2b99ef',
+                        '#2b99ef',
+                        '#2b99ef',
+                        '#2b99ef',
+                        '#2b99ef',
+                        '#2b99ef',
+                        '#2b99ef',
+                        '#2b99ef',
+                        '#2b99ef',
+                        '#2b99ef',
+                        '#2b99ef'
+
                     ],
                     borderColor: [
-                        '#EF8C99',
-                        '#EF8C99',
-                        '#EF8C99',
-                        '#EF8C99',
-                        '#EF8C99',
-                        '#EF8C99',
-                        '#EF8C99',
-                        '#EF8C99',
-                        '#EF8C99',
-                        '#EF8C99',
-                        '#EF8C99',
-                        '#EF8C99'
+                        '#2b99ef',
+                        '#2b99ef',
+                        '#2b99ef',
+                        '#2b99ef',
+                        '#2b99ef',
+                        '#2b99ef',
+                        '#2b99ef',
+                        '#2b99ef',
+                        '#2b99ef',
+                        '#2b99ef',
+                        '#2b99ef',
+                        '#2b99ef'
+
                     ],
                     borderWidth: 0.3,
                     data: [35, 55, 65, 85, 40, 30, 50, 35, 50, 70, 60, 50]
@@ -185,32 +187,36 @@ $(document).ready(function () {
                 {
                     label: "Data Set 1",
                     backgroundColor: [
-                        '#CF53F9',
-                        '#CF53F9',
-                        '#CF53F9',
-                        '#CF53F9',
-                        '#CF53F9',
-                        '#CF53F9',
-                        '#CF53F9',
-                        '#CF53F9',
-                        '#CF53F9',
-                        '#CF53F9',
-                        '#CF53F9',
-                        '#CF53F9'
+                        '#45b2f9',
+                        '#45b2f9',
+                        '#45b2f9',
+                        '#45b2f9',
+                        '#45b2f9',
+                        '#45b2f9',
+                        '#45b2f9',
+                        '#45b2f9',
+                        '#45b2f9',
+                        '#45b2f9',
+                        '#45b2f9',
+                        '#45b2f9'
+
+
                     ],
                     borderColor: [
-                        '#CF53F9',
-                        '#CF53F9',
-                        '#CF53F9',
-                        '#CF53F9',
-                        '#CF53F9',
-                        '#CF53F9',
-                        '#CF53F9',
-                        '#CF53F9',
-                        '#CF53F9',
-                        '#CF53F9',
-                        '#CF53F9',
-                        '#CF53F9'
+                        '#1a88f9',
+                        '#1a88f9',
+                        '#1a88f9',
+                        '#1a88f9',
+                        '#1a88f9',
+                        '#1a88f9',
+                        '#1a88f9',
+                        '#1a88f9',
+                        '#1a88f9',
+                        '#1a88f9',
+                        '#1a88f9',
+                        '#1a88f9'
+
+
                     ],
                     borderWidth: 0.2,
                     data: [30, 40, 45, 55, 70, 45, 60, 35, 50, 63, 40, 70]
@@ -258,15 +264,15 @@ $(document).ready(function () {
                     fill: true,
                     lineTension: 0.3,
                     backgroundColor: "transparent",
-                    borderColor: '#EF8C99',
-                    pointBorderColor: '#EF8C99',
-                    pointHoverBackgroundColor: '#EF8C99',
+                    borderColor: '#2b86ef',
+                    pointBorderColor: '#2b86ef',
+                    pointHoverBackgroundColor: '#2b86ef',
                     borderCapStyle: 'butt',
                     borderDash: [],
                     borderDashOffset: 0.0,
                     borderJoinStyle: 'miter',
                     borderWidth: 2,
-                    pointBackgroundColor: "#EF8C99",
+                    pointBackgroundColor: "#2b86ef",
                     pointBorderWidth: 2,
                     pointHoverRadius: 4,
                     pointHoverBorderColor: "#fff",
@@ -342,15 +348,15 @@ $(document).ready(function () {
                     fill: true,
                     lineTension: 0.3,
                     backgroundColor: "transparent",
-                    borderColor: '#CF53F9',
-                    pointBorderColor: '#CF53F9',
-                    pointHoverBackgroundColor: '#CF53F9',
+                    borderColor: '#4f8ef9',
+                    pointBorderColor:  '#4f8ef9',
+                    pointHoverBackgroundColor: '#4f8ef9',
                     borderCapStyle: 'butt',
                     borderDash: [],
                     borderDashOffset: 0.0,
                     borderJoinStyle: 'miter',
                     borderWidth: 2,
-                    pointBackgroundColor: "#CF53F9",
+                    pointBackgroundColor: "#3eaff9",
                     pointBorderWidth: 2,
                     pointHoverRadius: 4,
                     pointHoverBorderColor: "#fff",
@@ -416,31 +422,35 @@ $(document).ready(function () {
                 {
                     label: "Data Set 1",
                     backgroundColor: [
-                        "#864DD9",
-                        "#864DD9",
-                        "#864DD9",
-                        "#864DD9",
-                        "#864DD9",
-                        "#864DD9",
-                        "#864DD9"
+                        "#3c86d9",
+                        "#3c86d9",
+                        "#3c86d9",
+                        "#3c86d9",
+                        "#3c86d9",
+                        "#3c86d9",
+                        "#3c86d9",
+
                     ],
                     hoverBackgroundColor: [
-                        "#864DD9",
-                        "#864DD9",
-                        "#864DD9",
-                        "#864DD9",
-                        "#864DD9",
-                        "#864DD9",
-                        "#864DD9"
+                        "#3c86d9",
+                        "#3c86d9",
+                        "#3c86d9",
+                        "#3c86d9",
+                        "#3c86d9",
+                        "#3c86d9",
+                        "#3c86d9"
+
+
                     ],
                     borderColor: [
-                        "#864DD9",
-                        "#864DD9",
-                        "#864DD9",
-                        "#864DD9",
-                        "#864DD9",
-                        "#864DD9",
-                        "#864DD9"
+                        "#3c86d9",
+                        "#3c86d9",
+                        "#3c86d9",
+                        "#3c86d9",
+                        "#3c86d9",
+                        "#3c86d9",
+                        "#3c86d9"
+
                     ],
                     borderWidth: 0.5,
                     data: [65, 59, 80, 81, 56, 55, 40],
@@ -506,16 +516,16 @@ $(document).ready(function () {
                     data: [300, 50, 100, 80],
                     borderWidth: 0,
                     backgroundColor: [
-                        '#723ac3',
-                        "#864DD9",
-                        "#9762e6",
-                        "#a678eb"
+                        '#1055c3',
+                        "#3577d9",
+                        "#2d87e6",
+                        "#458feb"
                     ],
                     hoverBackgroundColor: [
-                        '#723ac3',
-                        "#864DD9",
-                        "#9762e6",
-                        "#a678eb"
+                        '#1d5cc3',
+                        "#415ed9",
+                        "#4db8e6",
+                        "#2bb2eb"
                     ]
                 }]
         }
@@ -551,16 +561,16 @@ $(document).ready(function () {
                     data: [120, 90, 77, 95],
                     borderWidth: [0, 0, 0, 0],
                     backgroundColor: [
-                        '#b53dde',
-                        "#CF53F9",
-                        "#d06cf2",
-                        "#de97f6"
+                        '#1055c3',
+                        "#3577d9",
+                        "#2d87e6",
+                        "#458feb"
                     ],
                     hoverBackgroundColor: [
-                        '#b53dde',
-                        "#CF53F9",
-                        "#d06cf2",
-                        "#de97f6"
+                        '#1055c3',
+                        "#3577d9",
+                        "#2d87e6",
+                        "#458feb"
                     ]
                 }]
         }
@@ -608,10 +618,10 @@ $(document).ready(function () {
                     50
                 ],
                 backgroundColor: [
-                    "#ba3fe4",
-                    "#CF53F9",
-                    "#d97bf9",
-                    "#e28eff"
+                    '#1055c3',
+                    "#3577d9",
+                    "#2d87e6",
+                    "#458feb"
                 ],
                 label: 'My dataset' // for legend
             }],
@@ -662,22 +672,22 @@ $(document).ready(function () {
                     label: "First dataset",
                     backgroundColor: "rgba(113, 39, 172, 0.4)",
                     borderWidth: 2,
-                    borderColor: "#7127AC",
-                    pointBackgroundColor: "#7127AC",
+                    borderColor: "#2a40ac",
+                    pointBackgroundColor: "#2a64ac",
                     pointBorderColor: "#fff",
                     pointHoverBackgroundColor: "#fff",
-                    pointHoverBorderColor: "#7127AC",
+                    pointHoverBorderColor: "#26a1ac",
                     data: [65, 59, 90, 81, 56, 55]
                 },
                 {
                     label: "Second dataset",
                     backgroundColor: "rgba(207, 83, 249, 0.4)",
                     borderWidth: 2,
-                    borderColor: "#CF53F9",
-                    pointBackgroundColor: "#CF53F9",
+                    borderColor: "#4098f9",
+                    pointBackgroundColor: "#2887f9",
                     pointBorderColor: "#fff",
                     pointHoverBackgroundColor: "#fff",
-                    pointHoverBorderColor: "#CF53F9",
+                    pointHoverBorderColor: "#468cf9",
                     data: [50, 60, 80, 45, 96, 70]
                 }
             ]

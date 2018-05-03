@@ -389,16 +389,16 @@ $(document).ready(function () {
                     data: [300, 50, 100, 60],
                     borderWidth: [0, 0, 0, 0],
                     backgroundColor: [
-                        '#6933b9',
-                        "#8553d1",
-                        "#a372ec",
-                        "#be9df1"
+                        '#1055c3',
+                        "#3577d9",
+                        "#2d87e6",
+                        "#458feb"
                     ],
                     hoverBackgroundColor: [
-                        '#6933b9',
-                        "#8553d1",
-                        "#a372ec",
-                        "#be9df1"
+                        '#1055c3',
+                        "#3577d9",
+                        "#2d87e6",
+                        "#458feb"
                     ]
                 }]
         }
@@ -428,16 +428,16 @@ $(document).ready(function () {
                     data: [80, 70, 100, 60],
                     borderWidth: [0, 0, 0, 0],
                     backgroundColor: [
-                        '#9528b9',
-                        "#b046d4",
-                        "#c767e7",
-                        "#e394fe"
+                        '#1055c3',
+                        "#3577d9",
+                        "#2d87e6",
+                        "#458feb"
                     ],
                     hoverBackgroundColor: [
-                        '#9528b9',
-                        "#b046d4",
-                        "#c767e7",
-                        "#e394fe"
+                        '#1055c3',
+                        "#3577d9",
+                        "#2d87e6",
+                        "#458feb"
                     ]
                 }]
         }
@@ -467,16 +467,16 @@ $(document).ready(function () {
                     data: [120, 90, 77, 95],
                     borderWidth: [0, 0, 0, 0],
                     backgroundColor: [
-                        '#da4d60',
-                        "#e96577",
-                        "#f28695",
-                        "#ffb6c1"
+                        '#1055c3',
+                        "#3577d9",
+                        "#2d87e6",
+                        "#458feb"
                     ],
                     hoverBackgroundColor: [
-                        '#da4d60',
-                        "#e96577",
-                        "#f28695",
-                        "#ffb6c1"
+                        '#1055c3',
+                        "#3577d9",
+                        "#2d87e6",
+                        "#458feb"
                     ]
                 }]
         }
@@ -511,30 +511,32 @@ $(document).ready(function () {
                 {
                     label: "Data Set 1",
                     backgroundColor: [
-                        '#EF8C99',
-                        '#EF8C99',
-                        '#EF8C99',
-                        '#EF8C99',
-                        '#EF8C99',
-                        '#EF8C99',
-                        '#EF8C99',
-                        '#EF8C99',
-                        '#EF8C99',
-                        '#EF8C99',
-                        '#EF8C99'
+                        '#45b2f9',
+                        '#45b2f9',
+                        '#45b2f9',
+                        '#45b2f9',
+                        '#45b2f9',
+                        '#45b2f9',
+                        '#45b2f9',
+                        '#45b2f9',
+                        '#45b2f9',
+                        '#45b2f9',
+                        '#45b2f9',
+                        '#45b2f9'
                     ],
                     borderColor: [
-                        '#EF8C99',
-                        '#EF8C99',
-                        '#EF8C99',
-                        '#EF8C99',
-                        '#EF8C99',
-                        '#EF8C99',
-                        '#EF8C99',
-                        '#EF8C99',
-                        '#EF8C99',
-                        '#EF8C99',
-                        '#EF8C99'
+                        '#45b2f9',
+                        '#45b2f9',
+                        '#45b2f9',
+                        '#45b2f9',
+                        '#45b2f9',
+                        '#45b2f9',
+                        '#45b2f9',
+                        '#45b2f9',
+                        '#45b2f9',
+                        '#45b2f9',
+                        '#45b2f9',
+                        '#45b2f9'
                     ],
                     borderWidth: 0.2,
                     data: [35, 55, 65, 85, 40, 30, 18, 35, 20, 70]
@@ -571,30 +573,32 @@ $(document).ready(function () {
                 {
                     label: "Data Set 1",
                     backgroundColor: [
-                        '#CF53F9',
-                        '#CF53F9',
-                        '#CF53F9',
-                        '#CF53F9',
-                        '#CF53F9',
-                        '#CF53F9',
-                        '#CF53F9',
-                        '#CF53F9',
-                        '#CF53F9',
-                        '#CF53F9',
-                        '#CF53F9'
+                        '#1a88f9',
+                        '#1a88f9',
+                        '#1a88f9',
+                        '#1a88f9',
+                        '#1a88f9',
+                        '#1a88f9',
+                        '#1a88f9',
+                        '#1a88f9',
+                        '#1a88f9',
+                        '#1a88f9',
+                        '#1a88f9',
+                        '#1a88f9'
                     ],
                     borderColor: [
-                        '#CF53F9',
-                        '#CF53F9',
-                        '#CF53F9',
-                        '#CF53F9',
-                        '#CF53F9',
-                        '#CF53F9',
-                        '#CF53F9',
-                        '#CF53F9',
-                        '#CF53F9',
-                        '#CF53F9',
-                        '#CF53F9'
+                        '#1a88f9',
+                        '#1a88f9',
+                        '#1a88f9',
+                        '#1a88f9',
+                        '#1a88f9',
+                        '#1a88f9',
+                        '#1a88f9',
+                        '#1a88f9',
+                        '#1a88f9',
+                        '#1a88f9',
+                        '#1a88f9',
+                        '#1a88f9'
                     ],
                     borderWidth: 0.2,
                     data: [44, 75, 65, 34, 60, 45, 22, 35, 30, 63]
@@ -627,16 +631,16 @@ $(document).ready(function () {
                     data: [300, 50, 100, 80],
                     borderWidth: 0,
                     backgroundColor: [
-                        '#723ac3',
-                        "#864DD9",
-                        "#9762e6",
-                        "#a678eb"
+                        '#1055c3',
+                        "#3577d9",
+                        "#2d87e6",
+                        "#458feb"
                     ],
                     hoverBackgroundColor: [
-                        '#723ac3',
-                        "#864DD9",
-                        "#9762e6",
-                        "#a678eb"
+                        '#1055c3',
+                        "#3577d9",
+                        "#2d87e6",
+                        "#458feb"
                     ]
                 }]
         }
