@@ -24,7 +24,7 @@ public class Product {
     private String productDescription;
     @Min(value = 0, message = "The Product must have a Valid Price")
     private double productPrice;
-    private String productCondition;
+
     private String productStatus;
     @Min(value = 0, message = "The Product Units Must Be More than 0")
     private int unitInStock;
@@ -82,13 +82,7 @@ public class Product {
         this.productPrice = productPrice;
     }
 
-    public String getProductCondition() {
-        return productCondition;
-    }
 
-    public void setProductCondition(String productCondition) {
-        this.productCondition = productCondition;
-    }
 
     public String getProductStatus() {
         return productStatus;

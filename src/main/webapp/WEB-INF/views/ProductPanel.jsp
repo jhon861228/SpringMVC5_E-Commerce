@@ -183,46 +183,38 @@
                     <div class="col-md-4 col-sm-6">
                         <div class="statistic-block block">
                             <div class="progress-details d-flex align-items-end justify-content-between">
-                                <div class="title">
+                                <div class="title has-line">
 
                                     <strong>ADD PRODUCT</strong>
                                 </div>
-                                <div class="icon"><i class="fa fa-plus-square"></i></div>
+                                <a href="/addProduct" onMouseOver="this.style.color='#0F0'"
+                                   onMouseOut="this.style.color='#00F'"  ><div style="font-size:40px;" class="icon"><i class="fa fa-plus-square"></i></div></a>
                             </div>
-                            <div class="progress progress-template">
-                                <div role="progressbar" style="width: 30%" aria-valuenow="30" aria-valuemin="0"
-                                     aria-valuemax="100" class="progress-bar progress-bar-template dashbg-1"></div>
-                            </div>
+
                         </div>
                     </div>
                     <div class="col-md-4 col-sm-6">
                         <div class="statistic-block block">
                             <div class="progress-details d-flex align-items-end justify-content-between">
-                                <div class="title">
+                                <div class="title has-line">
 
                                     <strong>DELETE PRODUCT</strong>
                                 </div>
-                                <div class="icon"><i class="fa fa-minus-square"></i></div>
+                               <a href="/admin/deleteProduct/"><div style="font-size:40px;" class="icon"><i class="fa fa-minus-square"></i></div></a>
                             </div>
-                            <div class="progress progress-template">
-                                <div role="progressbar" style="width: 30%" aria-valuenow="30" aria-valuemin="0"
-                                     aria-valuemax="100" class="progress-bar progress-bar-template dashbg-1"></div>
-                            </div>
+
                         </div>
                     </div>
                     <div class="col-md-4 col-sm-6">
                         <div class="statistic-block block">
                             <div class="progress-details d-flex align-items-end justify-content-between">
-                                <div class="title">
+                                <div class="title has-line">
 
-                                    <strong>EDIT PRODUCT</strong>
+                                    <strong class="">EDIT PRODUCT</strong>
                                 </div>
-                                <div class="icon"><i class="fa fa-edit"></i></div>
+                                <a href="/productlist"><div style="font-size:40px;" class="icon"><i class="fa fa-edit"></i></div></a>
                             </div>
-                            <div class="progress progress-template">
-                                <div role="progressbar" style="width: 30%" aria-valuenow="30" aria-valuemin="0"
-                                     aria-valuemax="100" class="progress-bar progress-bar-template dashbg-1"></div>
-                            </div>
+
                         </div>
                     </div>
 
@@ -241,7 +233,89 @@
                             </div>
 
                         </div>
+                        <section class="property-grid-sidebar">
+                            <div class="container">
+
+
+                                <div class="row">
+                                    <!-- Property Listings-->
+                                    <div class="property-listing col-lg-12">
+                                        <div class="row">
+                                            <c:forEach items="${products}" var="product">
+                                                <div class="col-lg-4">
+                                                    <div class="property-listing-item">
+                                                        <div class="image"><img
+                                                                src="<spring:url value="/getUserImage/${product.productId}" />.do"
+                                                                alt=" The Chalet Estate"
+                                                                class="img-fluid">
+                                                            <div class="price">${product.productStatus} </div>
+                                                        </div>
+                                                        <%--<div class="info">--%>
+                                                            <%--<div class="badge badge-primary">${product.productStatus}</div>--%>
+                                                            <%--<a href="<spring:url value="/viewProduct/${product.productId}" />"--%>
+                                                               <%--class="no-anchor-style">--%>
+                                                                <%--<h2 class="h3 text-thin">${product.productName}</h2></a>--%>
+                                                            <%--<p class="address">${product.productDescription}</p>--%>
+                                                        <%--</div>--%>
+                                                        <div class=" align-items-center justify-content-between">
+                                                            <div class="left">Product Name: <span class="area"></span>
+                                                                <b>${product.productName}</b></div>
+                                                            <div class="right">
+                                                                <div class="form-group">
+
+                                                                            <c:set var="myVar" value="Live"/>
+
+                                                                               <c:if test="${product.productStatus == myVar}">
+
+                                                                    <button style="background-color: firebrick; color: white;" class="btn col-md-12">Set Inactive</button>
+                                                                            </c:if>
+                                                                    <c:if test="${product.productStatus != myVar}">
+
+                                                                       <a href="<spring:url value="/admin/setProductLive/${product.productId}" />.do"><button style="background-color: #4cae4c; color:white;" class="btn  col-md-12">Set Active</button></a>
+
+                                                                    </c:if>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+
+                                            </c:forEach>
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="property-listing-footer">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="left mt-5">
+                                            <p class="mb-0">Showing <span class="text-primary">1 </span> of <span class="text-primary">6 </span>
+                                            </p>
+                                        </div>
+                                        <div class="right mt-5">
+                                            <nav aria-label="Page navigation example">
+                                                <ul class="pagination m-0">
+                                                    <li class="page-item"><a href="#" aria-label="Previous" class="page-link"><span
+                                                            aria-hidden="true">«</span><span class="sr-only">Previous</span></a></li>
+                                                    <li class="page-item"><a href="#" class="page-link active">1</a></li>
+                                                    <li class="page-item"><a href="#" class="page-link">2</a></li>
+                                                    <li class="page-item"><a href="#" class="page-link">3</a></li>
+                                                    <li class="page-item"><a href="#" aria-label="Next" class="page-link"><span
+                                                            aria-hidden="true">»</span><span class="sr-only">Next</span></a></li>
+                                                </ul>
+                                            </nav>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
                     </div>
+                </div>
+        </section>
+
+
+    </div>
             </div>
         </section>
     </div>

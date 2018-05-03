@@ -56,6 +56,20 @@ public class UserController {
         return "addProduct";
     }
 
+
+    @RequestMapping(value = "admin/SetProductLive/{id}", method = RequestMethod.POST)
+    public void editProduct(@PathVariable String id, Model model) {
+
+
+            Product product = productDao.getProductById(id);
+
+            product.setProductStatus("Live");
+            productDao.setProductLive(product);
+
+
+
+    }
+
     @RequestMapping(value = "/loginpage")
     public String loginpage(Model model) {
 

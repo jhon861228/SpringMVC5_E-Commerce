@@ -16,4 +16,8 @@ public interface ProductDao {
     void deleteProduct(String id);
 
     void editProduct(Product product);
+
+    void setProductLive(Product product);
+
+    void setProductInactive(Product product);
 }
