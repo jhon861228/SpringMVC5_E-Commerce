@@ -71,6 +71,23 @@ public class UserController {
         return "productList";
     }
 
+    @RequestMapping("/admin/productInventory")
+    public String ProductPanel(Model model) {
+        List<Product> products = productDao.getAllProducts();
+        model.addAttribute("products", products);
+
+        return "ProductPanel";
+    }
+
+
+    @RequestMapping("/admin/adminPanel")
+    public String adminPanel(Model model) {
+        List<Product> products = productDao.getAllProducts();
+        model.addAttribute("products", products);
+
+        return "adminpanel";
+    }
+
     @RequestMapping(value = "/registration", method = RequestMethod.POST)
     public String registration(@ModelAttribute("userForm") User userForm, BindingResult bindingResult, Model model) {
         userValidator.validate(userForm, bindingResult);

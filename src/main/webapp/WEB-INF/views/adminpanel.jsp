@@ -165,8 +165,8 @@
         </div>
         <!-- Sidebar Navidation Menus--><span class="heading">Main</span>
         <ul class="list-unstyled">
-            <li class="active"><a href="/adminpanel"> <i class="icon-home"></i>Dashboard</a></li>
-            <li><a href="productInventory.jsp"> <i class="icon-grid"></i>Product Inventory</a></li>
+            <li class="active"><a href="<c:url value="/admin/adminPanel" />"> <i class="icon-home"></i>Dashboard</a></li>
+            <li><a href="<c:url value="/admin/productInventory" />"> <i class="fa fa-cogs"></i>Product Inventory</a></li>
 
 
     </nav>
