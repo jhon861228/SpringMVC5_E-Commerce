@@ -47,6 +47,7 @@ public class Product {
 
     public void setProductId(String productId) {
         this.productId = productId;
+
     }
 
 

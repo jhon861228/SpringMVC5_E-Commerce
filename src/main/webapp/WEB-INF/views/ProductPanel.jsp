@@ -267,13 +267,16 @@
 
                                                                                <c:if test="${product.productStatus == myVar}">
 
-                                                                    <button style="background-color: firebrick; color: white;" class="btn col-md-12">Set Inactive</button>
+                                                                                   <a href="<spring:url value="/admin/setProductInactive/${product.productId}" />"><button style="background-color: darkred; color:white;" class="btn  col-md-12">Set Inactive</button></a>
                                                                             </c:if>
                                                                     <c:if test="${product.productStatus != myVar}">
 
-                                                                       <a href="<spring:url value="/admin/setProductLive/${product.productId}" />.do"><button style="background-color: #4cae4c; color:white;" class="btn  col-md-12">Set Active</button></a>
+                                                                       <a href="<spring:url value="/admin/setProductLive/${product.productId}" />"><button style="background-color: #4cae4c; color:white;" class="btn  col-md-12">Set Live</button></a>
 
                                                                     </c:if>
+
+
+
                                                                 </div>
                                                             </div>
                                                         </div>

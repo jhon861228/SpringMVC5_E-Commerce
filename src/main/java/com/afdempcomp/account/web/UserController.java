@@ -59,8 +59,9 @@ public class UserController {
     }
 
 
-    @RequestMapping(value = "admin/SetProductLive/{id}", method = RequestMethod.POST)
-    public void editProduct(@PathVariable String id, Model model) {
+
+    @RequestMapping(value = "admin/setProductLive/{id}", method = {RequestMethod.POST, RequestMethod.GET})
+    public String setProductLive(@PathVariable String id, Model model) {
 
 
             Product product = productDao.getProductById(id);
@@ -68,6 +69,20 @@ public class UserController {
             product.setProductStatus("Live");
             productDao.setProductLive(product);
 
+            return "redirect:" + "/admin/productInventory";
+
+
+    }
+
+    @RequestMapping(value = "admin/setProductInactive/{id}", method = {RequestMethod.POST, RequestMethod.GET})
+    public String setProductInactive(@PathVariable String id, Model model) {
+
+
+        Product product = productDao.getProductById(id);
+        product.setProductStatus("Inactive");
+        productDao.setProductLive(product);
+
+        return "redirect:" + "/admin/productInventory";
 
 
     }
@@ -209,6 +224,7 @@ public class UserController {
         product.setProductStatus("Inactive");
 
         productDao.addProduct(product);
+
         return "redirect:/productList";
     }
 
