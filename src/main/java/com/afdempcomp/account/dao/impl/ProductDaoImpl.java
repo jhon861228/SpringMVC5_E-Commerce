@@ -70,6 +70,8 @@ public class ProductDaoImpl implements ProductDao {
         session.flush();
     }
 
+
+
     public void setProductInactive(Product product) {
         Session session = sessionFactory.getCurrentSession();
         session.saveOrUpdate(product);

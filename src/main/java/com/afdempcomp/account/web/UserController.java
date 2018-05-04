@@ -52,24 +52,37 @@ public class UserController {
 
 
     @RequestMapping(value = "/addProduct")
-    public String addProduct(Model model) {
-        model.addAttribute("product", new Product());
+    public String addProduct(Model model, HttpServletRequest request) {
 
-        return "addProduct";
+
+        if (request.isUserInRole("ROLE_ADMINISTRATOR")) {
+            model.addAttribute("product", new Product());
+
+            return "addProduct";
+        }
+
+        if (request.isUserInRole("ROLE_MEMBER")) {
+            model.addAttribute("product", new Product());
+
+            return "addProduct";
+        } else {
+            return "/login";
+
+        }
+
     }
-
 
 
     @RequestMapping(value = "admin/setProductLive/{id}", method = {RequestMethod.POST, RequestMethod.GET})
     public String setProductLive(@PathVariable String id, Model model) {
 
 
-            Product product = productDao.getProductById(id);
+        Product product = productDao.getProductById(id);
 
-            product.setProductStatus("Live");
-            productDao.setProductLive(product);
+        product.setProductStatus("Live");
+        productDao.setProductLive(product);
 
-            return "redirect:" + "/admin/productInventory";
+        return "redirect:" + "/admin/productInventory";
 
 
     }
@@ -131,11 +144,6 @@ public class UserController {
 
         return "redirect:/welcome";
     }
-//
-//    @Controller
-//    @RequestMapping("/uploadFile.do")
-//    public class FileUploadController {
-
 
     @RequestMapping(value = "/login", method = RequestMethod.GET)
     public String login(Model model, String error, String logout) {
@@ -172,13 +180,13 @@ public class UserController {
     public String profiler(HttpSession session, HttpServletRequest request, Model model) {
 
 
-        if (request.isUserInRole("ROLE_ADMIN")) {
+        if (request.isUserInRole("ROLE_ADMINISTRATOR")) {
             return "adminpanel";
         }
         if (request.isUserInRole("ROLE_USER")) {
             return "profileClient";
         }
-        if (request.isUserInRole("ROLE_ME-MBER")) {
+        if (request.isUserInRole("ROLE_MEMBER")) {
             return "profileMember";
         } else return "404";
 
@@ -203,6 +211,8 @@ public class UserController {
     @RequestMapping(value = "/addProduct", method = RequestMethod.POST)
     // @RequestParam("file") MultipartFile file
     public String addProduct(@Valid @ModelAttribute("product") Product product, BindingResult result, @RequestParam("fileUpload") MultipartFile file) throws IOException {
+
+
         if (result.hasErrors()) {
 
             return "addProduct";

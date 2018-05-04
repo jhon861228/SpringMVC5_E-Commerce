@@ -128,7 +128,7 @@
 
                         </li>
                         </sec:authorize>
-                        <sec:authorize access="hasRole('ROLE_ADMIN')">
+                        <sec:authorize access="hasRole('ROLE_ADMINISTRATOR')">
                             <li class="list-inline-item"><a href="<spring:url value="/profile" />"
                                                             class="btn btn-primary btn-gradient">Admin Dashboard </a>
 

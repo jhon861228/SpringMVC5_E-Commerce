@@ -15,7 +15,7 @@
                                 <h1 style="text-align: center;">Be Part of the "AFDemp Cooperation Today</h1>
                                 <p class="template-text" style="text-align: center;">Welcome to the AFDemp Cooperation .<br>
                                     Here you Can Buy Products and Goods Or Sell Them And Be A Part Of Our Team.</p><a
-                                    href="#" class="btn btn-gradient col-md-12">JOIN TODAY</a>
+                                    href="/login" class="btn btn-gradient col-md-12">JOIN TODAY</a>
                             </div>
                         </div>
                     </div>

@@ -27,11 +27,13 @@ public class UserServiceImpl implements UserService {
 
 
     @Override
-    @Transactional//
+    @Transactional
     public void save(User user) {
         user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
+
         user.setRoles(new HashSet<>(roleRepository.findAll()));
-//        userRepository.save(user);
+        user.getRoles().remove(roleRepository.getOne(2L));
+        user.getRoles().remove(roleRepository.getOne(1L));
 
         Session session = sessionFactory.getCurrentSession();
         session.saveOrUpdate(user);
