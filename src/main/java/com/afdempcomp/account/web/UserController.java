@@ -81,7 +81,7 @@ public class UserController {
 
     @RequestMapping("/productlist")
     public String productInventory(Model model) {
-        List<Product> products = productDao.getAllProducts();
+        List<Product> products = productDao.getActiveProducts();
         model.addAttribute("products", products);
 
         return "productList";
@@ -138,7 +138,7 @@ public class UserController {
     @RequestMapping(value = "/")
     public String home(Model model) {
 
-        List<Product> products = productDao.getAllProducts();
+        List<Product> products = productDao.getActiveProducts();
         model.addAttribute("products", products);
         return "home";
     }

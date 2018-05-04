@@ -11,6 +11,8 @@ public interface ProductDao {
 
     List<Product> getAllProducts();
 
+    List<Product> getActiveProducts();
+
     void addProduct(Product product);
 
     void deleteProduct(String id);

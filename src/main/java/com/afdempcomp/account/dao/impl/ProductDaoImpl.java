@@ -42,6 +42,14 @@ public class ProductDaoImpl implements ProductDao {
         return products;
     }
 
+    public List<Product> getActiveProducts() {
+        Session session = sessionFactory.getCurrentSession();
+        Query query = session.createQuery("from Product where productStatus ='Live'");
+        List<Product> products = query.list();
+        session.flush();
+        return products;
+    }
+
     public void deleteProduct(String id) {
         Session session = sessionFactory.getCurrentSession();
         session.delete(getProductById(id));
