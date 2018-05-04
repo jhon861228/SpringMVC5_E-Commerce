@@ -20,27 +20,21 @@
     <link href="<c:url value="/resources/vendor/font-awesome/css/font-awesome.min.css" />" rel="stylesheet">
     <!-- Fontastic-->
     <link href="<c:url value="/resources/css/fontastic.css" />" rel="stylesheet">
-
     <!-- Bootstrap Select-->
     <link href="<c:url value="/resources/vendor/bootstrap-select/css/bootstrap-select.css" />" rel="stylesheet">
-
     <!-- Google fonts - Poppins-->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,700">
     <!-- swiper carousel-->
     <link href="<c:url value="/resources/vendor/swiper/css/swiper.css" />" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <!-- Gallery-->
-
     <link href="<c:url value="/resources/css/gallery.css" />" rel="stylesheet">
     <!-- theme stylesheet-->
     <link href="<c:url value="/resources/css/style.default.css" />" rel="stylesheet" id="theme-stylesheet">
-
     <!-- Custom stylesheet - for your changes-->
     <link href="<c:url value="/resources/css/custom.css" />" rel="stylesheet">
-
     <!-- Favicon-->
     <link href="<c:url value="/resources/img/favicon.ico" />" rel="shortcut icon">
-
     <!-- Modernizr-->
     <script src="js/modernizr.custom.js"></script>
     <!-- Tweaks for older IEs--><!--[if lt IE 9]>
@@ -66,7 +60,7 @@
                     <ul class="list-inline">
                         <li class="list-inline-item"><a href="#" class="search-btn"><i class="icon-search"></i></a></li>
                         <li class="list-inline-item"><a href="#"><i class="fa fa-heart-o"></i>Wishlist</a></li>
-                        <li class="list-inline-item"><a href="<spring:url value="/loginpage" />"
+                        <li class="list-inline-item"><a href="<spring:url value="/login" />"
                                                         class="pr-0 border-right-0"><i
                                 class="icon-user-1"></i>Sumbit Product</a>
 
@@ -114,7 +108,7 @@
 
                     <c:if test="${pageContext.request.userPrincipal.name == null}">
 
-                        <li class="list-inline-item"><a href="<spring:url value="/loginpage" />"
+                        <li class="list-inline-item"><a href="<spring:url value="/login" />"
                                                         class="btn btn-primary btn-gradient">LOGIN</a></li>
                     </c:if>
                     <c:if test="${pageContext.request.userPrincipal.name != null}">

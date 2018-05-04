@@ -44,21 +44,6 @@
                         </div>
                     </spring:bind>
 
-                    <spring:bind path="productManufacturer">
-                        <div style="color: whitesmoke;" class="form-group ${status.error ? 'has-error' : ''}">
-                            <form:input type="text" path="productManufacturer" class="form-control"
-                                        placeholder="Manufacturer"
-                                        autofocus="true"></form:input>
-                            <form:errors path="productManufacturer"></form:errors>
-                        </div>
-                    </spring:bind>
-                    <spring:bind path="productStatus">
-                        <div style="color: whitesmoke;" class="form-group ${status.error ? 'has-error' : ''}">
-                            <form:input type="text" path="productStatus" class="form-control" placeholder="Status"
-                                        autofocus="true"></form:input>
-                            <form:errors path="productStatus"></form:errors>
-                        </div>
-                    </spring:bind>
                     <spring:bind path="unitInStock">
                         <div style="color: whitesmoke;" class="form-group ${status.error ? 'has-error' : ''}">
                             <form:input type="number" path="unitInStock" class="form-control"

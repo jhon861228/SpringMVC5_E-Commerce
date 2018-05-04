@@ -9,6 +9,8 @@ import com.afdempcomp.account.service.UserService;
 import com.afdempcomp.account.validator.UserValidator;
 import org.apache.commons.io.IOUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -164,6 +166,7 @@ public class UserController {
         if (request.isUserInRole("ROLE_ME-MBER")) {
             return "profileMember";
         } else return "404";
+
     }
 
 
@@ -182,18 +185,6 @@ public class UserController {
         return "redirect:/productList";
     }
 
-    //    @RequestMapping("/addProduct")
-//    public String addProduct(Model model) {
-//        Product product = new Product();
-//        product.setProductCategory("instrument");
-//        product.setProductCondition("new");
-//        product.setProductStatus("active");
-//
-//        model.addAttribute("product", product);
-//
-//        return "/addProduct";
-//    }
-//
     @RequestMapping(value = "/addProduct", method = RequestMethod.POST)
     // @RequestParam("file") MultipartFile file
     public String addProduct(@Valid @ModelAttribute("product") Product product, BindingResult result, @RequestParam("fileUpload") MultipartFile file) throws IOException {
@@ -210,7 +201,13 @@ public class UserController {
 
             e.printStackTrace();
         }
+
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        String name = auth.getName();
+        product.setProductManufacturer(name);
         product.setPic(bytes);
+        product.setProductStatus("Inactive");
+
         productDao.addProduct(product);
         return "redirect:/productList";
     }
