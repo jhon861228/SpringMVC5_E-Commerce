@@ -212,10 +212,29 @@ public class UserController {
         IOUtils.copy(in1, response.getOutputStream());
     }
 
-    @RequestMapping({"admin/deleteProduct/{id}"})
-    public String deleteProduct(@PathVariable String id) {
-        this.productDao.deleteProduct(id);
-        return "redirect:/productList";
+    @RequestMapping("/deleteProduct/{id}")
+    public String deleteProduct(@PathVariable String id, HttpServletRequest request) {
+
+
+
+        if (request.isUserInRole("ROLE_ADMINISTRATOR")  ) {
+
+            this.productDao.deleteProduct(id);
+            return "redirect:/admin/productInventory";
+        }
+
+        if ( request.isUserInRole("ROLE_ADMINISTRATOR")) {
+            this.productDao.deleteProduct(id);
+        return "/profile";
+        }
+
+        else {
+
+            return  "/403";
+        }
+
+
+
     }
 
     @RequestMapping(value = "/addProduct", method = RequestMethod.POST)

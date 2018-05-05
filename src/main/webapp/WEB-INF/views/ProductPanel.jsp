@@ -39,8 +39,6 @@
 
     <!-- Custom stylesheet - for your changes-->
     <link href="<c:url value="/resources/css/custom.css" />" rel="stylesheet">
-
-    <!-- Favicon-->
     <link href="<c:url value="/resources/img/favicon.ico" />" rel="shortcut icon">
 
     <!-- Modernizr-->
@@ -205,7 +203,7 @@
 
                                     <strong>DELETE PRODUCT</strong>
                                 </div>
-                                <a href="/admin/deleteProduct/">
+                                <a href="/deleteProduct/${product.productId}">
                                     <div style="font-size:40px;" class="icon"><i class="fa fa-minus-square"></i></div>
                                 </a>
                             </div>
@@ -257,15 +255,12 @@
                                                                 src="<spring:url value="/getUserImage/${product.productId}" />.do"
                                                                 alt=" The Chalet Estate"
                                                                 class="img-fluid">
-                                                            <div class="price">${product.productStatus} </div>
+                                                            <div style="background-color: #9f3741;" class="price"><a href="<spring:url value="/deleteProduct/${product.productId}" />"><b style="color:white; ">DELETE</b></a></div>
+                                                            <div style="background-color: #1b6d85; bottom:50px;" class="price"><a href="<spring:url value="/deleteProduct/${product.productId}" />"><b style="color:white; ">EDIT</b></a></div>
+
                                                         </div>
-                                                            <%--<div class="info">--%>
-                                                            <%--<div class="badge badge-primary">${product.productStatus}</div>--%>
-                                                            <%--<a href="<spring:url value="/viewProduct/${product.productId}" />"--%>
-                                                            <%--class="no-anchor-style">--%>
-                                                            <%--<h2 class="h3 text-thin">${product.productName}</h2></a>--%>
-                                                            <%--<p class="address">${product.productDescription}</p>--%>
-                                                            <%--</div>--%>
+
+
                                                         <div class=" align-items-center justify-content-between">
                                                             <div class="left">Product Name: <span class="area"></span>
                                                                 <b>${product.productName}</b></div>

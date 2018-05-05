@@ -14,12 +14,13 @@
                 <p></p>
                 <hr>
                 <form:form method="POST" modelAttribute="userForm" class="form-signin">
-                  <p class="has-line ">Start By Selecting Account type: </p>  <select class="btn btn-primary btn-gradient" name="accountType" path="accountType">
-                        <option value="User">User</option>
-                        <option value="Member">Member</option>
+                    <p class="has-line ">Start By Selecting Account type: </p>  <select
+                        class="btn btn-primary btn-gradient" name="accountType" path="accountType">
+                    <option value="User">User</option>
+                    <option value="Member">Member</option>
 
-                    </select>
-<br><br>
+                </select>
+                    <br><br>
 
                     <spring:bind path="username">
                         <div style="color: whitesmoke;" class="form-group ${status.error ? 'has-error' : ''}">
