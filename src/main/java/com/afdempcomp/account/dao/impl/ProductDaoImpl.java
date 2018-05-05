@@ -3,6 +3,7 @@ package com.afdempcomp.account.dao.impl;
 
 import com.afdempcomp.account.dao.ProductDao;
 import com.afdempcomp.account.model.Product;
+import com.afdempcomp.account.model.User;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -34,6 +35,7 @@ public class ProductDaoImpl implements ProductDao {
         return product;
     }
 
+
     public List<Product> getAllProducts() {
         Session session = sessionFactory.getCurrentSession();
         Query query = session.createQuery("from Product");
@@ -41,6 +43,8 @@ public class ProductDaoImpl implements ProductDao {
         session.flush();
         return products;
     }
+
+
 
     public List<Product> getActiveProducts() {
         Session session = sessionFactory.getCurrentSession();
@@ -50,12 +54,12 @@ public class ProductDaoImpl implements ProductDao {
         return products;
     }
 
+
     public void deleteProduct(String id) {
         Session session = sessionFactory.getCurrentSession();
         session.delete(getProductById(id));
         session.flush();
     }
-
 
 
     public void editProduct(Product product) {
@@ -69,7 +73,6 @@ public class ProductDaoImpl implements ProductDao {
         session.saveOrUpdate(product);
         session.flush();
     }
-
 
 
     public void setProductInactive(Product product) {

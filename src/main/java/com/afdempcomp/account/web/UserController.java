@@ -87,6 +87,7 @@ public class UserController {
 
     }
 
+
     @RequestMapping(value = "admin/setProductInactive/{id}", method = {RequestMethod.POST, RequestMethod.GET})
     public String setProductInactive(@PathVariable String id, Model model) {
 
@@ -139,7 +140,7 @@ public class UserController {
         if (bindingResult.hasErrors()) {
             return "registration";
         }
-        userService.save(userForm);
+        userService.saveAsMember(userForm);
         securityService.autologin(userForm.getUsername(), userForm.getPasswordConfirm());
 
         return "redirect:/welcome";

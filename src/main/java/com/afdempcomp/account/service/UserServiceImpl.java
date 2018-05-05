@@ -1,6 +1,9 @@
 package com.afdempcomp.account.service;
 
 
+import com.afdempcomp.account.dao.ProductDao;
+import com.afdempcomp.account.dao.impl.ProductDaoImpl;
+import com.afdempcomp.account.model.Role;
 import com.afdempcomp.account.model.User;
 import com.afdempcomp.account.repository.RoleRepository;
 import com.afdempcomp.account.repository.UserRepository;
@@ -12,6 +15,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.HashSet;
+
 
 @Service
 public class UserServiceImpl implements UserService {
@@ -26,16 +30,36 @@ public class UserServiceImpl implements UserService {
     private SessionFactory sessionFactory;
 
 
-    @Override
+   // @Override
     @Transactional
-    public void save(User user) {
+    public void saveAsMember(User user) {
         user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
-
+        
         user.setRoles(new HashSet<>(roleRepository.findAll()));
-        user.getRoles().remove(roleRepository.getOne(2L));
+        user.getRoles().remove(roleRepository.getOne(3L));
         user.getRoles().remove(roleRepository.getOne(1L));
 
+
+
         Session session = sessionFactory.getCurrentSession();
+
+        session.saveOrUpdate(user);
+        session.flush();
+    }
+
+    @Transactional
+    public void saveAsUser(User user) {
+        user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
+
+
+        user.setRoles(new HashSet<>(roleRepository.findAll()));
+        user.getRoles().remove(roleRepository.getOne(1L));
+        user.getRoles().remove(roleRepository.getOne(2L));
+
+
+
+        Session session = sessionFactory.getCurrentSession();
+
         session.saveOrUpdate(user);
         session.flush();
     }
