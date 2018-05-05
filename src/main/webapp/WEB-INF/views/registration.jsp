@@ -14,6 +14,13 @@
                 <p></p>
                 <hr>
                 <form:form method="POST" modelAttribute="userForm" class="form-signin">
+                    <select name="accountType" path="accountType">
+                        <option value="User">User</option>
+                        <option value="Member">Member</option>
+
+                    </select>
+
+
 
                     <spring:bind path="username">
                         <div style="color: whitesmoke;" class="form-group ${status.error ? 'has-error' : ''}">
