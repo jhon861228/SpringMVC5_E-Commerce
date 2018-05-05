@@ -100,9 +100,11 @@
                     <c:if test="${pageContext.request.userPrincipal.name != null}">
 
                         <li class="list-inline-item"><a href="<spring:url value="/profile" />"
-                                                        class="btn btn-primary btn-gradient" style="color:white;">Admin Panel</a>
+                                                        class="btn btn-primary btn-gradient" style="color:white;">Admin
+                            Panel</a>
 
-                            <a style="color:white;" class="btn btn-primary btn-gradient" onclick="document.forms['logoutForm'].submit()">Logout<i
+                            <a style="color:white;" class="btn btn-primary btn-gradient"
+                               onclick="document.forms['logoutForm'].submit()">Logout<i
                                     class="fa fa-window-close"></i></a>
 
                             <form id="logoutForm" method="POST" action="${contextPath}/logout">
@@ -165,8 +167,9 @@
         </div>
         <!-- Sidebar Navidation Menus--><span class="heading">Main</span>
         <ul class="list-unstyled">
-            <li ><a href="<c:url value="/admin/adminPanel" />"> <i class="icon-home"></i>Dashboard</a></li>
-            <li class="active"><a href="<c:url value="/admin/productInventory" />"> <i class="fa fa-cogs"></i>Product Inventory</a></li>
+            <li><a href="<c:url value="/admin/adminPanel" />"> <i class="icon-home"></i>Dashboard</a></li>
+            <li class="active"><a href="<c:url value="/admin/productInventory" />"> <i class="fa fa-cogs"></i>Product
+                Inventory</a></li>
 
 
     </nav>
@@ -188,7 +191,9 @@
                                     <strong>ADD PRODUCT</strong>
                                 </div>
                                 <a href="/addProduct" onMouseOver="this.style.color='#0F0'"
-                                   onMouseOut="this.style.color='#00F'"  ><div style="font-size:40px;" class="icon"><i class="fa fa-plus-square"></i></div></a>
+                                   onMouseOut="this.style.color='#00F'">
+                                    <div style="font-size:40px;" class="icon"><i class="fa fa-plus-square"></i></div>
+                                </a>
                             </div>
 
                         </div>
@@ -200,7 +205,9 @@
 
                                     <strong>DELETE PRODUCT</strong>
                                 </div>
-                               <a href="/admin/deleteProduct/"><div style="font-size:40px;" class="icon"><i class="fa fa-minus-square"></i></div></a>
+                                <a href="/admin/deleteProduct/">
+                                    <div style="font-size:40px;" class="icon"><i class="fa fa-minus-square"></i></div>
+                                </a>
                             </div>
 
                         </div>
@@ -212,7 +219,9 @@
 
                                     <strong class="">EDIT PRODUCT</strong>
                                 </div>
-                                <a href="/productlist"><div style="font-size:40px;" class="icon"><i class="fa fa-edit"></i></div></a>
+                                <a href="/productlist">
+                                    <div style="font-size:40px;" class="icon"><i class="fa fa-edit"></i></div>
+                                </a>
                             </div>
 
                         </div>
@@ -223,13 +232,13 @@
         </section>
 
 
-
         <section>
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="stats-with-chart-2 block">
-                            <div class="title"><strong class="d-block">LIVE PRODUCTS MANAGER</strong><span class="d-block">Set Or Unset Products As Live</span>
+                            <div class="title"><strong class="d-block">LIVE PRODUCTS MANAGER</strong><span
+                                    class="d-block">Set Or Unset Products As Live</span>
                             </div>
 
                         </div>
@@ -250,31 +259,38 @@
                                                                 class="img-fluid">
                                                             <div class="price">${product.productStatus} </div>
                                                         </div>
-                                                        <%--<div class="info">--%>
+                                                            <%--<div class="info">--%>
                                                             <%--<div class="badge badge-primary">${product.productStatus}</div>--%>
                                                             <%--<a href="<spring:url value="/viewProduct/${product.productId}" />"--%>
-                                                               <%--class="no-anchor-style">--%>
-                                                                <%--<h2 class="h3 text-thin">${product.productName}</h2></a>--%>
+                                                            <%--class="no-anchor-style">--%>
+                                                            <%--<h2 class="h3 text-thin">${product.productName}</h2></a>--%>
                                                             <%--<p class="address">${product.productDescription}</p>--%>
-                                                        <%--</div>--%>
+                                                            <%--</div>--%>
                                                         <div class=" align-items-center justify-content-between">
                                                             <div class="left">Product Name: <span class="area"></span>
                                                                 <b>${product.productName}</b></div>
                                                             <div class="right">
                                                                 <div class="form-group">
 
-                                                                            <c:set var="myVar" value="Live"/>
+                                                                    <c:set var="myVar" value="Live"/>
 
-                                                                               <c:if test="${product.productStatus == myVar}">
+                                                                    <c:if test="${product.productStatus == myVar}">
 
-                                                                                   <a href="<spring:url value="/admin/setProductInactive/${product.productId}" />"><button style="background-color: darkred; color:white;" class="btn  col-md-12">Set Inactive</button></a>
-                                                                            </c:if>
+                                                                        <a href="<spring:url value="/admin/setProductInactive/${product.productId}" />">
+                                                                            <button style="background-color: darkred; color:white;"
+                                                                                    class="btn  col-md-12">Set Inactive
+                                                                            </button>
+                                                                        </a>
+                                                                    </c:if>
                                                                     <c:if test="${product.productStatus != myVar}">
 
-                                                                       <a href="<spring:url value="/admin/setProductLive/${product.productId}" />"><button style="background-color: #4cae4c; color:white;" class="btn  col-md-12">Set Live</button></a>
+                                                                        <a href="<spring:url value="/admin/setProductLive/${product.productId}" />">
+                                                                            <button style="background-color: #4cae4c; color:white;"
+                                                                                    class="btn  col-md-12">Set Live
+                                                                            </button>
+                                                                        </a>
 
                                                                     </c:if>
-
 
 
                                                                 </div>
@@ -293,19 +309,25 @@
                                 <div class="property-listing-footer">
                                     <div class="d-flex justify-content-between align-items-center">
                                         <div class="left mt-5">
-                                            <p class="mb-0">Showing <span class="text-primary">1 </span> of <span class="text-primary">6 </span>
+                                            <p class="mb-0">Showing <span class="text-primary">1 </span> of <span
+                                                    class="text-primary">6 </span>
                                             </p>
                                         </div>
                                         <div class="right mt-5">
                                             <nav aria-label="Page navigation example">
                                                 <ul class="pagination m-0">
-                                                    <li class="page-item"><a href="#" aria-label="Previous" class="page-link"><span
-                                                            aria-hidden="true">«</span><span class="sr-only">Previous</span></a></li>
-                                                    <li class="page-item"><a href="#" class="page-link active">1</a></li>
+                                                    <li class="page-item"><a href="#" aria-label="Previous"
+                                                                             class="page-link"><span
+                                                            aria-hidden="true">«</span><span
+                                                            class="sr-only">Previous</span></a></li>
+                                                    <li class="page-item"><a href="#" class="page-link active">1</a>
+                                                    </li>
                                                     <li class="page-item"><a href="#" class="page-link">2</a></li>
                                                     <li class="page-item"><a href="#" class="page-link">3</a></li>
-                                                    <li class="page-item"><a href="#" aria-label="Next" class="page-link"><span
-                                                            aria-hidden="true">»</span><span class="sr-only">Next</span></a></li>
+                                                    <li class="page-item"><a href="#" aria-label="Next"
+                                                                             class="page-link"><span
+                                                            aria-hidden="true">»</span><span class="sr-only">Next</span></a>
+                                                    </li>
                                                 </ul>
                                             </nav>
                                         </div>
@@ -319,9 +341,9 @@
 
 
     </div>
-            </div>
-        </section>
-    </div>
+</div>
+</section>
+</div>
 </div>
 </body>
 

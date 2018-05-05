@@ -1,6 +1,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
-<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags"%>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
 <!DOCTYPE html>
@@ -113,20 +113,20 @@
                     </c:if>
                     <c:if test="${pageContext.request.userPrincipal.name != null}">
                         <sec:authorize access="hasRole('ROLE_USER') or hasRole('ROLE_MEMBER')">
-                        <li class="list-inline-item"><a href="<spring:url value="/profile" />"
-                                                        class="btn btn-primary btn-gradient">${pageContext.request.userPrincipal.name}
-                            PROFILE </a>
-                            <a href="<spring:url value="/loginpage" />" class="btn btn-primary btn-gradient">Cart <i
-                                    class="fa fa-cart-arrow-down"></i></a>
-                            <a class="btn btn-primary btn-gradient" onclick="document.forms['logoutForm'].submit()">Logout<i
-                                    class="fa fa-window-close"></i></a>
+                            <li class="list-inline-item"><a href="<spring:url value="/profile" />"
+                                                            class="btn btn-primary btn-gradient">${pageContext.request.userPrincipal.name}
+                                PROFILE </a>
+                                <a href="<spring:url value="/loginpage" />" class="btn btn-primary btn-gradient">Cart <i
+                                        class="fa fa-cart-arrow-down"></i></a>
+                                <a class="btn btn-primary btn-gradient" onclick="document.forms['logoutForm'].submit()">Logout<i
+                                        class="fa fa-window-close"></i></a>
 
-                            <form id="logoutForm" method="POST" action="${contextPath}/logout">
-                                <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
-                            </form>
+                                <form id="logoutForm" method="POST" action="${contextPath}/logout">
+                                    <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+                                </form>
 
 
-                        </li>
+                            </li>
                         </sec:authorize>
                         <sec:authorize access="hasRole('ROLE_ADMINISTRATOR')">
                             <li class="list-inline-item"><a href="<spring:url value="/profile" />"

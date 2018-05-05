@@ -100,9 +100,11 @@
                     <c:if test="${pageContext.request.userPrincipal.name != null}">
 
                         <li class="list-inline-item"><a href="<spring:url value="/profile" />"
-                                                        class="btn btn-primary btn-gradient" style="color:white;">Admin Panel</a>
+                                                        class="btn btn-primary btn-gradient" style="color:white;">Admin
+                            Panel</a>
 
-                            <a style="color:white;" class="btn btn-primary btn-gradient" onclick="document.forms['logoutForm'].submit()">Logout<i
+                            <a style="color:white;" class="btn btn-primary btn-gradient"
+                               onclick="document.forms['logoutForm'].submit()">Logout<i
                                     class="fa fa-window-close"></i></a>
 
                             <form id="logoutForm" method="POST" action="${contextPath}/logout">
@@ -165,8 +167,10 @@
         </div>
         <!-- Sidebar Navidation Menus--><span class="heading">Main</span>
         <ul class="list-unstyled">
-            <li class="active"><a href="<c:url value="/admin/adminPanel" />"> <i class="icon-home"></i>Dashboard</a></li>
-            <li><a href="<c:url value="/admin/productInventory" />"> <i class="fa fa-cogs"></i>Product Inventory</a></li>
+            <li class="active"><a href="<c:url value="/admin/adminPanel" />"> <i class="icon-home"></i>Dashboard</a>
+            </li>
+            <li><a href="<c:url value="/admin/productInventory" />"> <i class="fa fa-cogs"></i>Product Inventory</a>
+            </li>
 
 
     </nav>

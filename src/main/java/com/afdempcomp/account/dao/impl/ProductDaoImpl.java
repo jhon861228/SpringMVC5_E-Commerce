@@ -3,7 +3,6 @@ package com.afdempcomp.account.dao.impl;
 
 import com.afdempcomp.account.dao.ProductDao;
 import com.afdempcomp.account.model.Product;
-import com.afdempcomp.account.model.User;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -43,7 +42,6 @@ public class ProductDaoImpl implements ProductDao {
         session.flush();
         return products;
     }
-
 
 
     public List<Product> getActiveProducts() {

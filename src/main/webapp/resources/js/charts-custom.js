@@ -349,7 +349,7 @@ $(document).ready(function () {
                     lineTension: 0.3,
                     backgroundColor: "transparent",
                     borderColor: '#4f8ef9',
-                    pointBorderColor:  '#4f8ef9',
+                    pointBorderColor: '#4f8ef9',
                     pointHoverBackgroundColor: '#4f8ef9',
                     borderCapStyle: 'butt',
                     borderDash: [],

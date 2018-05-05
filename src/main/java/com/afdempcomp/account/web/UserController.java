@@ -134,24 +134,25 @@ public class UserController {
     }
 
     @RequestMapping(value = "/registration", method = RequestMethod.POST)
-    public String registration(@ModelAttribute("userForm") User userForm, BindingResult bindingResult, Model model,@RequestParam("accountType") String accountType) {
+    public String registration(@ModelAttribute("userForm") User userForm, BindingResult bindingResult, Model model, @RequestParam("accountType") String accountType) {
         userValidator.validate(userForm, bindingResult);
 
         if (bindingResult.hasErrors()) {
             return "registration";
         }
-        System.out.println("TEST DEBUGGGGG " +accountType);
-        if(accountType.equals("Member")){
-        userService.saveAsMember(userForm);}
 
-        if (accountType.equals("User")){
+        if (accountType.equals("Member")) {
+            userService.saveAsMember(userForm);
+        }
+
+        if (accountType.equals("User")) {
 
             userService.saveAsUser(userForm);
         }
 
         securityService.autologin(userForm.getUsername(), userForm.getPasswordConfirm());
 
-        return "redirect:/welcome";
+        return "/";
     }
 
     @RequestMapping(value = "/login", method = RequestMethod.GET)

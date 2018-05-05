@@ -84,7 +84,6 @@ public class Product {
     }
 
 
-
     public String getProductStatus() {
         return productStatus;
     }
