@@ -181,7 +181,7 @@
         <section class="no-padding-top no-padding-bottom">
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-md-4 col-sm-6">
+                    <div class="col-md-12 col-sm-12">
                         <div class="statistic-block block">
                             <div class="progress-details d-flex align-items-end justify-content-between">
                                 <div class="title has-line">
@@ -191,34 +191,6 @@
                                 <a href="/addProduct" onMouseOver="this.style.color='#0F0'"
                                    onMouseOut="this.style.color='#00F'">
                                     <div style="font-size:40px;" class="icon"><i class="fa fa-plus-square"></i></div>
-                                </a>
-                            </div>
-
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-sm-6">
-                        <div class="statistic-block block">
-                            <div class="progress-details d-flex align-items-end justify-content-between">
-                                <div class="title has-line">
-
-                                    <strong>DELETE PRODUCT</strong>
-                                </div>
-                                <a href="/deleteProduct/${product.productId}">
-                                    <div style="font-size:40px;" class="icon"><i class="fa fa-minus-square"></i></div>
-                                </a>
-                            </div>
-
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-sm-6">
-                        <div class="statistic-block block">
-                            <div class="progress-details d-flex align-items-end justify-content-between">
-                                <div class="title has-line">
-
-                                    <strong class="">EDIT PRODUCT</strong>
-                                </div>
-                                <a href="/productlist">
-                                    <div style="font-size:40px;" class="icon"><i class="fa fa-edit"></i></div>
                                 </a>
                             </div>
 

@@ -288,10 +288,9 @@ public class UserController {
             e.printStackTrace();
         }
 
-        if (bytes != null){
             product.setPic(bytes);
+            
 
-        }
 
         if (request.isUserInRole("ROLE_ADMINISTRATOR")  ) {
             this.productDao.editProduct(product);
