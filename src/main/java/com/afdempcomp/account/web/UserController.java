@@ -2,12 +2,16 @@ package com.afdempcomp.account.web;
 
 
 import com.afdempcomp.account.dao.ProductDao;
+import com.afdempcomp.account.model.CartItem;
 import com.afdempcomp.account.model.Product;
 import com.afdempcomp.account.model.User;
 import com.afdempcomp.account.service.SecurityService;
 import com.afdempcomp.account.service.UserService;
 import com.afdempcomp.account.validator.UserValidator;
 import org.apache.commons.io.IOUtils;
+import org.hibernate.Session;
+import org.hibernate.SessionBuilder;
+import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -16,6 +20,7 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -25,6 +30,7 @@ import javax.validation.Valid;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -278,6 +284,33 @@ public class UserController {
         return "redirect:/productList";
     }
 
+
+    @RequestMapping("/addcart/{id}")
+    public ModelAndView goCart(@PathVariable("id")String id,HttpServletRequest request, HttpSession session) {
+
+        if (session.getAttribute("cart") == null){
+            List<Product> cart = new ArrayList<>();
+            cart.add(productDao.getProductById(id));
+            session.setAttribute("cart",cart);
+            System.out.println(cart.size());
+            ModelAndView model = new ModelAndView();
+            model.setViewName("cart");
+            return model;
+        }
+        else {
+            List <Product> cart = (List<Product>) session.getAttribute("cart");
+            cart.add(productDao.getProductById(id));
+            session.setAttribute("cart",cart);
+            System.out.println(cart.size());
+            ModelAndView model = new ModelAndView();
+            model.setViewName("cart");
+            return model;
+        }
+
+
+
+    }
+
     @RequestMapping(value = "/editProduct", method = RequestMethod.POST)
     public String editProduct(@ModelAttribute("product") Product product,  Model model,HttpServletRequest request,@RequestParam("fileUpload") MultipartFile file) throws IOException  {
         byte[] bytes = null;
@@ -289,7 +322,7 @@ public class UserController {
         }
 
             product.setPic(bytes);
-            
+
 
 
         if (request.isUserInRole("ROLE_ADMINISTRATOR")  ) {

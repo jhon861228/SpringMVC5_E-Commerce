@@ -12,9 +12,10 @@
 
                 <p></p>
                 <hr>
-                <form:form action="${pageContext.request.contextPath}/editProduct" method="POST" modelAttribute="product" class="form-signin" enctype="multipart/form-data">
+                <form:form action="${pageContext.request.contextPath}/editProduct" method="POST"
+                           modelAttribute="product" class="form-signin" enctype="multipart/form-data">
                     <form:hidden path="productId" value="${product.productId}"/>
-                    <%--<form:form action="/addProduct${_csrf.parameterName}=${_csrf.token}" method="POST " modelAttribute="product" class="form-signin" enctype="multipart/form-data"><form:form action="/addProduct${_csrf.parameterName}=${_csrf.token}" method="POST " modelAttribute="product" class="form-signin" enctype="multipart/form-data">--%>
+
                     <spring:bind path="productName">
                         <div style="color: whitesmoke;" class="form-group ${status.error ? 'has-error' : ''}">
                             <form:input type="text" path="productName" class="form-control"
@@ -24,7 +25,8 @@
                     </spring:bind>
                     <spring:bind path="productCategory">
                         <div style="color: whitesmoke;" class="form-group ${status.error ? 'has-error' : ''}">
-                            <form:input type="text" path="productCategory" class="form-control" value="${product.productCategory}"
+                            <form:input type="text" path="productCategory" class="form-control"
+                                        value="${product.productCategory}"
                                         autofocus="true"></form:input>
                             <form:errors path="productCategory"></form:errors>
                         </div>
@@ -39,7 +41,8 @@
                     </spring:bind>
                     <spring:bind path="productPrice">
                         <div style="color: whitesmoke;" class="form-group ${status.error ? 'has-error' : ''}">
-                            <form:input type="number" path="productPrice" class="form-control" value="${product.productPrice}"
+                            <form:input type="number" path="productPrice" class="form-control"
+                                        value="${product.productPrice}"
                                         autofocus="true"></form:input>
                             <form:errors path="productPrice"></form:errors>
                         </div>
