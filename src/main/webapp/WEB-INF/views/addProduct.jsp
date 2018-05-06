@@ -23,7 +23,7 @@
                     </spring:bind>
                     <spring:bind path="productCategory">
                         <div style="color: whitesmoke;" class="form-group ${status.error ? 'has-error' : ''}">
-                            <form:input type="text" path="productName" class="form-control" placeholder="Category"
+                            <form:input type="text" path="productCategory" class="form-control" placeholder="Category"
                                         autofocus="true"></form:input>
                             <form:errors path="productCategory"></form:errors>
                         </div>

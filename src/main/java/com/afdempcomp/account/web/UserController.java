@@ -72,6 +72,17 @@ public class UserController {
 
     }
 
+    @RequestMapping("/editProduct/{id}")
+    public String editProduct(@PathVariable String id, Model model) {
+        Product product = productDao.getProductById(id);
+        model.addAttribute(product);
+
+        return "editProduct";
+    }
+
+
+
+
 
     @RequestMapping(value = "admin/setProductLive/{id}", method = {RequestMethod.POST, RequestMethod.GET})
     public String setProductLive(@PathVariable String id, Model model) {
@@ -266,6 +277,42 @@ public class UserController {
 
         return "redirect:/productList";
     }
+
+    @RequestMapping(value = "/editProduct", method = RequestMethod.POST)
+    public String editProduct(@ModelAttribute("product") Product product,  Model model,HttpServletRequest request,@RequestParam("fileUpload") MultipartFile file) throws IOException  {
+        byte[] bytes = null;
+        try {
+            bytes = file.getBytes();
+        } catch (IOException e) {
+
+            e.printStackTrace();
+        }
+
+        if (bytes != null){
+            product.setPic(bytes);
+
+        }
+
+        if (request.isUserInRole("ROLE_ADMINISTRATOR")  ) {
+            this.productDao.editProduct(product);
+            return "redirect:/admin/productInventory";
+        }
+
+        if ( request.isUserInRole("ROLE_ADMINISTRATOR")) {
+            productDao.editProduct(product);
+            return "/profile";
+        }
+
+        else {
+
+            return  "/403";
+        }
+
+
+
+
+    }
+
 
     @Controller
     public class HTTPErrorHandler {

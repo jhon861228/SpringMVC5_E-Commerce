@@ -1,79 +1,74 @@
-<%@taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@include file="/WEB-INF/views/template/header.jsp" %>
 
+<section style="padding:4.5rem 0;" class="customer-login bg-black-2">
+    <div class="container" style="padding:3rem ,0;">
+        <div class="row">
+            <div class="col-md-12">
+                <h2 class="has-line">Submit a Product For Sale.</h2>
+                <h4 class="text-thin">Submit your by filling the form below.</h4>
 
-<div class="container-wrapper">
-    <div class="container">
-        <div class="page-header">
-            <h1>Edit Product</h1>
+                <p></p>
+                <hr>
+                <form:form action="${pageContext.request.contextPath}/editProduct" method="POST" modelAttribute="product" class="form-signin" enctype="multipart/form-data">
+                    <form:hidden path="productId" value="${product.productId}"/>
+                    <%--<form:form action="/addProduct${_csrf.parameterName}=${_csrf.token}" method="POST " modelAttribute="product" class="form-signin" enctype="multipart/form-data"><form:form action="/addProduct${_csrf.parameterName}=${_csrf.token}" method="POST " modelAttribute="product" class="form-signin" enctype="multipart/form-data">--%>
+                    <spring:bind path="productName">
+                        <div style="color: whitesmoke;" class="form-group ${status.error ? 'has-error' : ''}">
+                            <form:input type="text" path="productName" class="form-control"
+                                        value="${product.productName}" autofocus="true"></form:input>
+                            <form:errors path="productName"></form:errors>
+                        </div>
+                    </spring:bind>
+                    <spring:bind path="productCategory">
+                        <div style="color: whitesmoke;" class="form-group ${status.error ? 'has-error' : ''}">
+                            <form:input type="text" path="productName" class="form-control" value="${product.productCategory}"
+                                        autofocus="true"></form:input>
+                            <form:errors path="productCategory"></form:errors>
+                        </div>
+                    </spring:bind>
+                    <spring:bind path="productDescription">
+                        <div style="color: whitesmoke;" class="form-group ${status.error ? 'has-error' : ''}">
+                            <form:input type="text" path="productDescription" class="form-control"
+                                        value="${product.productDescription}"
+                                        autofocus="true"></form:input>
+                            <form:errors path="productDescription"></form:errors>
+                        </div>
+                    </spring:bind>
+                    <spring:bind path="productPrice">
+                        <div style="color: whitesmoke;" class="form-group ${status.error ? 'has-error' : ''}">
+                            <form:input type="number" path="productPrice" class="form-control" value="${product.productPrice}"
+                                        autofocus="true"></form:input>
+                            <form:errors path="productPrice"></form:errors>
+                        </div>
+                    </spring:bind>
 
-            <p class="lead">Please update the product information here:</p>
+                    <spring:bind path="unitInStock">
+                        <div style="color: whitesmoke;" class="form-group ${status.error ? 'has-error' : ''}">
+                            <form:input type="number" path="unitInStock" class="form-control"
+                                        value="${product.unitInStock}"
+                                        autofocus="true"></form:input>
+                            <form:errors path="unitInStock"></form:errors>
+                        </div>
+                    </spring:bind>
+
+
+                    <td><p>Product Image:</p></td>
+                    <td><input class="col-md-12 btn btn-primary btn-gradient" type="file" name="fileUpload" size="90"/>
+                    </td>
+                    <br><br><br>
+
+
+                    <button class="col-md-12 btn btn-primary btn-gradient" type="submit">Submit</button>
+                </form:form>
+            </div>
+
         </div>
-
-        <form:form action="${pageContext.request.contextPath}/editProduct" method="post"
-                   modelAttribute="product" enctype="multipart/form-data">
-            <form:hidden path="productId" value="${product.productId}"/>
-
-        <div class="form-group">
-            <label for="name">Name</label>
-            <form:input path="productName" id="name" class="form-Control" value="${product.productName}"/>
-        </div>
-
-        <div class="form-group">
-            <label for="category">Category</label>
-            <label class="checkbox-inline"><form:radiobutton path="productCategory" id="category"
-                                                             value="instrument"/>Instrument</label>
-            <label class="checkbox-inline"><form:radiobutton path="productCategory" id="category"
-                                                             value="record"/>Record</label>
-            <label class="checkbox-inline"><form:radiobutton path="productCategory" id="category"
-                                                             value="accessory"/>Accessory</label>
-        </div>
-
-        <div class="form-group">
-            <label for="description">Description</label>
-            <form:textarea path="productDescription" id="description" class="form-Control"
-                           value="${product.productDescription}"/>
-        </div>
-
-        <div class="form-group">
-            <label for="price">Price</label>
-            <form:input path="productPrice" id="price" class="form-Control" value="${product.productPrice}"/>
-        </div>
-
-        <div class="form-group">
-            <label for="condition">Condition</label>
-            <label class="checkbox-inline"><form:radiobutton path="productCondition" id="condition"
-                                                             value="new"/>New</label>
-            <label class="checkbox-inline"><form:radiobutton path="productCondition" id="condition"
-                                                             value="used"/>Used</label>
-        </div>
-
-        <div class="form-group">
-            <label for="status">Status</label>
-            <label class="checkbox-inline"><form:radiobutton path="productStatus" id="status"
-                                                             value="active"/>Active</label>
-            <label class="checkbox-inline"><form:radiobutton path="productStatus" id="status"
-                                                             value="inactive"/>Inactive</label>
-        </div>
-
-        <div class="form-group">
-            <label for="unitInStock">Unit In Stock</label>
-            <form:input path="unitInStock" id="unitInStock" class="form-Control" value="${product.unitInStock}"/>
-        </div>
-
-        <div class="form-group">
-            <label for="manufacturer">Manufacturer</label>
-            <form:input path="productManufacturer" id="manufacturer" class="form-Control"
-                        value="${product.productManufacturer}"/>
-        </div>
-
-        File2 to upload: <input type="file" name="file">
-
-        <br><br>
-        <input type="submit" value="submit" class="btn btn-default">
-        <a href="<c:url value="/productList" />" class="btn btn-default">Cancel</a>
-        </form:form>
+    </div>
+</section>
+<%@include file="/WEB-INF/views/template/footer.jsp" %>
 
 
-        <%@include file="/WEB-INF/views/template/footer.jsp" %>
+<%@include file="/WEB-INF/views/template/footer.jsp" %>

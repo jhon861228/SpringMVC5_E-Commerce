@@ -256,7 +256,7 @@
                                                                 alt=" The Chalet Estate"
                                                                 class="img-fluid">
                                                             <div style="background-color: #9f3741;" class="price"><a href="<spring:url value="/deleteProduct/${product.productId}" />"><b style="color:white; ">DELETE</b></a></div>
-                                                            <div style="background-color: #1b6d85; bottom:50px;" class="price"><a href="<spring:url value="/deleteProduct/${product.productId}" />"><b style="color:white; ">EDIT</b></a></div>
+                                                            <div style="background-color: #1b6d85; bottom:50px;" class="price"><a href="<spring:url value="/editProduct/${product.productId}" />"><b style="color:white; ">EDIT</b></a></div>
 
                                                         </div>
 
