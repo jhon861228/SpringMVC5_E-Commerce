@@ -2,6 +2,7 @@ package com.afdempcomp.account.web;
 
 
 import com.afdempcomp.account.dao.ProductDao;
+import com.afdempcomp.account.model.Cart;
 import com.afdempcomp.account.model.CartItem;
 import com.afdempcomp.account.model.Product;
 import com.afdempcomp.account.model.User;
@@ -9,10 +10,8 @@ import com.afdempcomp.account.service.SecurityService;
 import com.afdempcomp.account.service.UserService;
 import com.afdempcomp.account.validator.UserValidator;
 import org.apache.commons.io.IOUtils;
-import org.hibernate.Session;
-import org.hibernate.SessionBuilder;
-import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Scope;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
@@ -30,7 +29,6 @@ import javax.validation.Valid;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.ArrayList;
 import java.util.List;
 
 
@@ -85,9 +83,6 @@ public class UserController {
 
         return "editProduct";
     }
-
-
-
 
 
     @RequestMapping(value = "admin/setProductLive/{id}", method = {RequestMethod.POST, RequestMethod.GET})
@@ -233,23 +228,19 @@ public class UserController {
     public String deleteProduct(@PathVariable String id, HttpServletRequest request) {
 
 
-
-        if (request.isUserInRole("ROLE_ADMINISTRATOR")  ) {
+        if (request.isUserInRole("ROLE_ADMINISTRATOR")) {
 
             this.productDao.deleteProduct(id);
             return "redirect:/admin/productInventory";
         }
 
-        if ( request.isUserInRole("ROLE_ADMINISTRATOR")) {
+        if (request.isUserInRole("ROLE_ADMINISTRATOR")) {
             this.productDao.deleteProduct(id);
-        return "/profile";
+            return "/profile";
+        } else {
+
+            return "/403";
         }
-
-        else {
-
-            return  "/403";
-        }
-
 
 
     }
@@ -285,34 +276,92 @@ public class UserController {
     }
 
 
-    @RequestMapping("/addcart/{id}")
-    public ModelAndView goCart(@PathVariable("id")String id,HttpServletRequest request, HttpSession session) {
+    @Scope("session")
+    @RequestMapping(value = "/addcart/{id}", method = RequestMethod.GET)
+    public ModelAndView goCart(@PathVariable("id") String id, HttpServletRequest request, HttpSession session) {
 
-        if (session.getAttribute("cart") == null){
-            List<Product> cart = new ArrayList<>();
-            cart.add(productDao.getProductById(id));
-            session.setAttribute("cart",cart);
-            System.out.println(cart.size());
+        if (session.getAttribute("cart") == null) {
+            Cart cart = new Cart();
+            CartItem item = new CartItem();
+            item.setProduct(productDao.getProductById(id));
+            item.setItemQuantity(1);
+            cart.getCart().add(item);
+            System.out.println("added one");
+            cart.setTotalPrice((float) (cart.getTotalPrice()+item.getProduct().getProductPrice()));
+            session.setAttribute("cart", cart);
+            ModelAndView model = new ModelAndView();
+            model.setViewName("cart");
+
+
+            System.out.println("MEGETHOS CART" + cart.getCart().size());
+            System.out.println("SYNOLO EURO CART " + cart.getTotalPrice());
+
+            return model;
+
+        } else {
+            boolean found=false;
+            Cart cart = (Cart) session.getAttribute("cart");
+            CartItem item = new CartItem();
+            item.setProduct(productDao.getProductById(id));
+            int cartSize = cart.getCart().size();
+            for (int i = 0; i < cartSize; i++) {
+
+
+
+
+                    if (productDao.getProductById(id).getProductId().equals(cart.getCart().get(i).getProduct().getProductId()) && !false) {
+
+                        System.out.println("UPARXEI HDH");
+                        int newQuan = cart.getCart().get(i).getItemQuantity() + 1;
+                        item.setItemQuantity(newQuan);
+                        cart.getCart().set(i, item);
+                        cart.setTotalPrice((float) (cart.getTotalPrice()+item.getProduct().getProductPrice()));
+                        System.out.println("added two");
+                        session.setAttribute("cart", cart);
+                        found = true;
+
+
+                    }
+                }
+                if (!found){
+
+                    System.out.printf("DEN UPARXEI HDH");
+                    item.setProduct(productDao.getProductById(id));
+                    item.setItemQuantity(1);
+                    cart.getCart().add(item);
+                    cart.setTotalPrice((float) (cart.getTotalPrice()+item.getProduct().getProductPrice()));
+                    System.out.printf("added three");
+
+                }
+
+
+            System.out.println("SYNOLIKA LEFTA:" + cart.getTotalPrice());
+            System.out.println("megethos" + cart.getCart().size());
+
             ModelAndView model = new ModelAndView();
             model.setViewName("cart");
             return model;
         }
-        else {
-            List <Product> cart = (List<Product>) session.getAttribute("cart");
-            cart.add(productDao.getProductById(id));
-            session.setAttribute("cart",cart);
-            System.out.println(cart.size());
-            ModelAndView model = new ModelAndView();
-            model.setViewName("cart");
-            return model;
-        }
-
-
 
     }
 
+
+//    @RequestMapping("/deletecartitem/{id}")
+//    public ModelAndView deleteCartItem(@PathVariable("id")String id,HttpServletRequest request, HttpSession session) {
+//
+//        List <Product> cart = (List<Product>) session.getAttribute("cart");
+//            cart.
+//            cart.remove(productDao.getProductById(id));
+//            session.setAttribute("cart",cart);
+//            ModelAndView model = new ModelAndView();
+//            model.setViewName("cart");
+//            return model;
+//
+//    }
+
+
     @RequestMapping(value = "/editProduct", method = RequestMethod.POST)
-    public String editProduct(@ModelAttribute("product") Product product,  Model model,HttpServletRequest request,@RequestParam("fileUpload") MultipartFile file) throws IOException  {
+    public String editProduct(@ModelAttribute("product") Product product, Model model, HttpServletRequest request, @RequestParam("fileUpload") MultipartFile file) throws IOException {
         byte[] bytes = null;
         try {
             bytes = file.getBytes();
@@ -321,26 +370,21 @@ public class UserController {
             e.printStackTrace();
         }
 
-            product.setPic(bytes);
+        product.setPic(bytes);
 
 
-
-        if (request.isUserInRole("ROLE_ADMINISTRATOR")  ) {
+        if (request.isUserInRole("ROLE_ADMINISTRATOR")) {
             this.productDao.editProduct(product);
             return "redirect:/admin/productInventory";
         }
 
-        if ( request.isUserInRole("ROLE_ADMINISTRATOR")) {
+        if (request.isUserInRole("ROLE_ADMINISTRATOR")) {
             productDao.editProduct(product);
             return "/profile";
+        } else {
+
+            return "/403";
         }
-
-        else {
-
-            return  "/403";
-        }
-
-
 
 
     }

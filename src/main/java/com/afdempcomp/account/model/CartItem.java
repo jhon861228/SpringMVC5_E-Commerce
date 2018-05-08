@@ -1,36 +1,32 @@
 package com.afdempcomp.account.model;
 
-import java.util.List;
 
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
+
+@Component
+@Scope("session")
 public class CartItem {
 
-    private List<Product> product;
 
-    private int quantity;
+    private Product product;
+    private int itemQuantity;
 
+    public Product getProduct() {
 
-    public List<Product> getProduct() {
         return product;
     }
-    public void setProduct(List<Product> product) {
+
+    public void setProduct(Product product) {
+
         this.product = product;
     }
-    public int getQuantity() {
-        return quantity;
-    }
-    public void setQuantity(int quantity) {
-        this.quantity = quantity;
+
+    public int getItemQuantity() {
+        return itemQuantity;
     }
 
-    public CartItem(Product product) {
-
-//        this.product = product;
-//        this.quantity = quantity;
+    public void setItemQuantity(int itemQuantity) {
+        this.itemQuantity = itemQuantity;
     }
-
-    public CartItem() {
-        super();
-    }
-
-
 }

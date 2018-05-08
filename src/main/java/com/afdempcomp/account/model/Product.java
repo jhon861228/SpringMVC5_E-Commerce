@@ -25,6 +25,8 @@ public class Product {
     @Min(value = 0, message = "The Product must have a Valid Price")
     private double productPrice;
 
+
+
     private String productStatus;
     @Min(value = 0, message = "The Product Units Must Be More than 0")
     private int unitInStock;
