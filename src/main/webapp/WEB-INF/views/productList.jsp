@@ -39,7 +39,9 @@
                                         <b>${product.unitInStock}</b></div>
                                     <div class="right">
                                         <div class="form-group">
-                                            <a href="/addcart/${product.productId}"> <button class="btn btn-gradient col-md-12">Add To Cart</button></a>
+                                            <a href="/addcart/${product.productId}">
+                                                <button class="btn btn-gradient col-md-12">Add To Cart</button>
+                                            </a>
                                         </div>
                                     </div>
                                 </div>

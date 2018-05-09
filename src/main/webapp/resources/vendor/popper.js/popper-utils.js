@@ -532,19 +532,15 @@ function computeAutoPlacement(placement, refRect, popper, reference, boundariesE
         key
     }, rects[key], {
         area: getArea(rects[key])
-    })
+    });
 ).
-    sort((a, b) = > b.area - a.area
+    sort((a, b) = > b.area - a.area;
 )
-    ;
-
     const filteredAreas = sortedAreas.filter(({
         width,
         height
-    }) = > width >= popper.clientWidth && height >= popper.clientHeight
+    }) = > width >= popper.clientWidth && height >= popper.clientHeight;
 )
-    ;
-
     const computedPlacement = filteredAreas.length > 0 ? filteredAreas[0].key : sortedAreas[0].key;
 
     const variation = placement.split('-')[1];
@@ -564,7 +560,7 @@ for (let i = 0; i < longerTimeoutBrowsers.length; i += 1) {
 
 function microtaskDebounce(fn) {
     let called = false;
-    return () =
+    return () =;
 >
     {
         if (called) {
@@ -575,14 +571,12 @@ function microtaskDebounce(fn) {
             called = false;
         fn();
     })
-        ;
     }
-    ;
 }
 
 function taskDebounce(fn) {
     let scheduled = false;
-    return () =
+    return () =;
 >
     {
         if (!scheduled) {
@@ -591,12 +585,10 @@ function taskDebounce(fn) {
                 scheduled = false;
             fn();
         },
-            timeoutDuration
+            timeoutDuration;
         )
-            ;
         }
     }
-    ;
 }
 
 const supportsMicroTasks = isBrowser && window.Promise;
@@ -643,15 +635,13 @@ function find(arr, check) {
 function findIndex(arr, prop, value) {
     // use native findIndex if supported
     if (Array.prototype.findIndex) {
-        return arr.findIndex(cur = > cur[prop] === value
+        return arr.findIndex(cur = > cur[prop] === value;
     )
-        ;
     }
 
     // use `find` + `indexOf` if `findIndex` isn't supported
-    const match = find(arr, obj = > obj[prop] === value
+    const match = find(arr, obj = > obj[prop] === value;
 )
-    ;
     return arr.indexOf(match);
 }
 
@@ -712,9 +702,8 @@ function getOuterSizes(element) {
  */
 function getOppositePlacement(placement) {
     const hash = {left: 'right', right: 'left', bottom: 'top', top: 'bottom'};
-    return placement.replace(/left|right|bottom|top/g, matched = > hash[matched]
+    return placement.replace(/left|right|bottom|top/g, matched = > hash[matched];
 )
-    ;
 }
 
 /**
@@ -810,9 +799,8 @@ function isFunction(functionToCheck) {
  * @returns {Boolean}
  */
 function isModifierEnabled(modifiers, modifierName) {
-    return modifiers.some(({name, enabled}) = > enabled && name === modifierName
+    return modifiers.some(({name, enabled}) = > enabled && name === modifierName;
 )
-    ;
 }
 
 /**
@@ -826,15 +814,11 @@ function isModifierEnabled(modifiers, modifierName) {
  * @returns {Boolean}
  */
 function isModifierRequired(modifiers, requestingName, requestedName) {
-    const requesting = find(modifiers, ({name}) = > name === requestingName
+    const requesting = find(modifiers, ({name}) = > name === requestingName;
 )
-    ;
-
     const isRequired = !!requesting && modifiers.some(modifier = > {
         return modifier.name === requestedName && modifier.enabled && modifier.order < requesting.order;
 })
-    ;
-
     if (!isRequired) {
         const requesting = `\`${requestingName}\``;
         const requested = `\`${requestedName}\``;
@@ -878,7 +862,7 @@ function removeEventListeners(reference, state) {
     state.scrollParents.forEach(target = > {
         target.removeEventListener('scroll', state.updateBound);
 })
-    ;
+
 
     // Reset state
     state.updateBound = null;
@@ -902,7 +886,7 @@ function runModifiers(modifiers, data, ends) {
     const modifiersToRun = ends === undefined ? modifiers : modifiers.slice(0, findIndex(modifiers, 'name', ends));
 
     modifiersToRun.forEach(modifier = > {
-        if(modifier['function']
+        if(modifier['function'];
 )
     {
         // eslint-disable-line dot-notation
@@ -919,8 +903,6 @@ function runModifiers(modifiers, data, ends) {
         data = fn(data, modifier);
     }
 })
-    ;
-
     return data;
 }
 
@@ -960,7 +942,6 @@ function setStyles(element, styles) {
     }
     element.style[prop] = styles[prop] + unit;
 })
-    ;
 }
 
 function attachToScrollParents(scrollParent, event, callback, scrollParents) {

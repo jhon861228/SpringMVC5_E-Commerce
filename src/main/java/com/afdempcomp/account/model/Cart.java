@@ -1,15 +1,11 @@
 package com.afdempcomp.account.model;
 
 
-
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
-import javax.validation.constraints.Min;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 @Component
 @Scope("session")

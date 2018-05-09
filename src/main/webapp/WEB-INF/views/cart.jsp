@@ -46,7 +46,10 @@
                                     <td><p> ${cartItem.product.productName}</p></td>
                                     <td><p> ${cartItem.itemQuantity}</p></td>
                                     <td><p> ${cartItem.itemQuantity * cartItem.product.productPrice}</p></td>
-                                    <td><i style="font-size:30px; color:darkgray;" class="fa fa-trash"></i> <a href="/deletecartitem/${cartItem.product.productId}"> <button class="btn btn-gradient col-md-12">Remove(1)</button></a></td>
+                                    <td><i style="font-size:30px; color:darkgray;" class="fa fa-trash"></i> <a
+                                            href="/deletecartitem/${cartItem.product.productId}">
+                                        <button class="btn btn-gradient col-md-12">Remove(1)</button>
+                                    </a></td>
 
                                 </tr>
                             </c:forEach>
@@ -55,7 +58,7 @@
 
                         <c:if test="${sessionScope.cart.totalPrice == 0}">
 
-                              <h2 style="margin-bottom: 30%;">Hmm..It Seems like Your Cart is Empty</h2>
+                            <h2 style="margin-bottom: 30%;">Hmm..It Seems like Your Cart is Empty</h2>
 
                         </c:if>
 

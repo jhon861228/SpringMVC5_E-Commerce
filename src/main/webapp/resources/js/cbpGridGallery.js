@@ -286,7 +286,7 @@
         };
 
         setTimeout(slide, 25);
-    }
+    };
 
     CBPGridGallery.prototype._closeSlideshow = function (pos) {
         // remove class slideshow-open from the grid gallery elem
@@ -339,7 +339,7 @@
             this.nextItem = this.slideshowItems[this.current + 1];
         }
         this.currentItem = this.slideshowItems[this.current];
-    }
+    };
 
     // taken from https://github.com/desandro/vanilla-masonry/blob/master/masonry.js by David DeSandro
     // original debounce by John Hann
@@ -356,7 +356,7 @@
             clearTimeout(this._resizeTimeout);
         }
         this._resizeTimeout = setTimeout(delayed, 50);
-    }
+    };
 
     CBPGridGallery.prototype._resize = function () {
         if (this.isSlideshowVisible) {
@@ -370,7 +370,7 @@
                 setTransform(this.nextItem, support.support3d ? 'translate3d(' + translateVal + 'px, 0, -150px)' : 'translate(' + translateVal + 'px)');
             }
         }
-    }
+    };
 
     // add to global namespace
     window.CBPGridGallery = CBPGridGallery;

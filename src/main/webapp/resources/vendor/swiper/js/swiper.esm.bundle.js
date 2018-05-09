@@ -94,8 +94,6 @@ const Methods = {
 Object.keys(Methods).forEach((methodName) = > {
     $.fn[methodName] = Methods[methodName];
 })
-;
-
 let w;
 if (typeof window === 'undefined') {
     w = {
@@ -130,7 +128,7 @@ const Utils = {
             try {
                 object[key] = null;
     } catch
-        (e)
+        (e);
         {
             // no getter for object
         }
@@ -140,7 +138,6 @@ const Utils = {
             // something got wrong
         }
     })
-        ;
     },
     nextTick(callback, delay = 0) {
         return setTimeout(callback, delay);
@@ -158,7 +155,7 @@ const Utils = {
         if (win.WebKitCSSMatrix) {
             curTransform = curStyle.transform || curStyle.webkitTransform;
             if (curTransform.split(',').length > 6) {
-                curTransform = curTransform.split(', ').map(a = > a.replace(',', '.')
+                curTransform = curTransform.split(', ').map(a = > a.replace(',', '.');
             ).
                 join(', ');
             }
@@ -197,9 +194,8 @@ const Utils = {
         let length;
         if (typeof urlToParse === 'string' && urlToParse.length) {
             urlToParse = urlToParse.indexOf('?') > -1 ? urlToParse.replace(/\S*\?/, '') : '';
-            params = urlToParse.split('&').filter(paramsPart = > paramsPart !== ''
+            params = urlToParse.split('&').filter(paramsPart = > paramsPart !== '';
         )
-            ;
             length = params.length;
 
             for (i = 0; i < length; i += 1) {
@@ -212,7 +208,7 @@ const Utils = {
     isObject(o) {
         return typeof o === 'object' && o !== null && o.constructor && o.constructor === Object;
     },
-    extend(...args
+    extend(...args;
 )
 {
     const to = Object(args[0]);
@@ -240,8 +236,6 @@ const Utils = {
 }
 ,
 }
-;
-
 let d;
 if (typeof document === 'undefined') {
     d = {
@@ -333,36 +327,36 @@ const Support = (function Support() {
 }());
 
 class SwiperClass {
-    args
-    const
+    args;
+    const;
     self = this;
-    self
-    eventsListeners
+    self;
+    eventsListeners;
 
 ...
-    return
+    return;
 ) {
     self;
-    let
+    let;
     events;
 
 !
-    let
+    let;
 .
     data$$1;
 )
-    let
+    let;
     context;
-    typeof
-    args
-    [0]
-    'string'
-    Array
-    [0]
+    typeof;
+    args;
+    [0];
+    'string';
+    Array;
+    [0];
     events = args[0];
     data$$1 = args.slice(1, args.length);
     context = self;
-    args
+    args;
 
 ===
 
@@ -377,7 +371,6 @@ class SwiperClass {
             Object.keys(self.params.on).forEach((eventName) = > {
                 self.on(eventName, self.params.on[eventName]);
         })
-            ;
         }
     }
 
@@ -387,13 +380,12 @@ class SwiperClass {
         const self = this;
         if (typeof handler !== 'function') return self;
         events.split(' ').forEach((event) = > {
-            if(
-        !self.eventsListeners[event]
+            if(;
+        !self.eventsListeners[event];
     )
         self.eventsListeners[event] = [];
         self.eventsListeners[event].push(handler);
     })
-        ;
         return self;
     }
 
@@ -406,7 +398,7 @@ class SwiperClass {
         function onceHandler(
 
     ...
-        args
+        args;
     )
         {
             handler.apply(self, args);
@@ -418,7 +410,7 @@ class SwiperClass {
     off(events, handler) {
         const self = this;
         events.split(' ').forEach((event) = > {
-            if(typeof handler === 'undefined'
+            if(typeof handler === 'undefined';
     )
         {
             self.eventsListeners[event] = [];
@@ -426,16 +418,14 @@ class SwiperClass {
     else
         {
             self.eventsListeners[event].forEach((eventHandler, index$$1) = > {
-                if(eventHandler === handler
+                if(eventHandler === handler;
         )
             {
                 self.eventsListeners[event].splice(index$$1, 1);
             }
         })
-            ;
         }
     })
-        ;
         return self;
     }
 
@@ -458,24 +448,21 @@ else
 }
 const eventsArray = Array.isArray(events) ? events : events.split(' ');
 eventsArray.forEach((event) = > {
-    if(self.eventsListeners[event]
+    if(self.eventsListeners[event];
 )
 {
     const handlers = [];
     self.eventsListeners[event].forEach((eventHandler) = > {
         handlers.push(eventHandler);
 })
-    ;
     handlers.forEach((eventHandler) = > {
         eventHandler.apply(context, data$$1);
 })
-    ;
 }
 })
-;
 return self;
 }
-useModulesParams(instanceParams)
+useModulesParams(instanceParams);
 {
     const instance = this;
     if (!instance.modules) return;
@@ -486,9 +473,8 @@ useModulesParams(instanceParams)
         Utils.extend(instanceParams, module.params);
     }
 })
-    ;
 }
-useModules(modulesParams = {})
+useModules(modulesParams = {});
 {
     const instance = this;
     if (!instance.modules) return;
@@ -505,14 +491,12 @@ useModules(modulesParams = {})
             instance[modulePropName] = moduleProp;
         }
     })
-        ;
     }
     // Add event listeners
     if (module.on && instance.on) {
         Object.keys(module.on).forEach((moduleEventName) = > {
             instance.on(moduleEventName, module.on[moduleEventName]);
     })
-        ;
     }
 
     // Module create callback
@@ -520,18 +504,17 @@ useModules(modulesParams = {})
         module.create.bind(instance)(moduleParams);
     }
 })
-    ;
 }
-static
-set
-components(components)
+static;
+set;
+components(components);
 {
     const Class = this;
     if (!Class.use) return;
     Class.use(components);
 }
-static
-installModule(module,...params
+static;
+installModule(module,...params;
 )
 {
     const Class = this;
@@ -543,14 +526,12 @@ installModule(module,...params
         Object.keys(module.proto).forEach((key) = > {
             Class.prototype[key] = module.proto[key];
     })
-        ;
     }
     // Class
     if (module.static) {
         Object.keys(module.static).forEach((key) = > {
             Class[key] = module.static[key];
     })
-        ;
     }
     // Callback
     if (module.install) {
@@ -558,20 +539,18 @@ installModule(module,...params
     }
     return Class;
 }
-static
-use(module,...params
+static;
+use(module,...params;
 )
 {
     const Class = this;
     if (Array.isArray(module)) {
-        module.forEach(m = > Class.installModule(m)
+        module.forEach(m = > Class.installModule(m);
     )
-        ;
         return Class;
     }
-    return Class.installModule(module,...params
+    return Class.installModule(module,...params;
 )
-    ;
 }
 }
 
@@ -1290,13 +1269,12 @@ var slideTo = function (index$$1 = 0, speed = this.params.speed, runCallbacks = 
         if (!swiper.animating) {
             swiper.animating = true;
             $wrapperEl.transitionEnd(() = > {
-                if(
-            !swiper || swiper.destroyed
+                if(;
+            !swiper || swiper.destroyed;
         )
             return;
             swiper.transitionEnd(runCallbacks);
         })
-            ;
         }
     }
 
@@ -1362,7 +1340,6 @@ var slideToClickedSlide = function () {
                 Utils.nextTick(() = > {
                     swiper.slideTo(slideToIndex);
             })
-                ;
             } else {
                 swiper.slideTo(slideToIndex);
             }
@@ -1376,7 +1353,6 @@ var slideToClickedSlide = function () {
             Utils.nextTick(() = > {
                 swiper.slideTo(slideToIndex);
         })
-            ;
         } else {
             swiper.slideTo(slideToIndex);
         }
@@ -1428,7 +1404,6 @@ var loopCreate = function () {
     if (index$$1 < slides.length && index$$1 >= slides.length - swiper.loopedSlides) prependSlides.push(el);
     slide.attr('data-swiper-slide-index', index$$1);
 })
-    ;
     for (let i = 0; i < appendSlides.length; i += 1) {
         $wrapperEl.append($(appendSlides[i].cloneNode(true)).addClass(params.slideDuplicateClass));
     }
@@ -1967,15 +1942,14 @@ var onTouchEnd = function (event) {
         if (timeDiff < 300 && (touchEndTime - data$$1.lastClickTime) > 300) {
             if (data$$1.clickTimeout) clearTimeout(data$$1.clickTimeout);
             data$$1.clickTimeout = Utils.nextTick(() = > {
-                if(
-            !swiper || swiper.destroyed
+                if(;
+            !swiper || swiper.destroyed;
         )
             return;
             swiper.emit('click', e);
         },
-            300
+            300;
         )
-            ;
         }
         if (timeDiff < 300 && (touchEndTime - data$$1.lastClickTime) < 300) {
             if (data$$1.clickTimeout) clearTimeout(data$$1.clickTimeout);
@@ -1985,13 +1959,11 @@ var onTouchEnd = function (event) {
 
     data$$1.lastClickTime = Utils.now();
     Utils.nextTick(() = > {
-        if(
-    !swiper.destroyed
+        if(;
+    !swiper.destroyed;
 )
     swiper.allowClick = true;
 })
-    ;
-
     if (!data$$1.isTouched || !data$$1.isMoved || !swiper.swipeDirection || touches.diff === 0 || data$$1.currentTranslate === data$$1.startTranslate) {
         data$$1.isTouched = false;
         data$$1.isMoved = false;
@@ -2106,8 +2078,8 @@ var onTouchEnd = function (event) {
                 swiper.transitionStart();
                 swiper.animating = true;
                 $wrapperEl.transitionEnd(() = > {
-                    if(
-                !swiper || swiper.destroyed || !data$$1.allowMomentumBounce
+                    if(;
+                !swiper || swiper.destroyed || !data$$1.allowMomentumBounce;
             )
                 return;
                 swiper.emit('momentumBounce');
@@ -2115,15 +2087,13 @@ var onTouchEnd = function (event) {
                 swiper.setTransition(params.speed);
                 swiper.setTranslate(afterBouncePosition);
                 $wrapperEl.transitionEnd(() = > {
-                    if(
-                !swiper || swiper.destroyed
+                    if(;
+                !swiper || swiper.destroyed;
             )
                 return;
                 swiper.transitionEnd();
             })
-                ;
             })
-                ;
             } else if (swiper.velocity) {
                 swiper.updateProgress(newPosition);
                 swiper.setTransition(momentumDuration);
@@ -2132,13 +2102,12 @@ var onTouchEnd = function (event) {
                 if (!swiper.animating) {
                     swiper.animating = true;
                     $wrapperEl.transitionEnd(() = > {
-                        if(
-                    !swiper || swiper.destroyed
+                        if(;
+                    !swiper || swiper.destroyed;
                 )
                     return;
                     swiper.transitionEnd();
                 })
-                    ;
                 }
             } else {
                 swiper.updateProgress(newPosition);
@@ -2396,10 +2365,8 @@ var getBreakpoint = function (breakpoints) {
     Object.keys(breakpoints).forEach((point) = > {
         points.push(point);
 })
-    ;
-    points.sort((a, b) = > parseInt(a, 10) - parseInt(b, 10)
+    points.sort((a, b) = > parseInt(a, 10) - parseInt(b, 10);
 )
-    ;
     for (let i = 0; i < points.length; i += 1) {
         const point = points[i];
         if (point >= win.innerWidth && !breakpoint) {
@@ -2449,8 +2416,6 @@ var addClasses = function () {
     suffixes.forEach((suffix) = > {
         classNames.push(params.containerModifierClass + suffix);
 })
-    ;
-
     $el.addClass(classNames.join(' '));
 };
 
@@ -2681,35 +2646,35 @@ const prototypes = {
 const extendedDefaults = {};
 
 class Swiper$1 extends SwiperClass {
-    args
+    args;
 
 ...
-    let
+    let;
 ) {
     el;
-    let
+    let;
     params;
-    length
-    1
+    length;
+    1;
 
 .
-    args
+    args;
 ===
-    [0]
+    [0];
 &&
-    constructor
-    args
+    constructor;
+    args;
 .
-    [0]
+    [0];
 &&
-    constructor
-    Object
+    constructor;
+    Object;
 .
     params = args[0];
 ===
-    else
-    [el {
-    params
+    else;
+    [el; {
+    params;
 ,
     args;
 ] =
@@ -2729,16 +2694,15 @@ super(params);
 
 Object.keys(prototypes).forEach((prototypeGroup) = > {
     Object.keys(prototypes[prototypeGroup]).forEach((protoMethod) = > {
-    if(
-!Swiper$1.prototype[protoMethod]
+    if(;
+!Swiper$1.prototype[protoMethod];
 )
 {
     Swiper$1.prototype[protoMethod] = prototypes[prototypeGroup][protoMethod];
 }
 })
-;
 })
-;
+
 
 // Swiper Instance
 const swiper = this;
@@ -2764,7 +2728,7 @@ if (module.params) {
     if (!params[moduleParamName]) params[moduleParamName] = {enabled: false};
 }
 })
-;
+
 
 // Extend defaults with modules params
 const swiperParams = Utils.extend({}, defaults);
@@ -2789,7 +2753,6 @@ if ($el.length > 1) {
         const newParams = Utils.extend({}, params, {el: containerEl});
     swipers.push(new Swiper$1(newParams));
 })
-    ;
     return swipers;
 }
 
@@ -2912,7 +2875,7 @@ if (swiper.params.init) {
 // Return app instance
 return swiper;
 }
-slidesPerViewDynamic()
+slidesPerViewDynamic();
 {
     const swiper = this;
     const {
@@ -2945,7 +2908,7 @@ slidesPerViewDynamic()
     }
     return spv;
 }
-update()
+update();
 {
     const swiper = this;
     if (!swiper || swiper.destroyed) return;
@@ -2980,7 +2943,7 @@ update()
     }
     swiper.emit('update');
 }
-init()
+init();
 {
     const swiper = this;
     if (swiper.initialized) return;
@@ -3035,7 +2998,7 @@ init()
     // Emit
     swiper.emit('init');
 }
-destroy(deleteInstance = true, cleanStyles = true)
+destroy(deleteInstance = true, cleanStyles = true);
 {
     const swiper = this;
     const {
@@ -3080,8 +3043,6 @@ destroy(deleteInstance = true, cleanStyles = true)
     Object.keys(swiper.eventsListeners).forEach((eventName) = > {
         swiper.off(eventName);
 })
-    ;
-
     if (deleteInstance !== false) {
         swiper.$el[0].swiper = null;
         swiper.$el.data('swiper', null);
@@ -3089,32 +3050,32 @@ destroy(deleteInstance = true, cleanStyles = true)
     }
     swiper.destroyed = true;
 }
-static
-extendDefaults(newDefaults)
+static;
+extendDefaults(newDefaults);
 {
     Utils.extend(extendedDefaults, newDefaults);
 }
-static
-get
-extendedDefaults()
+static;
+get;
+extendedDefaults();
 {
     return extendedDefaults;
 }
-static
-get
-defaults()
+static;
+get;
+defaults();
 {
     return defaults;
 }
-static
-get
-Class()
+static;
+get;
+Class();
 {
     return SwiperClass;
 }
-static
-get
-$()
+static;
+get;
+$();
 {
     return $;
 }
@@ -3207,10 +3168,7 @@ const Observer = {
             mutations.forEach((mutation) = > {
             swiper.emit('observerUpdate', mutation);
     })
-        ;
     })
-        ;
-
         observer.observe(target, {
             attributes: typeof options.attributes === 'undefined' ? true : options.attributes,
             childList: typeof options.childList === 'undefined' ? true : options.childList,
@@ -3239,7 +3197,6 @@ const Observer = {
         swiper.observer.observers.forEach((observer) = > {
             observer.disconnect();
     })
-        ;
         swiper.observer.observers = [];
     },
 };
@@ -3368,13 +3325,11 @@ const Virtual = {
         appendIndexes.forEach((index$$1) = > {
             swiper.$wrapperEl.append(renderSlide(slides[index$$1], index$$1));
     })
-        ;
-        prependIndexes.sort((a, b) = > a < b
+        prependIndexes.sort((a, b) = > a < b;
     ).
         forEach((index$$1) = > {
             swiper.$wrapperEl.prepend(renderSlide(slides[index$$1], index$$1));
     })
-        ;
         swiper.$wrapperEl.children('.swiper-slide').css(offsetProp, `${offset$$1}px`);
         onRendered();
     },
@@ -3405,7 +3360,6 @@ const Virtual = {
             Object.keys(cache).forEach((cachedIndex) = > {
                 newCache[cachedIndex + 1] = cache[cachedIndex];
         })
-            ;
             swiper.virtual.cache = newCache;
         }
         swiper.virtual.update(true);
@@ -3732,9 +3686,8 @@ const Mousewheel = {
                 swiper.mousewheel.timeout = Utils.nextTick(() = > {
                     swiper.slideReset();
             },
-                300
+                300;
             )
-                ;
             }
             // Emit event
             swiper.emit('scroll', e);
@@ -3874,7 +3827,6 @@ const Navigation = {
             if (swiper.isEnd && !swiper.params.loop) return;
             swiper.slideNext();
         })
-            ;
         }
         if ($prevEl && $prevEl.length > 0) {
             $prevEl.on('click', (e) = > {
@@ -3882,7 +3834,6 @@ const Navigation = {
             if (swiper.isBeginning && !swiper.params.loop) return;
             swiper.slidePrev();
         })
-            ;
         }
 
         Utils.extend(swiper.navigation, {
@@ -4013,7 +3964,6 @@ const Pagination = {
                     }
                 }
             })
-                ;
             } else {
                 const $bullet = bullets.eq(current);
                 $bullet.addClass(params.bulletActiveClass);
@@ -4297,9 +4247,8 @@ const Scrollbar = {
                 $el[0].style.opacity = 0;
             $el.transition(400);
         },
-            1000
+            1000;
         )
-            ;
         }
     },
     setTransition(duration) {
@@ -4424,9 +4373,8 @@ const Scrollbar = {
                 $el.css('opacity', 0);
             $el.transition(400);
         },
-            1000
+            1000;
         )
-            ;
         }
         swiper.emit('scrollbarDragEnd', e);
         if (params.snapOnRelease) {
@@ -4621,7 +4569,6 @@ const Parallax = {
             .each((index$$1, el) = > {
             swiper.parallax.setTransform(el, progress);
     })
-        ;
         slides.each((slideIndex, slideEl) = > {
             let slideProgress = slideEl.progress;
         if (swiper.params.slidesPerGroup > 1 && swiper.params.slidesPerView !== 'auto') {
@@ -4632,9 +4579,7 @@ const Parallax = {
             .each((index$$1, el) = > {
             swiper.parallax.setTransform(el, slideProgress);
     })
-        ;
     })
-        ;
     },
     setTransition(duration = this.params.speed) {
         const swiper = this;
@@ -4646,7 +4591,6 @@ const Parallax = {
         if (duration === 0) parallaxDuration = 0;
         $parallaxEl.transition(parallaxDuration);
     })
-        ;
     },
 };
 
@@ -5084,7 +5028,6 @@ const Zoom = {
             $slideEl.on(swiper.touchEvents.move, zoom.onTouchMove);
         }
     })
-        ;
     },
     disable() {
         const swiper = this;
@@ -5118,7 +5061,6 @@ const Zoom = {
             $slideEl.off(swiper.touchEvents.move, zoom.onTouchMove);
         }
     })
-        ;
     },
 };
 
@@ -5176,7 +5118,6 @@ var Zoom$1 = {
         ('onGestureStart onGestureChange onGestureEnd onTouchStart onTouchMove onTouchEnd onTransitionEnd toggle enable disable in out').split(' ').forEach((methodName) = > {
             zoom[methodName] = Zoom[methodName].bind(swiper);
     })
-        ;
         Utils.extend(swiper, {
             zoom,
         });
@@ -5246,7 +5187,7 @@ const Lazy = {
 
         swiper.loadImage($imageEl[0], (src || background), srcset, sizes, false, () = > {
             if(
-            typeof swiper === 'undefined' || swiper === null || !swiper || (swiper && !swiper.params) || swiper.destroyed
+            typeof swiper === 'undefined' || swiper === null || !swiper || (swiper && !swiper.params) || swiper.destroyed;
     )
         return;
         if (background) {
@@ -5281,11 +5222,8 @@ const Lazy = {
         }
         swiper.emit('lazyImageReady', $slideEl[0], $imageEl[0]);
     })
-        ;
-
         swiper.emit('lazyImageLoad', $slideEl[0], $imageEl[0]);
     })
-        ;
     },
     load() {
         const swiper = this;
@@ -5322,7 +5260,6 @@ const Lazy = {
                 const index$$1 = isVirtual ? $(slideEl).attr('data-swiper-slide-index') : $(slideEl).index();
             swiper.lazy.loadInSlide(index$$1);
         })
-            ;
         } else if (slidesPerView > 1) {
             for (let i = activeIndex; i < activeIndex + slidesPerView; i += 1) {
                 if (slideExist(i)) swiper.lazy.loadInSlide(i);
@@ -5435,7 +5372,7 @@ const Controller = {
             let maxIndex;
             let minIndex;
             let guess;
-            return (array, val) =
+            return (array, val) =;
         >
             {
                 minIndex = -1;
@@ -5450,7 +5387,6 @@ const Controller = {
                 }
                 return maxIndex;
             }
-            ;
         }());
         this.x = x;
         this.y = y;
@@ -5536,8 +5472,8 @@ const Controller = {
             if (duration !== 0) {
                 c.transitionStart();
                 c.$wrapperEl.transitionEnd(() = > {
-                    if(
-                !controlled
+                    if(;
+                !controlled;
             )
                 return;
                 if (c.params.loop && swiper.params.controller.by === 'slide') {
@@ -5545,7 +5481,6 @@ const Controller = {
                 }
                 c.transitionEnd();
             })
-                ;
             }
         }
 
@@ -5706,7 +5641,6 @@ const a11y = {
             swiper.a11y.addElRole($bulletEl, 'button');
             swiper.a11y.addElLabel($bulletEl, params.paginationBulletMessage.replace(/{{index}}/, $bulletEl.index() + 1));
         })
-            ;
         }
     },
     init() {
@@ -5790,7 +5724,6 @@ var A11y = {
         Object.keys(a11y).forEach((methodName) = > {
             swiper.a11y[methodName] = a11y[methodName].bind(swiper);
     })
-        ;
     },
     on: {
         init() {
@@ -5852,9 +5785,8 @@ const History = {
         swiper.history.scrollToSlide(swiper.params.speed, swiper.history.paths.value, false);
     },
     getPathValues() {
-        const pathArray = win.location.pathname.slice(1).split('/').filter(part = > part !== ''
+        const pathArray = win.location.pathname.slice(1).split('/').filter(part = > part !== '';
     )
-        ;
         const total = pathArray.length;
         const key = pathArray[total - 2];
         const value = pathArray[total - 1];
@@ -6045,7 +5977,7 @@ const Autoplay = {
             delay = $activeSlideEl.attr('data-swiper-autoplay') || swiper.params.autoplay.delay;
         }
         swiper.autoplay.timeout = Utils.nextTick(() = > {
-            if(swiper.params.autoplay.reverseDirection
+            if(swiper.params.autoplay.reverseDirection;
     )
         {
             if (swiper.params.loop) {
@@ -6077,9 +6009,8 @@ const Autoplay = {
             swiper.autoplay.stop();
         }
     },
-        delay
+        delay;
     )
-        ;
     },
     start() {
         const swiper = this;
@@ -6114,8 +6045,8 @@ const Autoplay = {
             swiper.autoplay.run();
         } else {
             swiper.$wrapperEl.transitionEnd(() = > {
-                if(
-            !swiper || swiper.destroyed
+                if(;
+            !swiper || swiper.destroyed;
         )
             return;
             swiper.autoplay.paused = false;
@@ -6125,7 +6056,6 @@ const Autoplay = {
                 swiper.autoplay.run();
             }
         })
-            ;
         }
     },
 };
@@ -6231,7 +6161,6 @@ const Fade = {
                 $wrapperEl.trigger(triggerEvents[i]);
             }
         })
-            ;
         }
     },
 };

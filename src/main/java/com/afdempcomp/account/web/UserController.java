@@ -375,8 +375,7 @@ public class UserController {
             Cart cart = new Cart();
 
 
-        }
-        else {
+        } else {
             Cart cart = (Cart) session.getAttribute("cart");
 
 

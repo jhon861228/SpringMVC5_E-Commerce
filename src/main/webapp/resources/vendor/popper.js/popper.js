@@ -34,7 +34,7 @@ for (let i = 0; i < longerTimeoutBrowsers.length; i += 1) {
 
 function microtaskDebounce(fn) {
     let called = false;
-    return () =
+    return () =;
 >
     {
         if (called) {
@@ -45,14 +45,12 @@ function microtaskDebounce(fn) {
             called = false;
         fn();
     })
-        ;
     }
-    ;
 }
 
 function taskDebounce(fn) {
     let scheduled = false;
-    return () =
+    return () =;
 >
     {
         if (!scheduled) {
@@ -61,12 +59,10 @@ function taskDebounce(fn) {
                 scheduled = false;
             fn();
         },
-            timeoutDuration
+            timeoutDuration;
         )
-            ;
         }
     }
-    ;
 }
 
 const supportsMicroTasks = isBrowser && window.Promise;
@@ -604,19 +600,15 @@ function computeAutoPlacement(placement, refRect, popper, reference, boundariesE
         key
     }, rects[key], {
         area: getArea(rects[key])
-    })
+    });
 ).
-    sort((a, b) = > b.area - a.area
+    sort((a, b) = > b.area - a.area;
 )
-    ;
-
     const filteredAreas = sortedAreas.filter(({
         width,
         height
-    }) = > width >= popper.clientWidth && height >= popper.clientHeight
+    }) = > width >= popper.clientWidth && height >= popper.clientHeight;
 )
-    ;
-
     const computedPlacement = filteredAreas.length > 0 ? filteredAreas[0].key : sortedAreas[0].key;
 
     const variation = placement.split('-')[1];
@@ -665,9 +657,8 @@ function getOuterSizes(element) {
  */
 function getOppositePlacement(placement) {
     const hash = {left: 'right', right: 'left', bottom: 'top', top: 'bottom'};
-    return placement.replace(/left|right|bottom|top/g, matched = > hash[matched]
+    return placement.replace(/left|right|bottom|top/g, matched = > hash[matched];
 )
-    ;
 }
 
 /**
@@ -740,15 +731,13 @@ function find(arr, check) {
 function findIndex(arr, prop, value) {
     // use native findIndex if supported
     if (Array.prototype.findIndex) {
-        return arr.findIndex(cur = > cur[prop] === value
+        return arr.findIndex(cur = > cur[prop] === value;
     )
-        ;
     }
 
     // use `find` + `indexOf` if `findIndex` isn't supported
-    const match = find(arr, obj = > obj[prop] === value
+    const match = find(arr, obj = > obj[prop] === value;
 )
-    ;
     return arr.indexOf(match);
 }
 
@@ -766,7 +755,7 @@ function runModifiers(modifiers, data, ends) {
     const modifiersToRun = ends === undefined ? modifiers : modifiers.slice(0, findIndex(modifiers, 'name', ends));
 
     modifiersToRun.forEach(modifier = > {
-        if(modifier['function']
+        if(modifier['function'];
 )
     {
         // eslint-disable-line dot-notation
@@ -783,8 +772,6 @@ function runModifiers(modifiers, data, ends) {
         data = fn(data, modifier);
     }
 })
-    ;
-
     return data;
 }
 
@@ -845,9 +832,8 @@ function update() {
  * @returns {Boolean}
  */
 function isModifierEnabled(modifiers, modifierName) {
-    return modifiers.some(({name, enabled}) = > enabled && name === modifierName
+    return modifiers.some(({name, enabled}) = > enabled && name === modifierName;
 )
-    ;
 }
 
 /**
@@ -965,7 +951,7 @@ function removeEventListeners(reference, state) {
     state.scrollParents.forEach(target = > {
         target.removeEventListener('scroll', state.updateBound);
 })
-    ;
+
 
     // Reset state
     state.updateBound = null;
@@ -1017,7 +1003,6 @@ function setStyles(element, styles) {
     }
     element.style[prop] = styles[prop] + unit;
 })
-    ;
 }
 
 /**
@@ -1107,7 +1092,7 @@ function computeStyle(data, options) {
     const {popper} = data.offsets;
 
     // Remove this legacy support in Popper.js v2
-    const legacyGpuAccelerationOption = find(data.instance.modifiers, modifier = > modifier.name === 'applyStyle'
+    const legacyGpuAccelerationOption = find(data.instance.modifiers, modifier = > modifier.name === 'applyStyle';
 ).
     gpuAcceleration;
     if (legacyGpuAccelerationOption !== undefined) {
@@ -1197,15 +1182,11 @@ function computeStyle(data, options) {
  * @returns {Boolean}
  */
 function isModifierRequired(modifiers, requestingName, requestedName) {
-    const requesting = find(modifiers, ({name}) = > name === requestingName
+    const requesting = find(modifiers, ({name}) = > name === requestingName;
 )
-    ;
-
     const isRequired = !!requesting && modifiers.some(modifier = > {
         return modifier.name === requestedName && modifier.enabled && modifier.order < requesting.order;
 })
-    ;
-
     if (!isRequired) {
         const requesting = `\`${requestingName}\``;
         const requested = `\`${requestedName}\``;
@@ -1409,7 +1390,7 @@ function flip(data, options) {
     }
 
     flipOrder.forEach((step, index) = > {
-        if(placement !== step || flipOrder.length === index + 1
+        if(placement !== step || flipOrder.length === index + 1;
 )
     {
         return data;
@@ -1457,7 +1438,6 @@ function flip(data, options) {
         data = runModifiers(data.instance.modifiers, data, 'flip');
     }
 })
-    ;
     return data;
 }
 
@@ -1561,16 +1541,14 @@ function parseOffset(offset, popperOffsets, referenceOffsets, basePlacement) {
 
     // Split the offset string to obtain a list of values and operands
     // The regex addresses values with the plus or minus sign in front (+10, -20, etc)
-    const fragments = offset.split(/(\+|\-)/).map(frag = > frag.trim()
+    const fragments = offset.split(/(\+|\-)/).map(frag = > frag.trim();
 )
-    ;
+
 
     // Detect if the offset string contains a pair of values or a single one
     // they could be separated by comma or space
-    const divider = fragments.indexOf(find(fragments, frag = > frag.search(/,|\s/) !== -1)
+    const divider = fragments.indexOf(find(fragments, frag = > frag.search(/,|\s/) !== -1);
 )
-    ;
-
     if (fragments[divider] && fragments[divider].indexOf(',') === -1) {
         console.warn('Offsets separated by white space(s) are deprecated, use a comma (,) instead.');
     }
@@ -1589,7 +1567,7 @@ function parseOffset(offset, popperOffsets, referenceOffsets, basePlacement) {
     // This aggregates any `+` or `-` sign that aren't considered operators
     // e.g.: 10 + +5 => [10, +, +5]
         .reduce((a, b) = > {
-        if(a[a.length - 1] === '' && ['+', '-'].indexOf(b) !== -1
+        if(a[a.length - 1] === '' && ['+', '-'].indexOf(b) !== -1;
 )
     {
         a[a.length - 1] = b;
@@ -1605,28 +1583,25 @@ else
         return a.concat(b);
     }
 },
-    []
+    [];
 )
     // Here we convert the string values into number values (in px)
 .
-    map(str = > toValue(str, measurement, popperOffsets, referenceOffsets)
+    map(str = > toValue(str, measurement, popperOffsets, referenceOffsets);
 )
-    ;
 })
-    ;
+
 
     // Loop trough the offsets arrays and execute the operations
     ops.forEach((op, index) = > {
         op.forEach((frag, index2) = > {
-        if(isNumeric(frag)
+        if(isNumeric(frag);
 )
     {
         offsets[index] += frag * (op[index2 - 1] === '-' ? -1 : 1);
     }
 })
-    ;
 })
-    ;
     return offsets;
 }
 
@@ -1713,8 +1688,6 @@ function preventOverflow(data, options) {
         const side = ['left', 'top'].indexOf(placement) !== -1 ? 'primary' : 'secondary';
     popper = _extends({}, popper, check[side](placement));
 })
-    ;
-
     data.offsets.popper = popper;
 
     return data;
@@ -1765,7 +1738,7 @@ function hide(data) {
     }
 
     const refRect = data.offsets.reference;
-    const bound = find(data.instance.modifiers, modifier = > modifier.name === 'preventOverflow'
+    const bound = find(data.instance.modifiers, modifier = > modifier.name === 'preventOverflow';
 ).
     boundaries;
 
@@ -2208,9 +2181,9 @@ var Defaults = {
      * Access Popper.js instance with `data.instance`.
      * @prop {onUpdate}
      */
-    onUpdate
+    onUpdate;
 :
-() =
+() =;
 >
 {
 }
@@ -2221,9 +2194,9 @@ var Defaults = {
  * They provide most of the functionalities of Popper.js
  * @prop {modifiers}
  */
-modifiers
+modifiers;
 }
-;
+
 
 /**
  * @callback onCreate
@@ -2247,7 +2220,7 @@ class Popper {
      * @return {Object} instance - The generated Popper.js instance
      */
     constructor(reference, popper, options = {}) {
-        this.scheduleUpdate = () =
+        this.scheduleUpdate = () =;
     >
         requestAnimationFrame(this.update);
 
@@ -2273,31 +2246,31 @@ class Popper {
         Object.keys(_extends({}, Popper.Defaults.modifiers, options.modifiers)).forEach(name = > {
             this.options.modifiers[name] = _extends({}, Popper.Defaults.modifiers[name] || {}, options.modifiers ? options.modifiers[name] : {});
     })
-        ;
+
 
         // Refactoring modifiers' list (Object => Array)
         this.modifiers = Object.keys(this.options.modifiers).map(name = > _extends({
             name
-        }, this.options.modifiers[name])
+        }, this.options.modifiers[name]);
     )
         // sort the modifiers by order
     .
-        sort((a, b) = > a.order - b.order
+        sort((a, b) = > a.order - b.order;
     )
-        ;
+
 
         // modifiers have the ability to execute arbitrary code when Popper.js get inited
         // such code is executed in the same order of its modifier
         // they could add new properties to their options configuration
         // BE AWARE: don't add options to `options.modifiers.name` but to `modifierOptions`!
         this.modifiers.forEach(modifierOptions = > {
-            if(modifierOptions.enabled && isFunction(modifierOptions.onLoad)
+            if(modifierOptions.enabled && isFunction(modifierOptions.onLoad);
     )
         {
             modifierOptions.onLoad(this.reference, this.popper, this.options, modifierOptions, this.state);
         }
     })
-        ;
+
 
         // fire the first update to position the popper in the right place
         this.update();
