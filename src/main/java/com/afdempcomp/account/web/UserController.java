@@ -242,11 +242,9 @@ public class UserController {
             return "/403";
         }
 
-
     }
 
     @RequestMapping(value = "/addProduct", method = RequestMethod.POST)
-    // @RequestParam("file") MultipartFile file
     public String addProduct(@Valid @ModelAttribute("product") Product product, BindingResult result, @RequestParam("fileUpload") MultipartFile file) throws IOException {
 
 
@@ -287,19 +285,15 @@ public class UserController {
             item.setItemQuantity(1);
             cart.getCart().add(item);
             System.out.println("added one");
-            cart.setTotalPrice((float) (cart.getTotalPrice()+item.getProduct().getProductPrice()));
+            cart.setTotalPrice((float) (cart.getTotalPrice() + item.getProduct().getProductPrice()));
             session.setAttribute("cart", cart);
             ModelAndView model = new ModelAndView();
             model.setViewName("cart");
 
-
-            System.out.println("MEGETHOS CART" + cart.getCart().size());
-            System.out.println("SYNOLO EURO CART " + cart.getTotalPrice());
-
             return model;
 
         } else {
-            boolean found=false;
+            boolean found = false;
             Cart cart = (Cart) session.getAttribute("cart");
             CartItem item = new CartItem();
             item.setProduct(productDao.getProductById(id));
@@ -307,36 +301,31 @@ public class UserController {
             for (int i = 0; i < cartSize; i++) {
 
 
+                if (productDao.getProductById(id).getProductId().equals(cart.getCart().get(i).getProduct().getProductId()) && !found) {
 
+                    System.out.println("UPARXEI HDH");
+                    int newQuan = cart.getCart().get(i).getItemQuantity() + 1;
+                    item.setItemQuantity(newQuan);
+                    cart.getCart().set(i, item);
+                    cart.setTotalPrice((float) (cart.getTotalPrice() + item.getProduct().getProductPrice()));
 
-                    if (productDao.getProductById(id).getProductId().equals(cart.getCart().get(i).getProduct().getProductId()) && !false) {
+                    session.setAttribute("cart", cart);
+                    found = true;
 
-                        System.out.println("UPARXEI HDH");
-                        int newQuan = cart.getCart().get(i).getItemQuantity() + 1;
-                        item.setItemQuantity(newQuan);
-                        cart.getCart().set(i, item);
-                        cart.setTotalPrice((float) (cart.getTotalPrice()+item.getProduct().getProductPrice()));
-                        System.out.println("added two");
-                        session.setAttribute("cart", cart);
-                        found = true;
-
-
-                    }
-                }
-                if (!found){
-
-                    System.out.printf("DEN UPARXEI HDH");
-                    item.setProduct(productDao.getProductById(id));
-                    item.setItemQuantity(1);
-                    cart.getCart().add(item);
-                    cart.setTotalPrice((float) (cart.getTotalPrice()+item.getProduct().getProductPrice()));
-                    System.out.printf("added three");
 
                 }
+            }
+            if (!found) {
+
+                System.out.printf("DEN UPARXEI HDH");
+                item.setProduct(productDao.getProductById(id));
+                item.setItemQuantity(1);
+                cart.getCart().add(item);
+                cart.setTotalPrice((float) (cart.getTotalPrice() + item.getProduct().getProductPrice()));
 
 
-            System.out.println("SYNOLIKA LEFTA:" + cart.getTotalPrice());
-            System.out.println("megethos" + cart.getCart().size());
+            }
+
 
             ModelAndView model = new ModelAndView();
             model.setViewName("cart");

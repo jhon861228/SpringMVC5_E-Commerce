@@ -1,75 +1,65 @@
-<%--<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>--%>
-<%--<%@include file="/WEB-INF/views/template/header.jsp" %>--%>
-
-<%--<div class="container-wrapper">--%>
-        <%--<div class="container">--%>
-                <%--<section>--%>
-                        <%--<div class="jumbotron">--%>
-                                <%--<div class="container">--%>
-                                        <%--<h1>Cart</h1>--%>
-
-                                        <%--<p>All the selected products in your shopping cart</p>--%>
-                                <%--</div>--%>
-                        <%--</div>--%>
-                <%--</section>--%>
-
-                <%--<section class="container" ng-app="cartApp">--%>
-                        <%--<div ng-controller = "cartCtrl" ng-init="initCartId('${cartId}')">--%>
-                                <%--<div>--%>
-                                        <%--<a class="btn btn-danger pull-left" ng-click="clearCart()"><span--%>
-                                                <%--class="glyphicon glyphicon-remove-sign"></span>Clear Cart</a>--%>
-                                <%--</div>--%>
-
-                                <%--<table class="table table-hover">--%>
-                                        <%--<tr>--%>
-                                                <%--<th>Product</th>--%>
-                                                <%--<th>Unit Price</th>--%>
-                                                <%--<th>Quantity</th>--%>
-                                                <%--<th>Price</th>--%>
-                                                <%--<th>Action</th>--%>
-                                        <%--</tr>--%>
-
-                                        <%--<c:forEach var="items" items="${sessionScope.cart}">--%>
-
-<%--\--%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<%@include file="/WEB-INF/views/template/header.jsp" %>
 
 
-                                        <%--<tr ng-repeat = "item in cart.cartItems">--%>
-                                                <%--<td>${item.productName}</td>--%>
-                                                <%--<td>${item.productPrice}</td>--%>
-                                                <%--<td>${item.productDescription}</td>--%>
-                                                <%--<td>${item.productPrice}</td>--%>
-                                                <%--<td><a href="/deletecartitem/${item.productId}" class="label label-danger" >--%>
-                                                        <%--<span class="glyphicon glyphicon-remove"></span>remove</a></td>--%>
-                                        <%--</tr>--%>
-                                        <%--</c:forEach>--%>
-                                        <%--<tr>--%>
-                                                <%--<th></th>--%>
-                                                <%--<th></th>--%>
-                                                <%--<th>Grand Total</th>--%>
-                                                <%--<th>{{calGrandTotal()}}</th>--%>
-                                                <%--<th></th>--%>
-                                        <%--</tr>--%>
-                                <%--</table>--%>
+<section style="padding:2rem 0; " class="property-single bg-black-2">
+    <div class="container">
 
-                                <%--<a href="<spring:url value="/productList" />" class="btn btn-default">Continue Shopping</a>--%>
-                        <%--</div>--%>
-                <%--</section>--%>
+        <header>
+            <h1 class="h2 d-flex align-items-center"><span>Cart <i class="fa fa-shopping-cart"></i></span>
 
-        <%--</div>--%>
-<%--</div>--%>
+            </h1>
+            <p class="template-text">Here you can see the products of your cart & proceed to Checkout.</p>
+        </header>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="property-single-details bg-black-3 mt-5 block">
 
-<%--<c:forEach var="item" items="${sessionScope.cart}">--%>
+                    <div class="row">
 
 
-        <%--<li>${item.productName}</li>--%>
-        <%--<li>${product.unitPrice}</li>--%>
+                        <table>
+                            <tr>
+                                <th><h3 style="padding-left: 60px; padding-right: 30px;" class="h4 has-line">
+                                    Product </h3></th>
+                                <th><h3 style="padding-right: 90px;" class="h4 has-line">Product Name </h3></th>
+                                <th><h3 style="padding-right: 90px;" class="h4 has-line">Quantity</h3></th>
+                                <th><h3 style="padding-right: 90px;" class="h4 has-line">Price </h3></th>
+                                <th><h3 style="padding-right: 90px;" class="h4"></h3></th>
+                            </tr>
 
-<%--</c:forEach>--%>
+
+                            <c:forEach items="${sessionScope.cart.cart}" var="cartItem">
+
+                                <tr>
+                                    <td>
+                                        <div class="col-md-3"><strong>
+                                            <div class=" " style="width: 75px;"><img style="border-radius: 30px;"
+                                                                                     src="<spring:url value="/getUserImage/${cartItem.product.productId}"/>.do"
+                                                                                     alt="..." class="img-fluid"></div>
+                                        </strong></div>
+                                    </td>
+                                    <td><p> ${cartItem.product.productName}</p></td>
+                                    <td><p> ${cartItem.itemQuantity}</p></td>
+                                    <td><p> ${cartItem.itemQuantity * cartItem.product.productPrice}</p></td>
+                                    <td><i style="font-size:50px; color:whitesmoke;" class="fa fa-times"></i></td>
+
+                                </tr>
+                            </c:forEach>
+                        </table>
+                        
+
+                        <h2 style="float: right; padding-top: 10%;"><i class="fa fa-money" aria-hidden="true"></i> Total
+                            Price: ${sessionScope.cart.totalPrice}</h2>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</section>
 
 
-
-
-
-
-<%--<%@include file="/WEB-INF/views/template/footer.jsp" %>--%>
+<%@include file="/WEB-INF/views/template/footer.jsp" %>
