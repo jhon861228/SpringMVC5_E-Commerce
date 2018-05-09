@@ -29,9 +29,6 @@
                             </tr>
 
 
-                            <%--<c:if "${sessionScope.cart.cart.totalPrice}"==null >--%>
-
-
                             <c:if test="${sessionScope.cart.totalPrice != 0}">
                             <c:forEach items="${sessionScope.cart.cart}" var="cartItem">
 
