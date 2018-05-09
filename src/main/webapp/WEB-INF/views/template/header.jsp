@@ -116,7 +116,7 @@
                             <li class="list-inline-item"><a href="<spring:url value="/profile" />"
                                                             class="btn btn-primary btn-gradient">${pageContext.request.userPrincipal.name}
                                 PROFILE </a>
-                                <a href="<spring:url value="/loginpage" />" class="btn btn-primary btn-gradient">Cart <i
+                                <a href="<spring:url value="/cart" />" class="btn btn-primary btn-gradient">Cart <i
                                         class="fa fa-cart-arrow-down"></i></a>
                                 <a class="btn btn-primary btn-gradient" onclick="document.forms['logoutForm'].submit()">Logout<i
                                         class="fa fa-window-close"></i></a>

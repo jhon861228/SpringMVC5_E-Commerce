@@ -335,19 +335,55 @@ public class UserController {
     }
 
 
-//    @RequestMapping("/deletecartitem/{id}")
-//    public ModelAndView deleteCartItem(@PathVariable("id")String id,HttpServletRequest request, HttpSession session) {
-//
-//        List <Product> cart = (List<Product>) session.getAttribute("cart");
-//            cart.
-//            cart.remove(productDao.getProductById(id));
-//            session.setAttribute("cart",cart);
-//            ModelAndView model = new ModelAndView();
-//            model.setViewName("cart");
-//            return model;
-//
-//    }
+    @RequestMapping("/deletecartitem/{id}")
+    public String deleteCartItem(@PathVariable("id") String id, HttpServletRequest request, HttpSession session) {
 
+        Cart cart = (Cart) session.getAttribute("cart");
+        int cartSize = cart.getCart().size();
+        for (int i = 0; i < cartSize; i++) {
+
+
+            if (id.equals(cart.getCart().get(i).getProduct().getProductId())) {
+
+                int Quan = cart.getCart().get(i).getItemQuantity();
+
+                if (Quan > 1) {
+
+                    cart.getCart().get(i).setItemQuantity(Quan - 1);
+                    cart.setTotalPrice((float) (cart.getTotalPrice() - cart.getCart().get(i).getProduct().getProductPrice()));
+                } else if (Quan == 1) {
+                    cart.setTotalPrice((float) (cart.getTotalPrice() - cart.getCart().get(i).getProduct().getProductPrice()));
+                    cart.getCart().remove(i);
+
+
+                }
+
+
+                session.setAttribute("cart", cart);
+
+
+            }
+        }
+        return "cart";
+    }
+
+    @RequestMapping("/cart")
+    public String viewCart(HttpSession session) {
+
+
+        if (session.getAttribute("cart") == null) {
+            Cart cart = new Cart();
+
+
+        }
+        else {
+            Cart cart = (Cart) session.getAttribute("cart");
+
+
+        }
+        return "cart";
+
+    }
 
     @RequestMapping(value = "/editProduct", method = RequestMethod.POST)
     public String editProduct(@ModelAttribute("product") Product product, Model model, HttpServletRequest request, @RequestParam("fileUpload") MultipartFile file) throws IOException {

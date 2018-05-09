@@ -29,6 +29,10 @@
                             </tr>
 
 
+                            <%--<c:if "${sessionScope.cart.cart.totalPrice}"==null >--%>
+
+
+                            <c:if test="${sessionScope.cart.totalPrice != 0}">
                             <c:forEach items="${sessionScope.cart.cart}" var="cartItem">
 
                                 <tr>
@@ -42,12 +46,18 @@
                                     <td><p> ${cartItem.product.productName}</p></td>
                                     <td><p> ${cartItem.itemQuantity}</p></td>
                                     <td><p> ${cartItem.itemQuantity * cartItem.product.productPrice}</p></td>
-                                    <td><i style="font-size:50px; color:whitesmoke;" class="fa fa-times"></i></td>
+                                    <td><i style="font-size:30px; color:darkgray;" class="fa fa-trash"></i> <a href="/deletecartitem/${cartItem.product.productId}"> <button class="btn btn-gradient col-md-12">Remove(1)</button></a></td>
 
                                 </tr>
                             </c:forEach>
                         </table>
-                        
+                        </c:if>
+
+                        <c:if test="${sessionScope.cart.totalPrice == 0}">
+
+                              <h2 style="margin-bottom: 30%;">Hmm..It Seems like Your Cart is Empty</h2>
+
+                        </c:if>
 
                         <h2 style="float: right; padding-top: 10%;"><i class="fa fa-money" aria-hidden="true"></i> Total
                             Price: ${sessionScope.cart.totalPrice}</h2>
